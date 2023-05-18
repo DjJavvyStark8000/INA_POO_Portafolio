@@ -1,0 +1,8 @@
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea7_C#\Practica07_DunierJavier\Practica07_DunierJavier\ejercicio_Aguinaldo\bin\Debug\ejercicio_Aguinaldo.exe.config
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea7_C#\Practica07_DunierJavier\Practica07_DunierJavier\ejercicio_Aguinaldo\bin\Debug\ejercicio_Aguinaldo.exe
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea7_C#\Practica07_DunierJavier\Practica07_DunierJavier\ejercicio_Aguinaldo\bin\Debug\ejercicio_Aguinaldo.pdb
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea7_C#\Practica07_DunierJavier\Practica07_DunierJavier\ejercicio_Aguinaldo\obj\Debug\ejercicio_Aguinaldo.csproj.AssemblyReference.cache
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea7_C#\Practica07_DunierJavier\Practica07_DunierJavier\ejercicio_Aguinaldo\obj\Debug\ejercicio_Aguinaldo.csproj.SuggestedBindingRedirects.cache
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea7_C#\Practica07_DunierJavier\Practica07_DunierJavier\ejercicio_Aguinaldo\obj\Debug\ejercicio_Aguinaldo.csproj.CoreCompileInputs.cache
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea7_C#\Practica07_DunierJavier\Practica07_DunierJavier\ejercicio_Aguinaldo\obj\Debug\ejercicio_Aguinaldo.exe
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea7_C#\Practica07_DunierJavier\Practica07_DunierJavier\ejercicio_Aguinaldo\obj\Debug\ejercicio_Aguinaldo.pdb

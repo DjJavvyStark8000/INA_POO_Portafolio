@@ -1,0 +1,8 @@
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea7_C#\Practica07_DunierJavier\Practica07_DunierJavier\bin\Debug\Practica07_DunierJavier.exe.config
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea7_C#\Practica07_DunierJavier\Practica07_DunierJavier\bin\Debug\Practica07_DunierJavier.exe
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea7_C#\Practica07_DunierJavier\Practica07_DunierJavier\bin\Debug\Practica07_DunierJavier.pdb
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea7_C#\Practica07_DunierJavier\Practica07_DunierJavier\obj\Debug\Practica07_DunierJavier.csproj.AssemblyReference.cache
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea7_C#\Practica07_DunierJavier\Practica07_DunierJavier\obj\Debug\Practica07_DunierJavier.csproj.SuggestedBindingRedirects.cache
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea7_C#\Practica07_DunierJavier\Practica07_DunierJavier\obj\Debug\Practica07_DunierJavier.csproj.CoreCompileInputs.cache
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea7_C#\Practica07_DunierJavier\Practica07_DunierJavier\obj\Debug\Practica07_DunierJavier.exe
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea7_C#\Practica07_DunierJavier\Practica07_DunierJavier\obj\Debug\Practica07_DunierJavier.pdb
