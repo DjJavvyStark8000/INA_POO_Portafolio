@@ -19,6 +19,7 @@ namespace Ejercicio03
             Console.WriteLine("Ingrese segundos:");
             int seconds = int.Parse(Console.ReadLine());
 
+
             int totalSeconds = CalculateTotalSeconds(hours, minutes, seconds);
 
             Console.WriteLine("Total de segundos: " + totalSeconds);

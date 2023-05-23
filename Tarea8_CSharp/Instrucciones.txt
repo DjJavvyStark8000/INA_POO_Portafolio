@@ -1,0 +1,16 @@
+Instrucciones: 
+Trabajando de forma individual resuelva los siguientes problemas en C#, cree todos los programas solicitados en la misma solución.
+1.	Construya un programa que permita leer una cantidad de 20 números y nos indique finalmente cuantos fueron positivos, cuantos fueron negativos y cuantas veces se introdujo el cero.
+2.	Construya un programa que permita leer una cantidad variable de números y nos indique cuantos fueron mayores o iguales a 100 y cuántos menores a 100, cada vez que ingresa un número debe preguntar si desea ingresar otro.
+3.	Construya un programa que permita ingresar 10 notas entre 1 y 100, indicando finalmente cuántos alumnos aprobaron (>=70) y cuantos reprobaron (<70).
+4.	Construya un programa que permita leer una cantidad variable de números indicando finalmente lo siguiente:
+	cuantos fueron pares
+	cuantos fueron impares
+	cuántos fueron múltiplos de tres
+5.	Construya un programa que permita leer una cantidad variable de números hasta que se ingresen 5 números negativos. Indicar cantidad total de números leídos.
+6.	Leer 10 números e indicar cuánto es la suma de todos ellos.
+7.	Leer 10 números e indicar cuánto suman los números pares.
+8.	Leer una cantidad variable de números e indicar cuánto suman todos los números, y cuál es el promedio de los números
+9.	Leer una cantidad de números variables hasta que se ingrese un número múltiplo de 5. Indicar el número de datos que fueron ingresados, sin contar el múltiplo de la condición de término.
+10.	Leer las edades de los asistentes a un cine e indicar finalmente cuántos de estos fueron: niños (1-10), adolescentes (11-15), jóvenes (16-22), adultos (23-65), adultos mayores (más de 65), preguntar si desea leer otro asistente.
+11.	Construya un programa que permita leer sólo números positivos hasta reunir 10 números pares, o el número 5 cuatro veces. Al final debe indicar la totalidad de números leídos.
