@@ -1,0 +1,8 @@
+C:\Users\djjav\Desktop\CSharp_8\Ejercicio2\bin\Debug\Ejercicio2.exe.config
+C:\Users\djjav\Desktop\CSharp_8\Ejercicio2\bin\Debug\Ejercicio2.exe
+C:\Users\djjav\Desktop\CSharp_8\Ejercicio2\bin\Debug\Ejercicio2.pdb
+C:\Users\djjav\Desktop\CSharp_8\Ejercicio2\obj\Debug\Ejercicio2.csproj.AssemblyReference.cache
+C:\Users\djjav\Desktop\CSharp_8\Ejercicio2\obj\Debug\Ejercicio2.csproj.SuggestedBindingRedirects.cache
+C:\Users\djjav\Desktop\CSharp_8\Ejercicio2\obj\Debug\Ejercicio2.csproj.CoreCompileInputs.cache
+C:\Users\djjav\Desktop\CSharp_8\Ejercicio2\obj\Debug\Ejercicio2.exe
+C:\Users\djjav\Desktop\CSharp_8\Ejercicio2\obj\Debug\Ejercicio2.pdb

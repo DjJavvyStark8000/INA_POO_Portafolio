@@ -1,0 +1,8 @@
+C:\Users\djjav\Desktop\CSharp_8\Ejercicio4\bin\Debug\Ejercicio4.exe.config
+C:\Users\djjav\Desktop\CSharp_8\Ejercicio4\bin\Debug\Ejercicio4.exe
+C:\Users\djjav\Desktop\CSharp_8\Ejercicio4\bin\Debug\Ejercicio4.pdb
+C:\Users\djjav\Desktop\CSharp_8\Ejercicio4\obj\Debug\Ejercicio4.csproj.AssemblyReference.cache
+C:\Users\djjav\Desktop\CSharp_8\Ejercicio4\obj\Debug\Ejercicio4.csproj.SuggestedBindingRedirects.cache
+C:\Users\djjav\Desktop\CSharp_8\Ejercicio4\obj\Debug\Ejercicio4.csproj.CoreCompileInputs.cache
+C:\Users\djjav\Desktop\CSharp_8\Ejercicio4\obj\Debug\Ejercicio4.exe
+C:\Users\djjav\Desktop\CSharp_8\Ejercicio4\obj\Debug\Ejercicio4.pdb

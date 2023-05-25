@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio01", "Ejercicio01.csproj", "{AE706211-45A3-461C-8E23-15F994AF6989}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio2", "..\Ejercicio2\Ejercicio2.csproj", "{FB1D19D2-FF29-47EF-A27F-CEC7F5955938}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE706211-45A3-461C-8E23-15F994AF6989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE706211-45A3-461C-8E23-15F994AF6989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE706211-45A3-461C-8E23-15F994AF6989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE706211-45A3-461C-8E23-15F994AF6989}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB1D19D2-FF29-47EF-A27F-CEC7F5955938}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB1D19D2-FF29-47EF-A27F-CEC7F5955938}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB1D19D2-FF29-47EF-A27F-CEC7F5955938}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB1D19D2-FF29-47EF-A27F-CEC7F5955938}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D93AF6F0-D2DD-4A39-AD9E-D5739DE1C90A}
+	EndGlobalSection
+EndGlobal
