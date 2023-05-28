@@ -1,0 +1,15 @@
+C:\Users\djjav\Desktop\CSharp_9\Portafolio9_DunierJavier\bin\Debug\net6.0\Portafolio9_DunierJavier.exe
+C:\Users\djjav\Desktop\CSharp_9\Portafolio9_DunierJavier\bin\Debug\net6.0\Portafolio9_DunierJavier.deps.json
+C:\Users\djjav\Desktop\CSharp_9\Portafolio9_DunierJavier\bin\Debug\net6.0\Portafolio9_DunierJavier.runtimeconfig.json
+C:\Users\djjav\Desktop\CSharp_9\Portafolio9_DunierJavier\bin\Debug\net6.0\Portafolio9_DunierJavier.dll
+C:\Users\djjav\Desktop\CSharp_9\Portafolio9_DunierJavier\bin\Debug\net6.0\Portafolio9_DunierJavier.pdb
+C:\Users\djjav\Desktop\CSharp_9\Portafolio9_DunierJavier\obj\Debug\net6.0\Portafolio9_DunierJavier.csproj.AssemblyReference.cache
+C:\Users\djjav\Desktop\CSharp_9\Portafolio9_DunierJavier\obj\Debug\net6.0\Portafolio9_DunierJavier.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\djjav\Desktop\CSharp_9\Portafolio9_DunierJavier\obj\Debug\net6.0\Portafolio9_DunierJavier.AssemblyInfoInputs.cache
+C:\Users\djjav\Desktop\CSharp_9\Portafolio9_DunierJavier\obj\Debug\net6.0\Portafolio9_DunierJavier.AssemblyInfo.cs
+C:\Users\djjav\Desktop\CSharp_9\Portafolio9_DunierJavier\obj\Debug\net6.0\Portafolio9_DunierJavier.csproj.CoreCompileInputs.cache
+C:\Users\djjav\Desktop\CSharp_9\Portafolio9_DunierJavier\obj\Debug\net6.0\Portafolio9_DunierJavier.dll
+C:\Users\djjav\Desktop\CSharp_9\Portafolio9_DunierJavier\obj\Debug\net6.0\refint\Portafolio9_DunierJavier.dll
+C:\Users\djjav\Desktop\CSharp_9\Portafolio9_DunierJavier\obj\Debug\net6.0\Portafolio9_DunierJavier.pdb
+C:\Users\djjav\Desktop\CSharp_9\Portafolio9_DunierJavier\obj\Debug\net6.0\Portafolio9_DunierJavier.genruntimeconfig.cache
+C:\Users\djjav\Desktop\CSharp_9\Portafolio9_DunierJavier\obj\Debug\net6.0\ref\Portafolio9_DunierJavier.dll
