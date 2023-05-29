@@ -39,12 +39,36 @@ namespace Portafolio9_DunierJavier
 
 
         //setters y getters mas simplificados en esta ocacion.
-        public int IdCliente { get; set; }
-        public string? Nombre { get; set; }
-        public string? Apellido1 { get; set; }
-        public string? FechaNacimiento { get; set; }
-        public int Telefono { get; set; }
-        public string? Direccion { get; set; }
+        public int IdCliente 
+        {
+            get { return idCliente; }
+            set { idCliente = value; }
+        }
+        public string? Nombre 
+        {
+            get { return nombre; }
+            set { nombre = value; }  
+        }
+        public string? Apellido1 
+        {
+            get { return apellido1; }
+            set { apellido1 = value; } 
+        }
+        public string? FechaNacimiento 
+        {
+            get { return fechaNacimiento; }
+            set { fechaNacimiento = value; } 
+        }
+        public int Telefono 
+        {
+            get { return telefono; }
+            set { telefono = value; } 
+        }
+        public string? Direccion 
+        {
+            get { return direccion; }
+            set { direccion = value; }
+        }
 
         //metodos get
         public string getNombreApell()
