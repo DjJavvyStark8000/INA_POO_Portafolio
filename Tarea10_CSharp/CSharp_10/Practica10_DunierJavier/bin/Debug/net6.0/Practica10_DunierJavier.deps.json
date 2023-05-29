@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Practica10_DunierJavier/1.0.0": {
+        "runtime": {
+          "Practica10_DunierJavier.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Practica10_DunierJavier/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

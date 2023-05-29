@@ -1,0 +1,15 @@
+C:\Users\djjav\Desktop\CSharp_10\Practica10_DunierJavier\bin\Debug\net6.0\Practica10_DunierJavier.exe
+C:\Users\djjav\Desktop\CSharp_10\Practica10_DunierJavier\bin\Debug\net6.0\Practica10_DunierJavier.deps.json
+C:\Users\djjav\Desktop\CSharp_10\Practica10_DunierJavier\bin\Debug\net6.0\Practica10_DunierJavier.runtimeconfig.json
+C:\Users\djjav\Desktop\CSharp_10\Practica10_DunierJavier\bin\Debug\net6.0\Practica10_DunierJavier.dll
+C:\Users\djjav\Desktop\CSharp_10\Practica10_DunierJavier\bin\Debug\net6.0\Practica10_DunierJavier.pdb
+C:\Users\djjav\Desktop\CSharp_10\Practica10_DunierJavier\obj\Debug\net6.0\Practica10_DunierJavier.csproj.AssemblyReference.cache
+C:\Users\djjav\Desktop\CSharp_10\Practica10_DunierJavier\obj\Debug\net6.0\Practica10_DunierJavier.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\djjav\Desktop\CSharp_10\Practica10_DunierJavier\obj\Debug\net6.0\Practica10_DunierJavier.AssemblyInfoInputs.cache
+C:\Users\djjav\Desktop\CSharp_10\Practica10_DunierJavier\obj\Debug\net6.0\Practica10_DunierJavier.AssemblyInfo.cs
+C:\Users\djjav\Desktop\CSharp_10\Practica10_DunierJavier\obj\Debug\net6.0\Practica10_DunierJavier.csproj.CoreCompileInputs.cache
+C:\Users\djjav\Desktop\CSharp_10\Practica10_DunierJavier\obj\Debug\net6.0\Practica10_DunierJavier.dll
+C:\Users\djjav\Desktop\CSharp_10\Practica10_DunierJavier\obj\Debug\net6.0\refint\Practica10_DunierJavier.dll
+C:\Users\djjav\Desktop\CSharp_10\Practica10_DunierJavier\obj\Debug\net6.0\Practica10_DunierJavier.pdb
+C:\Users\djjav\Desktop\CSharp_10\Practica10_DunierJavier\obj\Debug\net6.0\Practica10_DunierJavier.genruntimeconfig.cache
+C:\Users\djjav\Desktop\CSharp_10\Practica10_DunierJavier\obj\Debug\net6.0\ref\Practica10_DunierJavier.dll
