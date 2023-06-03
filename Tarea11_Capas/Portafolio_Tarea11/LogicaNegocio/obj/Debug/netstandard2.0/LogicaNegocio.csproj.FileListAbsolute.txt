@@ -1,0 +1,10 @@
+C:\Users\djjav\Desktop\Tarea11_Capas\Portafolio_Tarea11\LogicaNegocio\bin\Debug\netstandard2.0\LogicaNegocio.deps.json
+C:\Users\djjav\Desktop\Tarea11_Capas\Portafolio_Tarea11\LogicaNegocio\bin\Debug\netstandard2.0\LogicaNegocio.dll
+C:\Users\djjav\Desktop\Tarea11_Capas\Portafolio_Tarea11\LogicaNegocio\bin\Debug\netstandard2.0\LogicaNegocio.pdb
+C:\Users\djjav\Desktop\Tarea11_Capas\Portafolio_Tarea11\LogicaNegocio\obj\Debug\netstandard2.0\LogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\djjav\Desktop\Tarea11_Capas\Portafolio_Tarea11\LogicaNegocio\obj\Debug\netstandard2.0\LogicaNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\djjav\Desktop\Tarea11_Capas\Portafolio_Tarea11\LogicaNegocio\obj\Debug\netstandard2.0\LogicaNegocio.AssemblyInfoInputs.cache
+C:\Users\djjav\Desktop\Tarea11_Capas\Portafolio_Tarea11\LogicaNegocio\obj\Debug\netstandard2.0\LogicaNegocio.AssemblyInfo.cs
+C:\Users\djjav\Desktop\Tarea11_Capas\Portafolio_Tarea11\LogicaNegocio\obj\Debug\netstandard2.0\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\djjav\Desktop\Tarea11_Capas\Portafolio_Tarea11\LogicaNegocio\obj\Debug\netstandard2.0\LogicaNegocio.dll
+C:\Users\djjav\Desktop\Tarea11_Capas\Portafolio_Tarea11\LogicaNegocio\obj\Debug\netstandard2.0\LogicaNegocio.pdb

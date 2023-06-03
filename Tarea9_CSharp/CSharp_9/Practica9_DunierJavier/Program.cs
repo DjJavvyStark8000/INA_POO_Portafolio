@@ -17,6 +17,8 @@ namespace Portafolio9_DunierJavier
             Cliente unCliente = new Cliente();
             Cliente dosCliente = new Cliente("Javier", "Bolaños");
 
+
+
             //1.Utilizar con cada objeto todos los métodos getter,
             //setter y métodos de funcionalidad que creó.
             //Libro
@@ -27,6 +29,8 @@ namespace Portafolio9_DunierJavier
                 $"que pertenece la la categoria {unLibro.Categoria} lo estara promoviendo en\n" +
                 $"el editorial {dosLibro.Editorial} en el anio {unLibro.AnioPublicacion}, este\n" +
                 $"tiene un costo de {unLibro.Precio}");
+
+
             //cambiar titulo editorial
             unLibro.setEditorial("Aliens2", "ABC");
             Console.WriteLine($"\nEl autor a anunciado que para el anio {unLibro.AnioPublicacion + 1}\n" +
@@ -34,6 +38,8 @@ namespace Portafolio9_DunierJavier
                 $"editorial {unLibro.Editorial}");
 
             Console.WriteLine("\n\n-------------------------------------------------------\n\n");
+
+
             unCliente.setTelefono(55555555);//cambiar telefono
             //chequer si el telefono es valido rando de 22222222 a 99999999 es valido
             if (unCliente.checkPhone(unCliente.Telefono))
