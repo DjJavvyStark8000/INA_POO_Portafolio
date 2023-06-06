@@ -1,0 +1,135 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Entidades/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Entidades.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entidades.dll": {}
+        }
+      },
+      "_02_CapaLogica/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Entidades": "1.0.0",
+          "_03_CapaBaseDatos": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/_02_CapaLogica.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/_02_CapaLogica.dll": {}
+        }
+      },
+      "_03_CapaBaseDatos/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Entidades": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/_03_CapaBaseDatos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/_03_CapaBaseDatos.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Entidades/1.0.0": {
+      "type": "project",
+      "path": "../Entidades/Entidades.csproj",
+      "msbuildProject": "../Entidades/Entidades.csproj"
+    },
+    "_02_CapaLogica/1.0.0": {
+      "type": "project",
+      "path": "../_02_CapaLogica/_02_CapaLogica.csproj",
+      "msbuildProject": "../_02_CapaLogica/_02_CapaLogica.csproj"
+    },
+    "_03_CapaBaseDatos/1.0.0": {
+      "type": "project",
+      "path": "../_03_CapaBaseDatos/_03_CapaBaseDatos.csproj",
+      "msbuildProject": "../_03_CapaBaseDatos/_03_CapaBaseDatos.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "Entidades >= 1.0.0",
+      "_02_CapaLogica >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\djjav\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\_01_CapaPresentacion\\_01_CapaPresentacion.csproj",
+      "projectName": "_01_CapaPresentacion",
+      "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\_01_CapaPresentacion\\_01_CapaPresentacion.csproj",
+      "packagesPath": "C:\\Users\\djjav\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\_01_CapaPresentacion\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\djjav\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "projectReferences": {
+            "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\Entidades\\Entidades.csproj"
+            },
+            "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\_02_CapaLogica\\_02_CapaLogica.csproj": {
+              "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\_02_CapaLogica\\_02_CapaLogica.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

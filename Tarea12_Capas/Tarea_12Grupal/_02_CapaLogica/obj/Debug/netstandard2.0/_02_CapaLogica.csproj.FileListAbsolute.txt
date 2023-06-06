@@ -1,0 +1,15 @@
+C:\Users\djjav\Desktop\Tarea12_Capas\Tarea_12Grupal\_02_CapaLogica\bin\Debug\netstandard2.0\_02_CapaLogica.deps.json
+C:\Users\djjav\Desktop\Tarea12_Capas\Tarea_12Grupal\_02_CapaLogica\bin\Debug\netstandard2.0\_02_CapaLogica.dll
+C:\Users\djjav\Desktop\Tarea12_Capas\Tarea_12Grupal\_02_CapaLogica\bin\Debug\netstandard2.0\_02_CapaLogica.pdb
+C:\Users\djjav\Desktop\Tarea12_Capas\Tarea_12Grupal\_02_CapaLogica\bin\Debug\netstandard2.0\Entidades.dll
+C:\Users\djjav\Desktop\Tarea12_Capas\Tarea_12Grupal\_02_CapaLogica\bin\Debug\netstandard2.0\_03_CapaBaseDatos.dll
+C:\Users\djjav\Desktop\Tarea12_Capas\Tarea_12Grupal\_02_CapaLogica\bin\Debug\netstandard2.0\Entidades.pdb
+C:\Users\djjav\Desktop\Tarea12_Capas\Tarea_12Grupal\_02_CapaLogica\bin\Debug\netstandard2.0\_03_CapaBaseDatos.pdb
+C:\Users\djjav\Desktop\Tarea12_Capas\Tarea_12Grupal\_02_CapaLogica\obj\Debug\netstandard2.0\_02_CapaLogica.csproj.AssemblyReference.cache
+C:\Users\djjav\Desktop\Tarea12_Capas\Tarea_12Grupal\_02_CapaLogica\obj\Debug\netstandard2.0\_02_CapaLogica.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\djjav\Desktop\Tarea12_Capas\Tarea_12Grupal\_02_CapaLogica\obj\Debug\netstandard2.0\_02_CapaLogica.AssemblyInfoInputs.cache
+C:\Users\djjav\Desktop\Tarea12_Capas\Tarea_12Grupal\_02_CapaLogica\obj\Debug\netstandard2.0\_02_CapaLogica.AssemblyInfo.cs
+C:\Users\djjav\Desktop\Tarea12_Capas\Tarea_12Grupal\_02_CapaLogica\obj\Debug\netstandard2.0\_02_CapaLogica.csproj.CoreCompileInputs.cache
+C:\Users\djjav\Desktop\Tarea12_Capas\Tarea_12Grupal\_02_CapaLogica\obj\Debug\netstandard2.0\_02_CapaLogica.csproj.CopyComplete
+C:\Users\djjav\Desktop\Tarea12_Capas\Tarea_12Grupal\_02_CapaLogica\obj\Debug\netstandard2.0\_02_CapaLogica.dll
+C:\Users\djjav\Desktop\Tarea12_Capas\Tarea_12Grupal\_02_CapaLogica\obj\Debug\netstandard2.0\_02_CapaLogica.pdb

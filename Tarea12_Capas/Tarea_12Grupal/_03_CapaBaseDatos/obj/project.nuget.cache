@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZzlsmM7RhXUwLH2ffMmY2c6Wu7T85DU+nE1ja8g0blkxWf8LEcHBwEAMKvL0Aab+xNU3R9Clm6H0J1Ibzch+8g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\_03_CapaBaseDatos\\_03_CapaBaseDatos.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\djjav\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\djjav\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

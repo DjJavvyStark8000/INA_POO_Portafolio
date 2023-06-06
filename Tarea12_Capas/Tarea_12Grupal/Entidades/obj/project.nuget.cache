@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "t4HC/339HDGxhLHY5ksAQ02I7rmbM0HxV/6CwBGBIlY31Yl1NFZi7mpheFhiPB3nqUqJ3G3l2PSMp41YSv96uA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\Entidades\\Entidades.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\djjav\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\djjav\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
