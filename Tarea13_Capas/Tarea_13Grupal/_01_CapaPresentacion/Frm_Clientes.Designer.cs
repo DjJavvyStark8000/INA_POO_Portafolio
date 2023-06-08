@@ -100,6 +100,7 @@
             btnSalir.TabIndex = 9;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
             // 
             // btnEliminar
             // 
@@ -118,6 +119,7 @@
             btnNuevo.TabIndex = 7;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // btnGuardar
             // 
@@ -127,6 +129,7 @@
             btnGuardar.TabIndex = 6;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // lblID
             // 
@@ -149,7 +152,6 @@
             // txtNombre
             // 
             txtNombre.BackColor = System.Drawing.SystemColors.Info;
-            txtNombre.Enabled = false;
             txtNombre.Location = new System.Drawing.Point(35, 103);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new System.Drawing.Size(109, 23);
@@ -158,7 +160,6 @@
             // txtTelefono
             // 
             txtTelefono.BackColor = System.Drawing.SystemColors.Info;
-            txtTelefono.Enabled = false;
             txtTelefono.Location = new System.Drawing.Point(160, 103);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new System.Drawing.Size(165, 23);
@@ -167,7 +168,6 @@
             // txtDireccion
             // 
             txtDireccion.BackColor = System.Drawing.SystemColors.Info;
-            txtDireccion.Enabled = false;
             txtDireccion.Location = new System.Drawing.Point(348, 103);
             txtDireccion.Multiline = true;
             txtDireccion.Name = "txtDireccion";

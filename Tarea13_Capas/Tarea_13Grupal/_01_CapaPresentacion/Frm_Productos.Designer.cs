@@ -110,6 +110,7 @@
             btnNuevo.TabIndex = 2;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // btnEliminar
             // 
@@ -128,6 +129,7 @@
             button1.TabIndex = 4;
             button1.Text = "Salir";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -143,14 +145,13 @@
             lblIGravado.AutoSize = true;
             lblIGravado.Location = new System.Drawing.Point(539, 66);
             lblIGravado.Name = "lblIGravado";
-            lblIGravado.Size = new System.Drawing.Size(52, 15);
+            lblIGravado.Size = new System.Drawing.Size(51, 15);
             lblIGravado.TabIndex = 43;
-            lblIGravado.Text = "Grabado";
+            lblIGravado.Text = "Gravado";
             // 
             // txtGravado
             // 
             txtGravado.BackColor = System.Drawing.SystemColors.Info;
-            txtGravado.Enabled = false;
             txtGravado.Location = new System.Drawing.Point(539, 84);
             txtGravado.Name = "txtGravado";
             txtGravado.Size = new System.Drawing.Size(109, 23);
@@ -168,7 +169,6 @@
             // txtPrecioVenta
             // 
             txtPrecioVenta.BackColor = System.Drawing.SystemColors.Info;
-            txtPrecioVenta.Enabled = false;
             txtPrecioVenta.Location = new System.Drawing.Point(396, 84);
             txtPrecioVenta.Name = "txtPrecioVenta";
             txtPrecioVenta.Size = new System.Drawing.Size(109, 23);
@@ -186,7 +186,6 @@
             // txtPrecioCompra
             // 
             txtPrecioCompra.BackColor = System.Drawing.SystemColors.Info;
-            txtPrecioCompra.Enabled = false;
             txtPrecioCompra.Location = new System.Drawing.Point(243, 84);
             txtPrecioCompra.Name = "txtPrecioCompra";
             txtPrecioCompra.Size = new System.Drawing.Size(109, 23);
@@ -204,7 +203,6 @@
             // txtDescripcion
             // 
             txtDescripcion.BackColor = System.Drawing.SystemColors.Info;
-            txtDescripcion.Enabled = false;
             txtDescripcion.Location = new System.Drawing.Point(11, 84);
             txtDescripcion.Multiline = true;
             txtDescripcion.Name = "txtDescripcion";
@@ -251,7 +249,7 @@
             Controls.Add(btnGuardar);
             Controls.Add(dataGridView1);
             Name = "Frm_Productos";
-            Text = "Frm_Productos";
+            Text = "Productos";
             Load += Frm_Productos_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

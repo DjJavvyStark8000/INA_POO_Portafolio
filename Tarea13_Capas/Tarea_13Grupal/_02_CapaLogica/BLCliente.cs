@@ -8,30 +8,37 @@ namespace _02_CapaLogica
 {
     public class BLCliente
     {
-        private int id_Cliente;
-        private string nombre;
-        private string telefono;
-        private string direccion;
+        //atributos
+        private string _cadenaConexion;
+        private string _mensaje;
 
-        //constructores
-        public BLCliente()
+        //propiedades
+        public string Mensaje
         {
-            id_Cliente = 0;
-            nombre = "";
-            telefono = "";
-            direccion = "";
-        }
-        public BLCliente(int id_Cliente, string nombre, string telefono, string direccion)
-        {
-            this.id_Cliente = id_Cliente;
-            this.nombre = nombre;
-            this.telefono = telefono;
-            this.direccion = direccion;
+            get => _mensaje;
         }
 
-        public int Cliente { get { return id_Cliente; } set { id_Cliente = value; } }
-        public string Nombre { get { return nombre; } set { nombre = value; } }
-        public string Telefono { get { return telefono; } set { telefono = value; } }
-        public string Direccion { get { return direccion; } set { direccion = value; } }
+        // constructor
+        public BLCliente(string cadenaConexion)
+        {
+            _cadenaConexion = cadenaConexion;
+            _mensaje = string.Empty;
+        }
+
+        //metodo para llamar al metodo insertar de la capa3accesodatos
+        public int LlamarMetodoInsertar(EntidadClientes cliente)
+        {
+            int id_cliente = 0;
+            DAClientes accesoDatos = new DAClientes(_cadenaConexion);
+            try
+            {
+                id_cliente = accesoDatos.InsertarCliente(cliente);             
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return id_cliente;
+        }// fin de la clase insertar
     }
 }

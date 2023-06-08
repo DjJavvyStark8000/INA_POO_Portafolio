@@ -920,11 +920,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\_03_CapaBaseDatos\\_03_CapaBaseDatos.csproj",
+      "projectUniqueName": "C:\\Users\\djjav\\Desktop\\Tarea13_Capas\\Tarea_12Grupal\\_03_CapaBaseDatos\\_03_CapaBaseDatos.csproj",
       "projectName": "_03_CapaBaseDatos",
-      "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\_03_CapaBaseDatos\\_03_CapaBaseDatos.csproj",
+      "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea13_Capas\\Tarea_12Grupal\\_03_CapaBaseDatos\\_03_CapaBaseDatos.csproj",
       "packagesPath": "C:\\Users\\djjav\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\_03_CapaBaseDatos\\obj\\",
+      "outputPath": "C:\\Users\\djjav\\Desktop\\Tarea13_Capas\\Tarea_12Grupal\\_03_CapaBaseDatos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\djjav\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -941,8 +941,8 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\Entidades\\Entidades.csproj"
+            "C:\\Users\\djjav\\Desktop\\Tarea13_Capas\\Tarea_12Grupal\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea13_Capas\\Tarea_12Grupal\\Entidades\\Entidades.csproj"
             }
           }
         }

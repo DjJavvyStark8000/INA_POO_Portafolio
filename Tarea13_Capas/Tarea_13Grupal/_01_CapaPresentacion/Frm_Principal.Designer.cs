@@ -41,7 +41,7 @@
             menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { accesarToolStripMenuItem });
             menuStrip1.Location = new System.Drawing.Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new System.Drawing.Size(730, 24);
+            menuStrip1.Size = new System.Drawing.Size(1144, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -77,12 +77,14 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(730, 508);
+            ClientSize = new System.Drawing.Size(1144, 999);
             Controls.Add(menuStrip1);
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "Frm_Principal";
-            Text = "Frm_Principal";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "Principal";
+            WindowState = System.Windows.Forms.FormWindowState.Maximized;
             Load += Frm_Principal_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

@@ -940,11 +940,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\_02_CapaLogica\\_02_CapaLogica.csproj",
+      "projectUniqueName": "C:\\Users\\djjav\\Desktop\\Tarea13_Capas\\Tarea_12Grupal\\_02_CapaLogica\\_02_CapaLogica.csproj",
       "projectName": "_02_CapaLogica",
-      "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\_02_CapaLogica\\_02_CapaLogica.csproj",
+      "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea13_Capas\\Tarea_12Grupal\\_02_CapaLogica\\_02_CapaLogica.csproj",
       "packagesPath": "C:\\Users\\djjav\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\_02_CapaLogica\\obj\\",
+      "outputPath": "C:\\Users\\djjav\\Desktop\\Tarea13_Capas\\Tarea_12Grupal\\_02_CapaLogica\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\djjav\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -961,11 +961,11 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\Entidades\\Entidades.csproj"
+            "C:\\Users\\djjav\\Desktop\\Tarea13_Capas\\Tarea_12Grupal\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea13_Capas\\Tarea_12Grupal\\Entidades\\Entidades.csproj"
             },
-            "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\_03_CapaBaseDatos\\_03_CapaBaseDatos.csproj": {
-              "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\_03_CapaBaseDatos\\_03_CapaBaseDatos.csproj"
+            "C:\\Users\\djjav\\Desktop\\Tarea13_Capas\\Tarea_12Grupal\\_03_CapaBaseDatos\\_03_CapaBaseDatos.csproj": {
+              "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea13_Capas\\Tarea_12Grupal\\_03_CapaBaseDatos\\_03_CapaBaseDatos.csproj"
             }
           }
         }

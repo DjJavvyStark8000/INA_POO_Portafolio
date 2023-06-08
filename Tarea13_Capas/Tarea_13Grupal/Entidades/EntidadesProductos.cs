@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Entidades
 {
-    internal class EntidadesProductos
+    public class EntidadesProductos
     {
         private int id_producto;
         private string description;
@@ -31,7 +31,7 @@ namespace Entidades
         }
 
         public int Id_Producto { get{ return id_producto; }set { id_producto = value; } }
-        public string Description { get { return description; } set { description = value; } }
+        public string Descripcion { get { return description; } set { description = value; } }
         public double Precio_compra { get { return precio_compra; }set { precio_compra = value; } }
         public double Precio_venta { get { return precio_venta;} set { precio_venta = value; } }
         public char Gravado { get {  return gravado; } set {  gravado = value; } }

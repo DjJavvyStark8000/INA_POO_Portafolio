@@ -6,36 +6,38 @@ using Entidades;
 
 namespace _02_CapaLogica
 {
-    internal class BLProductos
-    {
-        private int id_producto;
-        private string description;
-        private double precio_compra;
-        private double precio_venta;
-        private char gravado;
+    public class BLProductos
+    {//atributos
+        private string _cadenaConexion;
+        private string _mensaje;
 
-
-        public BLProductos()
+        //propiedades
+        public string Mensaje
         {
-            id_producto = 0;
-            description = "";
-            precio_compra = 0.0;
-            precio_venta = 0.0;
-            gravado = 'n';
-        }
-        public BLProductos(int id_producto, string description, double precio_compra, double precio_venta, char gravado)
-        {
-            this.id_producto = id_producto;
-            this.description = description;
-            this.precio_compra = precio_compra;
-            this.precio_venta = precio_venta;
-            this.gravado = gravado;
+            get => _mensaje;
         }
 
-        public int Id_Producto { get { return id_producto; } set { id_producto = value; } }
-        public string Description { get { return description; } set { description = value; } }
-        public double Precio_compra { get { return precio_compra; } set { precio_compra = value; } }
-        public double Precio_venta { get { return precio_venta; } set { precio_venta = value; } }
-        public char Gravado { get { return gravado; } set { gravado = value; } }
+        // constructor
+        public BLProductos(string cadenaConexion)
+        {
+            _cadenaConexion = cadenaConexion;
+            _mensaje = string.Empty;
+        }
+
+        //metodo para llamar al metodo insertar de la capa3accesodatos
+        public int LlamarMetodoInsertar(EntidadesProductos producto)
+        {
+            int id_producto = 0;
+            DAProductos accesoDatos = new DAProductos(_cadenaConexion);
+            try
+            {
+                id_producto = accesoDatos.InsertarProducto(producto);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return id_producto;
+        }// fin de la clase insertar
     }
 }

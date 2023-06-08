@@ -534,11 +534,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\_01_CapaPresentacion\\_01_CapaPresentacion.csproj",
+      "projectUniqueName": "C:\\Users\\djjav\\Desktop\\Tarea13_Capas\\Tarea_12Grupal\\_01_CapaPresentacion\\_01_CapaPresentacion.csproj",
       "projectName": "_01_CapaPresentacion",
-      "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\_01_CapaPresentacion\\_01_CapaPresentacion.csproj",
+      "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea13_Capas\\Tarea_12Grupal\\_01_CapaPresentacion\\_01_CapaPresentacion.csproj",
       "packagesPath": "C:\\Users\\djjav\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\_01_CapaPresentacion\\obj\\",
+      "outputPath": "C:\\Users\\djjav\\Desktop\\Tarea13_Capas\\Tarea_12Grupal\\_01_CapaPresentacion\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\djjav\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -555,11 +555,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\Entidades\\Entidades.csproj"
+            "C:\\Users\\djjav\\Desktop\\Tarea13_Capas\\Tarea_12Grupal\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea13_Capas\\Tarea_12Grupal\\Entidades\\Entidades.csproj"
             },
-            "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\_02_CapaLogica\\_02_CapaLogica.csproj": {
-              "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea12_Capas\\Tarea_12Grupal\\_02_CapaLogica\\_02_CapaLogica.csproj"
+            "C:\\Users\\djjav\\Desktop\\Tarea13_Capas\\Tarea_12Grupal\\_02_CapaLogica\\_02_CapaLogica.csproj": {
+              "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea13_Capas\\Tarea_12Grupal\\_02_CapaLogica\\_02_CapaLogica.csproj"
             }
           }
         }
