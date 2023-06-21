@@ -52,10 +52,10 @@
             button14 = new System.Windows.Forms.Button();
             btnAgregarPaciente = new System.Windows.Forms.Button();
             panel2 = new System.Windows.Forms.Panel();
+            btnHistorial = new System.Windows.Forms.Button();
             btnRecetas = new System.Windows.Forms.Button();
             btnAgendarCita = new System.Windows.Forms.Button();
             button3 = new System.Windows.Forms.Button();
-            btnHistorial = new System.Windows.Forms.Button();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgrVerPaciente).BeginInit();
@@ -80,6 +80,7 @@
             // btn_Horarios
             // 
             btn_Horarios.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            btn_Horarios.Enabled = false;
             btn_Horarios.Image = (System.Drawing.Image)resources.GetObject("btn_Horarios.Image");
             btn_Horarios.Location = new System.Drawing.Point(6, 443);
             btn_Horarios.Name = "btn_Horarios";
@@ -132,6 +133,7 @@
             // button4
             // 
             button4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            button4.Enabled = false;
             button4.Image = (System.Drawing.Image)resources.GetObject("button4.Image");
             button4.Location = new System.Drawing.Point(6, 333);
             button4.Name = "button4";
@@ -144,6 +146,7 @@
             // button2
             // 
             button2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            button2.Enabled = false;
             button2.Image = (System.Drawing.Image)resources.GetObject("button2.Image");
             button2.Location = new System.Drawing.Point(6, 113);
             button2.Name = "button2";
@@ -156,6 +159,7 @@
             // button1
             // 
             button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            button1.Enabled = false;
             button1.Image = (System.Drawing.Image)resources.GetObject("button1.Image");
             button1.Location = new System.Drawing.Point(6, 3);
             button1.Name = "button1";
@@ -180,10 +184,10 @@
             dgrVerPaciente.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             dgrVerPaciente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgrVerPaciente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { clmIdpaciente, clmNombrepaciente, clmApellidos, clmFechaNacimiento, clmTelefono, clmAsegurado });
-            dgrVerPaciente.Location = new System.Drawing.Point(13, 47);
+            dgrVerPaciente.Location = new System.Drawing.Point(13, 17);
             dgrVerPaciente.Name = "dgrVerPaciente";
             dgrVerPaciente.RowTemplate.Height = 25;
-            dgrVerPaciente.Size = new System.Drawing.Size(845, 359);
+            dgrVerPaciente.Size = new System.Drawing.Size(1013, 389);
             dgrVerPaciente.TabIndex = 0;
             // 
             // clmIdpaciente
@@ -234,6 +238,7 @@
             // button8
             // 
             button8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            button8.Enabled = false;
             button8.Image = (System.Drawing.Image)resources.GetObject("button8.Image");
             button8.Location = new System.Drawing.Point(365, 13);
             button8.Name = "button8";
@@ -258,6 +263,7 @@
             // button12
             // 
             button12.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            button12.Enabled = false;
             button12.Image = (System.Drawing.Image)resources.GetObject("button12.Image");
             button12.Location = new System.Drawing.Point(173, 16);
             button12.Name = "button12";
@@ -270,6 +276,7 @@
             // button14
             // 
             button14.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            button14.Enabled = false;
             button14.Image = (System.Drawing.Image)resources.GetObject("button14.Image");
             button14.Location = new System.Drawing.Point(325, 16);
             button14.Name = "button14";
@@ -306,6 +313,20 @@
             panel2.Size = new System.Drawing.Size(1048, 183);
             panel2.TabIndex = 3;
             // 
+            // btnHistorial
+            // 
+            btnHistorial.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            btnHistorial.Enabled = false;
+            btnHistorial.Image = (System.Drawing.Image)resources.GetObject("btnHistorial.Image");
+            btnHistorial.Location = new System.Drawing.Point(477, 16);
+            btnHistorial.Name = "btnHistorial";
+            btnHistorial.Size = new System.Drawing.Size(146, 147);
+            btnHistorial.TabIndex = 6;
+            btnHistorial.Text = "HISTORIAL";
+            btnHistorial.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            btnHistorial.UseVisualStyleBackColor = false;
+            btnHistorial.Click += btnHistorial_Click;
+            // 
             // btnRecetas
             // 
             btnRecetas.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -335,6 +356,7 @@
             // button3
             // 
             button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            button3.Enabled = false;
             button3.Image = (System.Drawing.Image)resources.GetObject("button3.Image");
             button3.Location = new System.Drawing.Point(595, 12);
             button3.Name = "button3";
@@ -344,20 +366,7 @@
             button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             button3.UseVisualStyleBackColor = false;
             // 
-            // btnHistorial
-            // 
-            btnHistorial.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            btnHistorial.Image = (System.Drawing.Image)resources.GetObject("btnHistorial.Image");
-            btnHistorial.Location = new System.Drawing.Point(477, 16);
-            btnHistorial.Name = "btnHistorial";
-            btnHistorial.Size = new System.Drawing.Size(146, 147);
-            btnHistorial.TabIndex = 6;
-            btnHistorial.Text = "HISTORIAL";
-            btnHistorial.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            btnHistorial.UseVisualStyleBackColor = false;
-            btnHistorial.Click += btnHistorial_Click;
-            // 
-            // Frm_Principal
+            // Frm_Plataforma
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -372,7 +381,7 @@
             Controls.Add(panel1);
             Controls.Add(panel4);
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
-            Name = "Frm_Principal";
+            Name = "Frm_Plataforma";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Clínica El Buen Vivir";
             Load += Frm_Principal_Load;

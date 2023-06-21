@@ -37,7 +37,7 @@ namespace ElBuenVivir_Logica
             }
             return cita;
         }
-        // (2) metodo para llamar al metodo insertar Horario
+        // (2a) metodo para llamar al metodo insertar Horario
         public int LlamarInsertarHorario(EntidadHorario horario)
         {
             int id_especial = 0;
@@ -45,6 +45,22 @@ namespace ElBuenVivir_Logica
             try
             {
                 id_especial = unHorario.InsertarHorario(horario);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return id_especial;
+        }// fin de la clase insertar
+
+        // (2b) metodo para llamar al metodo insertar Horario
+        public int LlamarInsertarCita(EntidadCitas cita)
+        {
+            int id_especial = 0;
+            DACitas unaCita = new DACitas(_cadenaConexion);
+            try
+            {
+                id_especial = unaCita.InsertarCita(cita);
             }
             catch (Exception)
             {

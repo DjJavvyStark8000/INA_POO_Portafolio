@@ -1,4 +1,5 @@
-﻿using ElBuenVivir_Entidades;
+﻿using ElBuenVivir_AccesoDatos;
+using ElBuenVivir_Entidades;
 using ElBuenVivir_Logica;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace ElBuenVivir_Interfaz
         private List<int> horasDisponibles;
         private string horaDCita = string.Empty;
         private string accion = "nuevo";
-        private int medEspId = 0;
+        private int medEspId = 1;
         private int horarioId = 0;
 
         public Frm_Citas()
@@ -29,9 +30,7 @@ namespace ElBuenVivir_Interfaz
 
         public void Frm_Horarios_Load(object sender, EventArgs e)
         {
-            //horasDisponibles = CargarListaHorarios("", new DateTime(2023, 6, 18));
-            //llenarHoras();
-            //DisableUnavailableDates();
+            LimpiarCasillas();
             CargarListaCitas();
             CargarListaMedicos();
         }
@@ -76,9 +75,7 @@ namespace ElBuenVivir_Interfaz
                 cita = logicaCita.llamarListarCitas(condicion);
                 if (cita.Count > 0)
                 {
-                    //dgrListarCitas.DataSource = cita;
-
-
+                    dgrListarCitas.DataSource = cita;
                 }
             }
             catch (Exception error)
@@ -181,7 +178,7 @@ namespace ElBuenVivir_Interfaz
         }
 
         //Crear cita object
-        private EntidadCitas CrearCita() 
+        private EntidadCitas CrearCita()
         {
             EntidadCitas unaCita = new EntidadCitas();
             unaCita.IdMedicosEspecialidades = medEspId;
@@ -222,14 +219,14 @@ namespace ElBuenVivir_Interfaz
             {
                 MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-          
+
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             EntidadCitas lacita = new EntidadCitas();//objeto
             BLCitas logicaCita = new BLCitas(Configuracion.getCadenaConeccion);//conexion
-    
+
             try
             {
                 if (!VerificarCamposTexto())//si no tiene texto                   
@@ -240,23 +237,13 @@ namespace ElBuenVivir_Interfaz
                 {
                     if (accion == "nuevo")
                     {
-                        //Estos datos se mandan a la base de datos y regresa id de cita para plataforma
-                        //asociar con paciente pero no me da tiempo de seguir
-                        obtenerId();
-                        EntidadCitas cita = new EntidadCitas();
-                        cita = CrearCita();
-                        string mensaje = "Datos de la cita:\n";
-                        mensaje += "IdMedicosEspecialidades: " + cita.IdMedicosEspecialidades + "\n";
-                        mensaje += "HorarioId: " + cita.HorarioId + "\n";
-                        mensaje += "Estado: " + cita.Estado + "\n";
-                        mensaje += "Motivo: " + cita.Motivo + "\n";
-                        mensaje += "Observaciones: " + cita.Observaciones + "\n";
-                        mensaje += "Método de Pago: " + cita.Metodo_Pago + "\n";
-                        mensaje += "Pagado: " + cita.Pagado;
-
-                        MessageBox.Show(mensaje);
-                        //lacita = CrearCita();//crea objeto horario
-                        //int cita_id = logicaCita.(lacita);
+                        //Estos datos se mandan a la base de datos y regresa id de cita para plataforma                  
+                        //manda los dato a la base de datos y obtiene el ID
+                        obtenerId();//id de horario
+                        lacita = CrearCita();//creacion del objeto cita
+                        int idCita = logicaCita.LlamarInsertarCita(lacita);
+                        CargarListaCitas();
+                        MessageBox.Show("operacion fue exitosa", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -302,7 +289,22 @@ namespace ElBuenVivir_Interfaz
             return todosTienenLetras;
         }
 
-        
+
+        //limpiar casilla
+        private void LimpiarCasillas()
+        {
+            // Clear textboxes
+            txtID.Text = string.Empty;
+            txtNumCita.Text = string.Empty;
+            txtMotivo.Text = string.Empty;
+            txtNombreCompleto.Clear();
+            txtObservaciones.Text = string.Empty;
+            comboMedicos.SelectedItem = null;
+            comboEstado.SelectedItem = null;
+            comboMetodoPago.SelectedItem = null;
+            checkPagoSi.Checked = false;
+            checkPagoNo.Checked = false;
+        }
         private void comboMedicos_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -317,7 +319,7 @@ namespace ElBuenVivir_Interfaz
                     try
                     {
                         medEspId = logicaMedicosEspecialidades.llamarIdMedicosEspecialidades(medicoID);
-                        
+
                     }
                     catch (Exception error)
                     {
@@ -325,6 +327,17 @@ namespace ElBuenVivir_Interfaz
                     }
                 }
             }
+        }
+
+        private void btnBuscarEspecial_Click(object sender, EventArgs e)
+        {
+            CargarListaCitas();
+            MessageBox.Show("Hello");
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            LimpiarCasillas();
         }
     }
 }

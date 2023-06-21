@@ -41,6 +41,7 @@
             horasalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            idmedesp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             citaid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,7 +70,7 @@
             label1 = new System.Windows.Forms.Label();
             comboMetodoPago = new System.Windows.Forms.ComboBox();
             groupBox2 = new System.Windows.Forms.GroupBox();
-            textBox1 = new System.Windows.Forms.TextBox();
+            txtNumCita = new System.Windows.Forms.TextBox();
             lblID = new System.Windows.Forms.Label();
             lblCitaId = new System.Windows.Forms.Label();
             txtID = new System.Windows.Forms.TextBox();
@@ -124,7 +125,7 @@
             dgrListarCitas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dgrListarCitas.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             dgrListarCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgrListarCitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { cedula, paciente, fechaentrada, horaentrada, horasalida, dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, motivo, citaid, dataGridViewTextBoxColumn3, observaciones });
+            dgrListarCitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { cedula, paciente, fechaentrada, horaentrada, horasalida, dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, idmedesp, motivo, citaid, dataGridViewTextBoxColumn3, observaciones });
             dgrListarCitas.Enabled = false;
             dgrListarCitas.Location = new System.Drawing.Point(15, 419);
             dgrListarCitas.Name = "dgrListarCitas";
@@ -173,6 +174,12 @@
             dataGridViewTextBoxColumn2.HeaderText = "MÉDICO";
             dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
+            // idmedesp
+            // 
+            idmedesp.DataPropertyName = "IdMedicosEspecialidades";
+            idmedesp.HeaderText = "ID_MED_ESP";
+            idmedesp.Name = "idmedesp";
+            // 
             // motivo
             // 
             motivo.DataPropertyName = "Motivo";
@@ -209,7 +216,6 @@
             // 
             // btnBuscarEspecial
             // 
-            btnBuscarEspecial.Enabled = false;
             btnBuscarEspecial.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btnBuscarEspecial.Location = new System.Drawing.Point(528, 718);
             btnBuscarEspecial.Name = "btnBuscarEspecial";
@@ -217,6 +223,7 @@
             btnBuscarEspecial.TabIndex = 55;
             btnBuscarEspecial.Text = "BUSCAR";
             btnBuscarEspecial.UseVisualStyleBackColor = true;
+            btnBuscarEspecial.Click += btnBuscarEspecial_Click;
             // 
             // btnSalir
             // 
@@ -250,13 +257,13 @@
             // 
             // btnNuevo
             // 
-            btnNuevo.Enabled = false;
             btnNuevo.Location = new System.Drawing.Point(908, 718);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new System.Drawing.Size(120, 61);
             btnNuevo.TabIndex = 51;
             btnNuevo.Text = "NUEVO";
             btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // groupBox1
             // 
@@ -436,7 +443,7 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(textBox1);
+            groupBox2.Controls.Add(txtNumCita);
             groupBox2.Controls.Add(lblID);
             groupBox2.Controls.Add(lblCitaId);
             groupBox2.Controls.Add(txtID);
@@ -448,13 +455,13 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos del paciente";
             // 
-            // textBox1
+            // txtNumCita
             // 
-            textBox1.Enabled = false;
-            textBox1.Location = new System.Drawing.Point(513, 26);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new System.Drawing.Size(193, 26);
-            textBox1.TabIndex = 48;
+            txtNumCita.Enabled = false;
+            txtNumCita.Location = new System.Drawing.Point(513, 26);
+            txtNumCita.Name = "txtNumCita";
+            txtNumCita.Size = new System.Drawing.Size(193, 26);
+            txtNumCita.TabIndex = 48;
             // 
             // lblID
             // 
@@ -533,17 +540,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.DateTimePicker dateFechaCita;
         private System.Windows.Forms.DataGridView dgrListarCitas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cedula;
-        private System.Windows.Forms.DataGridViewTextBoxColumn paciente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaentrada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn horaentrada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn horasalida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn motivo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn citaid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn observaciones;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnBuscarEspecial;
         private System.Windows.Forms.Button btnSalir;
@@ -554,7 +550,7 @@
         private System.Windows.Forms.TextBox txtNombreCompleto;
         private System.Windows.Forms.Label lblNombreCompleto;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNumCita;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label lblCitaId;
         private System.Windows.Forms.TextBox txtID;
@@ -573,5 +569,17 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboMedicos;
         private System.Windows.Forms.Label lblMedico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cedula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paciente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaentrada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn horaentrada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn horasalida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idmedesp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn motivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn citaid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn observaciones;
     }
 }
