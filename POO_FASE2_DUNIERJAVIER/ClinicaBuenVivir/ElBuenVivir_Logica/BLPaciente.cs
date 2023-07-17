@@ -54,5 +54,21 @@ namespace ElBuenVivir_Logica
             }
             return id_paciente;
         }// fin de la clase insertar
+
+        // (3) metodo para llamar al metodo editar pacientes
+        public int LlamarEditarPaciente(EntidadPaciente paciente)
+        {
+            int filasAfectadas = 0;
+            DAPaciente unPaciente = new DAPaciente(_cadenaConexion);
+            try
+            {
+                filasAfectadas = unPaciente.EditarPaciente(paciente);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return filasAfectadas;
+        }
     }
 }

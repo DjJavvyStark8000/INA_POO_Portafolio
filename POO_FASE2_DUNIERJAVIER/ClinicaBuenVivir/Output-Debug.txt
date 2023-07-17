@@ -26,14 +26,12 @@
 'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.ObjectModel.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
 'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Linq.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
 'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\3.1.32\System.Windows.Extensions.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Collections.NonGeneric.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
 'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Buffers.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
 'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.ComponentModel.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
-'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Collections.NonGeneric.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
-'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Private.Uri.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
-'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Users\djjav\Desktop\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\bin\Debug\netcoreapp3.1\ElBuenVivir_Logica.dll'. Symbols loaded.
-'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Users\djjav\Desktop\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\bin\Debug\netcoreapp3.1\ElBuenVivir_Entidades.dll'. Symbols loaded.
 'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\3.1.32\System.Configuration.ConfigurationManager.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
 'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Diagnostics.Tools.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Private.Uri.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
 'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Security.Cryptography.Algorithms.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
 'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Security.Cryptography.Primitives.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
 'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Xml.ReaderWriter.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
@@ -45,6 +43,8 @@
 'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
 'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Runtime.Serialization.Formatters.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
 'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Xml.XmlSerializer.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Users\djjav\Desktop\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\bin\Debug\netcoreapp3.1\ElBuenVivir_Logica.dll'. Symbols loaded.
+'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Users\djjav\Desktop\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\bin\Debug\netcoreapp3.1\ElBuenVivir_Entidades.dll'. Symbols loaded.
 'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Users\djjav\Desktop\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\bin\Debug\netcoreapp3.1\ElBuenVivir_AccesoDatos.dll'. Symbols loaded.
 'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Data.Common.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
 'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Users\djjav\Desktop\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
@@ -61,7 +61,4 @@
 'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Text.Encoding.CodePages.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
 'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Diagnostics.Process.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
 'ElBuenVivir_Interfaz.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Runtime.Numerics.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
-Exception thrown: 'System.Data.SqlClient.SqlException' in System.Data.SqlClient.dll
-Exception thrown: 'System.Data.SqlClient.SqlException' in ElBuenVivir_AccesoDatos.dll
-Exception thrown: 'System.Data.SqlClient.SqlException' in ElBuenVivir_Logica.dll
-The program '[17712] ElBuenVivir_Interfaz.exe' has exited with code 4294967295 (0xffffffff).
+The program '[21848] ElBuenVivir_Interfaz.exe' has exited with code 0 (0x0).

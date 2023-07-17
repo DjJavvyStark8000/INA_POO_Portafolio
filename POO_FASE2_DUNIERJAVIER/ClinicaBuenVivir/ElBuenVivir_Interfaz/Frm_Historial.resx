@@ -117,49 +117,48 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="historial_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="fecha_registro.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="antecedentes.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="medicamentos.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="diagnosticos.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="laboratorio.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="observaciones.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="historial_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="fecha_registro.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="antecedentes.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="medicamentos.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="diagnosticos.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="laboratorio.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="observaciones.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnReceta.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EAAACxABrSO9dQAAAzlJREFUeF7t2svLDmEYx/E3h3LIAhsLx4XDHgtiQ/4BOa0cVmQjSs6HklIoS1lI
+        ZIMSC2tZWMg5FsjCaeFULFAivr+aq66m65mZt95n5n65f/Wpae6D+7l6zDPvPTOQk5OTk5OTk5OT03qm
+        YFVBx/9ERmEpNmAndmErotzAn4KOo2is5tBcmnMJRiK5jMdBfIJ9KPMGUW7D+ug4isb6uUT/xn6MQxKZ
+        hScoL9T4AkzHOVyCL5aOdU5t6mOJCmAeYyY6zWS8RLRA4wuwDVEfT30sVQWQF5iEznIR0cI8X4AdiPp4
+        6mOpK4CcRyeZh9+IFuX5AizEU+hb8wPWR8c6p7YFsDQpgNYwB61nH6IFlb1FlCYXQY31c/WyB63nCqLF
+        lH1D9NN1E9ZHx+VozHf4uXrRBbT13EK0mMhylLMYxwqLdKKUFYjmimgtrcd/hes8wGB+t3VfoZ+5aK5I
+        r/9Cfc1gCiB3MB910YXyLqI5ehkWBTCvoA8YeY1oTJ1hVYB+yAVA62lSgJ/QBVA3OOU23cA8KkQ3VBqj
+        sZqj3FaWbAFWwnICvs3f82+HbzsOi/YLfFsk2QJMhWU1fJv/7dexb1Nfi+bwbZFcALSeJgWYBssa+Dbd
+        CVp07NvU16I5fFsk2QJshjIC2uzwbUdgOQrfdhYao2yBb4skWwB5h8+lc+Z9IWrTLpHGRm1lSRegDbkA
+        aD1NCvAFV6Ft71/FOaNdoOsFvzsk6qsxGvu1OFcl2QL4fYAD8G0bYdkE36Ztb0uTfYFkC5BvhGD5Lwsw
+        A5Z18G16zGXRsW9bC4vm8G2RZAtwCKMxAdeKc+Y0xhTOFOeMLn4ao7GHi3NVki1AW3IB0HpyARAtps49
+        nIQ9EzA6dx/RmDqdFGAwD0aMPnzVCw56wULbYNHYKp08GLmMaDFVTqEu6hONrdLJo7G9iBZTRV/zuqhP
+        NLbKbrSeuWjyeNzrRwG0htnoJBcQLaqXfhRAO02dRa+nPEe0sMhQF+AZJqLT6EWlpk9yh7IAD+H/1ug0
+        evStN0Y+IlqsGYoCfIAuwGORXPQbry3u9bAXJb1lqIv6lMdpLs2puZN8UTInJycnJycnJydnWGVg4C9d
+        rV4HNE3t4QAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="historial_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="fecha_registro.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="antecedentes.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="medicamentos.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="diagnosticos.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="laboratorio.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="observaciones.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAkAEBAAAAEAIABoBAAAlgAAABgYAAABACAAiAkAAP4EAAAgIAAAAQAgAKgQAACGDgAAMDAAAAEA

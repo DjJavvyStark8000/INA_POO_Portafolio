@@ -30,28 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Recetas));
             groupRecetas = new System.Windows.Forms.GroupBox();
-            comboCantidadRecetas = new System.Windows.Forms.ComboBox();
-            textBox1 = new System.Windows.Forms.TextBox();
-            label4 = new System.Windows.Forms.Label();
+            numericCantidad = new System.Windows.Forms.NumericUpDown();
+            label3 = new System.Windows.Forms.Label();
+            comboMedicamentos = new System.Windows.Forms.ComboBox();
+            txtDosis = new System.Windows.Forms.TextBox();
+            lblMedicamentos = new System.Windows.Forms.Label();
+            txtFechaRetiro = new System.Windows.Forms.TextBox();
             txtNombreReceta = new System.Windows.Forms.TextBox();
             lblReceta = new System.Windows.Forms.Label();
-            dateProximaEntrega = new System.Windows.Forms.DateTimePicker();
-            lblIDPacienteReceta = new System.Windows.Forms.Label();
-            lblProximaReceta = new System.Windows.Forms.Label();
-            lblRecetaPaciente = new System.Windows.Forms.Label();
-            txtPaciente = new System.Windows.Forms.TextBox();
-            dateEntrega = new System.Windows.Forms.DateTimePicker();
-            txtCedulaPaciente = new System.Windows.Forms.TextBox();
             txtDuracion = new System.Windows.Forms.TextBox();
             lblDuracion = new System.Windows.Forms.Label();
-            txtIdReceta = new System.Windows.Forms.TextBox();
-            lblNumeroReceta = new System.Windows.Forms.Label();
-            lblFechasEntrega = new System.Windows.Forms.Label();
-            lblNumeroRecetas = new System.Windows.Forms.Label();
+            lblFechasRetiro = new System.Windows.Forms.Label();
             txtIndicaciones = new System.Windows.Forms.TextBox();
             lblIndicaciones = new System.Windows.Forms.Label();
-            txtEspecialista = new System.Windows.Forms.TextBox();
-            lblEspecialista = new System.Windows.Forms.Label();
             dgrListarReceta = new System.Windows.Forms.DataGridView();
             recetaid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             especialista = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,80 +56,116 @@
             cantidadrecetas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             indicaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             groupBox1 = new System.Windows.Forms.GroupBox();
-            btnGuardar = new System.Windows.Forms.Button();
-            btnBuscarEspecial = new System.Windows.Forms.Button();
+            btnGuardarReceta = new System.Windows.Forms.Button();
+            btnBuscarRecetas = new System.Windows.Forms.Button();
             btnSalir = new System.Windows.Forms.Button();
-            btnEditarEspecialidad = new System.Windows.Forms.Button();
-            btnEliminarEspecialidad = new System.Windows.Forms.Button();
-            btnNuevo = new System.Windows.Forms.Button();
+            btnEditarRecetas = new System.Windows.Forms.Button();
+            btnEliminarRecetas = new System.Windows.Forms.Button();
+            btnNuevaReceta = new System.Windows.Forms.Button();
+            txtMedico = new System.Windows.Forms.TextBox();
+            label2 = new System.Windows.Forms.Label();
+            txtPaciente = new System.Windows.Forms.TextBox();
+            label1 = new System.Windows.Forms.Label();
+            groupPacienteMedico = new System.Windows.Forms.GroupBox();
+            numericCantidadRecetas = new System.Windows.Forms.NumericUpDown();
+            label4 = new System.Windows.Forms.Label();
+            lclProximaReceta = new System.Windows.Forms.Label();
+            dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            txtIdReceta = new System.Windows.Forms.TextBox();
+            lblNumeroReceta = new System.Windows.Forms.Label();
             groupRecetas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericCantidad).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgrListarReceta).BeginInit();
             groupBox1.SuspendLayout();
+            groupPacienteMedico.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericCantidadRecetas).BeginInit();
             SuspendLayout();
             // 
             // groupRecetas
             // 
-            groupRecetas.Controls.Add(comboCantidadRecetas);
-            groupRecetas.Controls.Add(textBox1);
+            groupRecetas.Controls.Add(dateTimePicker1);
+            groupRecetas.Controls.Add(lclProximaReceta);
+            groupRecetas.Controls.Add(numericCantidadRecetas);
             groupRecetas.Controls.Add(label4);
+            groupRecetas.Controls.Add(numericCantidad);
+            groupRecetas.Controls.Add(label3);
+            groupRecetas.Controls.Add(comboMedicamentos);
+            groupRecetas.Controls.Add(txtDosis);
+            groupRecetas.Controls.Add(lblMedicamentos);
+            groupRecetas.Controls.Add(txtFechaRetiro);
             groupRecetas.Controls.Add(txtNombreReceta);
             groupRecetas.Controls.Add(lblReceta);
-            groupRecetas.Controls.Add(dateProximaEntrega);
-            groupRecetas.Controls.Add(lblIDPacienteReceta);
-            groupRecetas.Controls.Add(lblProximaReceta);
-            groupRecetas.Controls.Add(lblRecetaPaciente);
-            groupRecetas.Controls.Add(txtPaciente);
-            groupRecetas.Controls.Add(dateEntrega);
-            groupRecetas.Controls.Add(txtCedulaPaciente);
             groupRecetas.Controls.Add(txtDuracion);
             groupRecetas.Controls.Add(lblDuracion);
-            groupRecetas.Controls.Add(txtIdReceta);
-            groupRecetas.Controls.Add(lblNumeroReceta);
-            groupRecetas.Controls.Add(lblFechasEntrega);
-            groupRecetas.Controls.Add(lblNumeroRecetas);
+            groupRecetas.Controls.Add(lblFechasRetiro);
             groupRecetas.Controls.Add(txtIndicaciones);
             groupRecetas.Controls.Add(lblIndicaciones);
-            groupRecetas.Controls.Add(txtEspecialista);
-            groupRecetas.Controls.Add(lblEspecialista);
             groupRecetas.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            groupRecetas.Location = new System.Drawing.Point(12, 12);
+            groupRecetas.Location = new System.Drawing.Point(12, 131);
             groupRecetas.Name = "groupRecetas";
-            groupRecetas.Size = new System.Drawing.Size(1126, 211);
+            groupRecetas.Size = new System.Drawing.Size(716, 265);
             groupRecetas.TabIndex = 7;
             groupRecetas.TabStop = false;
-            groupRecetas.Text = "Recetas";
+            groupRecetas.Text = "Receta";
             // 
-            // comboCantidadRecetas
+            // numericCantidad
             // 
-            comboCantidadRecetas.FormattingEnabled = true;
-            comboCantidadRecetas.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
-            comboCantidadRecetas.Location = new System.Drawing.Point(722, 109);
-            comboCantidadRecetas.Name = "comboCantidadRecetas";
-            comboCantidadRecetas.Size = new System.Drawing.Size(200, 26);
-            comboCantidadRecetas.TabIndex = 29;
-            comboCantidadRecetas.Text = "Seleccione una";
+            numericCantidad.Location = new System.Drawing.Point(235, 39);
+            numericCantidad.Name = "numericCantidad";
+            numericCantidad.Size = new System.Drawing.Size(241, 26);
+            numericCantidad.TabIndex = 73;
+            numericCantidad.ValueChanged += numericCantidad_ValueChanged;
             // 
-            // textBox1
+            // label3
             // 
-            textBox1.Enabled = false;
-            textBox1.Location = new System.Drawing.Point(500, 52);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new System.Drawing.Size(422, 26);
-            textBox1.TabIndex = 28;
+            label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label3.Location = new System.Drawing.Point(235, 22);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(61, 14);
+            label3.TabIndex = 72;
+            label3.Text = "*Cantidad";
             // 
-            // label4
+            // comboMedicamentos
             // 
-            label4.AutoSize = true;
-            label4.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label4.Location = new System.Drawing.Point(500, 34);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(38, 15);
-            label4.TabIndex = 27;
-            label4.Text = "Dosis";
+            comboMedicamentos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            comboMedicamentos.Enabled = false;
+            comboMedicamentos.FormattingEnabled = true;
+            comboMedicamentos.Location = new System.Drawing.Point(235, 82);
+            comboMedicamentos.Name = "comboMedicamentos";
+            comboMedicamentos.Size = new System.Drawing.Size(241, 26);
+            comboMedicamentos.TabIndex = 71;
+            comboMedicamentos.SelectedIndexChanged += comboMedicamentos_SelectedIndexChanged;
+            // 
+            // txtDosis
+            // 
+            txtDosis.Location = new System.Drawing.Point(234, 114);
+            txtDosis.Multiline = true;
+            txtDosis.Name = "txtDosis";
+            txtDosis.Size = new System.Drawing.Size(242, 69);
+            txtDosis.TabIndex = 70;
+            // 
+            // lblMedicamentos
+            // 
+            lblMedicamentos.AutoSize = true;
+            lblMedicamentos.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblMedicamentos.Location = new System.Drawing.Point(234, 65);
+            lblMedicamentos.Name = "lblMedicamentos";
+            lblMedicamentos.Size = new System.Drawing.Size(94, 14);
+            lblMedicamentos.TabIndex = 69;
+            lblMedicamentos.Text = "*Medicamentos";
+            // 
+            // txtFechaRetiro
+            // 
+            txtFechaRetiro.Enabled = false;
+            txtFechaRetiro.Location = new System.Drawing.Point(9, 100);
+            txtFechaRetiro.Name = "txtFechaRetiro";
+            txtFechaRetiro.Size = new System.Drawing.Size(200, 26);
+            txtFechaRetiro.TabIndex = 29;
             // 
             // txtNombreReceta
             // 
-            txtNombreReceta.Location = new System.Drawing.Point(17, 106);
+            txtNombreReceta.Location = new System.Drawing.Point(9, 39);
             txtNombreReceta.Name = "txtNombreReceta";
             txtNombreReceta.Size = new System.Drawing.Size(200, 26);
             txtNombreReceta.TabIndex = 26;
@@ -147,76 +174,15 @@
             // 
             lblReceta.AutoSize = true;
             lblReceta.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblReceta.Location = new System.Drawing.Point(17, 88);
+            lblReceta.Location = new System.Drawing.Point(9, 21);
             lblReceta.Name = "lblReceta";
             lblReceta.Size = new System.Drawing.Size(105, 15);
             lblReceta.TabIndex = 25;
             lblReceta.Text = "Nombre de Receta";
-            lblReceta.Click += label4_Click;
-            // 
-            // dateProximaEntrega
-            // 
-            dateProximaEntrega.Location = new System.Drawing.Point(239, 165);
-            dateProximaEntrega.Name = "dateProximaEntrega";
-            dateProximaEntrega.Size = new System.Drawing.Size(200, 26);
-            dateProximaEntrega.TabIndex = 24;
-            // 
-            // lblIDPacienteReceta
-            // 
-            lblIDPacienteReceta.AutoSize = true;
-            lblIDPacienteReceta.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblIDPacienteReceta.Location = new System.Drawing.Point(239, 34);
-            lblIDPacienteReceta.Name = "lblIDPacienteReceta";
-            lblIDPacienteReceta.Size = new System.Drawing.Size(82, 15);
-            lblIDPacienteReceta.TabIndex = 10;
-            lblIDPacienteReceta.Text = "Identificación";
-            // 
-            // lblProximaReceta
-            // 
-            lblProximaReceta.AutoSize = true;
-            lblProximaReceta.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblProximaReceta.Location = new System.Drawing.Point(239, 147);
-            lblProximaReceta.Name = "lblProximaReceta";
-            lblProximaReceta.Size = new System.Drawing.Size(92, 15);
-            lblProximaReceta.TabIndex = 23;
-            lblProximaReceta.Text = "Próxima Receta";
-            // 
-            // lblRecetaPaciente
-            // 
-            lblRecetaPaciente.AutoSize = true;
-            lblRecetaPaciente.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblRecetaPaciente.Location = new System.Drawing.Point(17, 34);
-            lblRecetaPaciente.Name = "lblRecetaPaciente";
-            lblRecetaPaciente.Size = new System.Drawing.Size(54, 15);
-            lblRecetaPaciente.TabIndex = 8;
-            lblRecetaPaciente.Text = "Paciente";
-            // 
-            // txtPaciente
-            // 
-            txtPaciente.Enabled = false;
-            txtPaciente.Location = new System.Drawing.Point(17, 52);
-            txtPaciente.Name = "txtPaciente";
-            txtPaciente.Size = new System.Drawing.Size(200, 26);
-            txtPaciente.TabIndex = 9;
-            // 
-            // dateEntrega
-            // 
-            dateEntrega.Location = new System.Drawing.Point(17, 165);
-            dateEntrega.Name = "dateEntrega";
-            dateEntrega.Size = new System.Drawing.Size(200, 26);
-            dateEntrega.TabIndex = 22;
-            // 
-            // txtCedulaPaciente
-            // 
-            txtCedulaPaciente.Enabled = false;
-            txtCedulaPaciente.Location = new System.Drawing.Point(239, 52);
-            txtCedulaPaciente.Name = "txtCedulaPaciente";
-            txtCedulaPaciente.Size = new System.Drawing.Size(200, 26);
-            txtCedulaPaciente.TabIndex = 11;
             // 
             // txtDuracion
             // 
-            txtDuracion.Location = new System.Drawing.Point(500, 109);
+            txtDuracion.Location = new System.Drawing.Point(9, 158);
             txtDuracion.Name = "txtDuracion";
             txtDuracion.Size = new System.Drawing.Size(200, 26);
             txtDuracion.TabIndex = 21;
@@ -225,94 +191,52 @@
             // 
             lblDuracion.AutoSize = true;
             lblDuracion.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblDuracion.Location = new System.Drawing.Point(500, 91);
+            lblDuracion.Location = new System.Drawing.Point(9, 140);
             lblDuracion.Name = "lblDuracion";
             lblDuracion.Size = new System.Drawing.Size(58, 15);
             lblDuracion.TabIndex = 20;
             lblDuracion.Text = "Duración";
             // 
-            // txtIdReceta
+            // lblFechasRetiro
             // 
-            txtIdReceta.Location = new System.Drawing.Point(239, 106);
-            txtIdReceta.Name = "txtIdReceta";
-            txtIdReceta.Size = new System.Drawing.Size(200, 26);
-            txtIdReceta.TabIndex = 19;
-            // 
-            // lblNumeroReceta
-            // 
-            lblNumeroReceta.AutoSize = true;
-            lblNumeroReceta.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblNumeroReceta.Location = new System.Drawing.Point(239, 88);
-            lblNumeroReceta.Name = "lblNumeroReceta";
-            lblNumeroReceta.Size = new System.Drawing.Size(105, 15);
-            lblNumeroReceta.TabIndex = 18;
-            lblNumeroReceta.Text = "Número de Receta";
-            // 
-            // lblFechasEntrega
-            // 
-            lblFechasEntrega.AutoSize = true;
-            lblFechasEntrega.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblFechasEntrega.Location = new System.Drawing.Point(17, 147);
-            lblFechasEntrega.Name = "lblFechasEntrega";
-            lblFechasEntrega.Size = new System.Drawing.Size(105, 15);
-            lblFechasEntrega.TabIndex = 16;
-            lblFechasEntrega.Text = "Fechas de Entrega";
-            // 
-            // lblNumeroRecetas
-            // 
-            lblNumeroRecetas.AutoSize = true;
-            lblNumeroRecetas.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblNumeroRecetas.Location = new System.Drawing.Point(722, 91);
-            lblNumeroRecetas.Name = "lblNumeroRecetas";
-            lblNumeroRecetas.Size = new System.Drawing.Size(117, 15);
-            lblNumeroRecetas.TabIndex = 14;
-            lblNumeroRecetas.Text = "Cantidad de Recetas";
+            lblFechasRetiro.AutoSize = true;
+            lblFechasRetiro.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblFechasRetiro.Location = new System.Drawing.Point(9, 82);
+            lblFechasRetiro.Name = "lblFechasRetiro";
+            lblFechasRetiro.Size = new System.Drawing.Size(90, 15);
+            lblFechasRetiro.TabIndex = 16;
+            lblFechasRetiro.Text = "Fecha de Retiro";
             // 
             // txtIndicaciones
             // 
-            txtIndicaciones.Location = new System.Drawing.Point(946, 52);
+            txtIndicaciones.Location = new System.Drawing.Point(497, 39);
             txtIndicaciones.Multiline = true;
             txtIndicaciones.Name = "txtIndicaciones";
-            txtIndicaciones.Size = new System.Drawing.Size(161, 139);
+            txtIndicaciones.Size = new System.Drawing.Size(204, 201);
             txtIndicaciones.TabIndex = 13;
             // 
             // lblIndicaciones
             // 
             lblIndicaciones.AutoSize = true;
             lblIndicaciones.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblIndicaciones.Location = new System.Drawing.Point(946, 34);
+            lblIndicaciones.Location = new System.Drawing.Point(497, 21);
             lblIndicaciones.Name = "lblIndicaciones";
             lblIndicaciones.Size = new System.Drawing.Size(78, 15);
             lblIndicaciones.TabIndex = 12;
             lblIndicaciones.Text = "Indicaciones";
             // 
-            // txtEspecialista
-            // 
-            txtEspecialista.Enabled = false;
-            txtEspecialista.Location = new System.Drawing.Point(500, 165);
-            txtEspecialista.Name = "txtEspecialista";
-            txtEspecialista.Size = new System.Drawing.Size(422, 26);
-            txtEspecialista.TabIndex = 7;
-            // 
-            // lblEspecialista
-            // 
-            lblEspecialista.AutoSize = true;
-            lblEspecialista.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblEspecialista.Location = new System.Drawing.Point(500, 147);
-            lblEspecialista.Name = "lblEspecialista";
-            lblEspecialista.Size = new System.Drawing.Size(74, 15);
-            lblEspecialista.TabIndex = 6;
-            lblEspecialista.Text = "Especialista";
-            // 
             // dgrListarReceta
             // 
+            dgrListarReceta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dgrListarReceta.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             dgrListarReceta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgrListarReceta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { recetaid, especialista, NOMBRE, paciente, cedula, fechaentrega, proximareceta, dosis, duracion, cantidadrecetas, indicaciones });
             dgrListarReceta.Location = new System.Drawing.Point(17, 25);
             dgrListarReceta.Name = "dgrListarReceta";
+            dgrListarReceta.RowHeadersVisible = false;
             dgrListarReceta.RowTemplate.Height = 25;
-            dgrListarReceta.Size = new System.Drawing.Size(1090, 406);
+            dgrListarReceta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dgrListarReceta.Size = new System.Drawing.Size(684, 103);
             dgrListarReceta.TabIndex = 9;
             dgrListarReceta.CellContentClick += dgrListarReceta_CellContentClick;
             // 
@@ -384,130 +308,227 @@
             // 
             groupBox1.Controls.Add(dgrListarReceta);
             groupBox1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            groupBox1.Location = new System.Drawing.Point(12, 246);
+            groupBox1.Location = new System.Drawing.Point(12, 402);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new System.Drawing.Size(1126, 449);
+            groupBox1.Size = new System.Drawing.Size(716, 147);
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             groupBox1.Text = "Listar Recetas";
             // 
-            // btnGuardar
+            // btnGuardarReceta
             // 
-            btnGuardar.Enabled = false;
-            btnGuardar.Location = new System.Drawing.Point(1018, 701);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new System.Drawing.Size(120, 61);
-            btnGuardar.TabIndex = 33;
-            btnGuardar.Text = "GUARDAR";
-            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardarReceta.Enabled = false;
+            btnGuardarReceta.Location = new System.Drawing.Point(623, 555);
+            btnGuardarReceta.Name = "btnGuardarReceta";
+            btnGuardarReceta.Size = new System.Drawing.Size(105, 61);
+            btnGuardarReceta.TabIndex = 33;
+            btnGuardarReceta.Text = "GUARDAR";
+            btnGuardarReceta.UseVisualStyleBackColor = true;
+            btnGuardarReceta.Click += btnGuardarReceta_Click;
             // 
-            // btnBuscarEspecial
+            // btnBuscarRecetas
             // 
-            btnBuscarEspecial.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnBuscarEspecial.Location = new System.Drawing.Point(512, 701);
-            btnBuscarEspecial.Name = "btnBuscarEspecial";
-            btnBuscarEspecial.Size = new System.Drawing.Size(120, 61);
-            btnBuscarEspecial.TabIndex = 32;
-            btnBuscarEspecial.Text = "BUSCAR";
-            btnBuscarEspecial.UseVisualStyleBackColor = true;
+            btnBuscarRecetas.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnBuscarRecetas.Location = new System.Drawing.Point(179, 555);
+            btnBuscarRecetas.Name = "btnBuscarRecetas";
+            btnBuscarRecetas.Size = new System.Drawing.Size(105, 61);
+            btnBuscarRecetas.TabIndex = 32;
+            btnBuscarRecetas.Text = "BUSCAR";
+            btnBuscarRecetas.UseVisualStyleBackColor = true;
             // 
             // btnSalir
             // 
             btnSalir.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnSalir.Location = new System.Drawing.Point(12, 701);
+            btnSalir.Location = new System.Drawing.Point(12, 555);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new System.Drawing.Size(242, 61);
+            btnSalir.Size = new System.Drawing.Size(105, 61);
             btnSalir.TabIndex = 31;
             btnSalir.Text = "SALIR";
             btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
             // 
-            // btnEditarEspecialidad
+            // btnEditarRecetas
             // 
-            btnEditarEspecialidad.Location = new System.Drawing.Point(764, 701);
-            btnEditarEspecialidad.Name = "btnEditarEspecialidad";
-            btnEditarEspecialidad.Size = new System.Drawing.Size(120, 61);
-            btnEditarEspecialidad.TabIndex = 30;
-            btnEditarEspecialidad.Text = "EDITAR";
-            btnEditarEspecialidad.UseVisualStyleBackColor = true;
+            btnEditarRecetas.Location = new System.Drawing.Point(401, 555);
+            btnEditarRecetas.Name = "btnEditarRecetas";
+            btnEditarRecetas.Size = new System.Drawing.Size(105, 61);
+            btnEditarRecetas.TabIndex = 30;
+            btnEditarRecetas.Text = "EDITAR";
+            btnEditarRecetas.UseVisualStyleBackColor = true;
             // 
-            // btnEliminarEspecialidad
+            // btnEliminarRecetas
             // 
-            btnEliminarEspecialidad.Location = new System.Drawing.Point(638, 701);
-            btnEliminarEspecialidad.Name = "btnEliminarEspecialidad";
-            btnEliminarEspecialidad.Size = new System.Drawing.Size(120, 61);
-            btnEliminarEspecialidad.TabIndex = 29;
-            btnEliminarEspecialidad.Text = "ELIMINAR";
-            btnEliminarEspecialidad.UseVisualStyleBackColor = true;
+            btnEliminarRecetas.Location = new System.Drawing.Point(290, 555);
+            btnEliminarRecetas.Name = "btnEliminarRecetas";
+            btnEliminarRecetas.Size = new System.Drawing.Size(105, 61);
+            btnEliminarRecetas.TabIndex = 29;
+            btnEliminarRecetas.Text = "ELIMINAR";
+            btnEliminarRecetas.UseVisualStyleBackColor = true;
             // 
-            // btnNuevo
+            // btnNuevaReceta
             // 
-            btnNuevo.Location = new System.Drawing.Point(892, 701);
-            btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new System.Drawing.Size(120, 61);
-            btnNuevo.TabIndex = 28;
-            btnNuevo.Text = "NUEVO";
-            btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevaReceta.Location = new System.Drawing.Point(512, 555);
+            btnNuevaReceta.Name = "btnNuevaReceta";
+            btnNuevaReceta.Size = new System.Drawing.Size(105, 61);
+            btnNuevaReceta.TabIndex = 28;
+            btnNuevaReceta.Text = "NUEVO";
+            btnNuevaReceta.UseVisualStyleBackColor = true;
+            // 
+            // txtMedico
+            // 
+            txtMedico.Enabled = false;
+            txtMedico.Location = new System.Drawing.Point(384, 43);
+            txtMedico.Name = "txtMedico";
+            txtMedico.Size = new System.Drawing.Size(326, 26);
+            txtMedico.TabIndex = 37;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label2.Location = new System.Drawing.Point(384, 25);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(48, 15);
+            label2.TabIndex = 36;
+            label2.Text = "Médico";
+            // 
+            // txtPaciente
+            // 
+            txtPaciente.Enabled = false;
+            txtPaciente.Location = new System.Drawing.Point(10, 43);
+            txtPaciente.Name = "txtPaciente";
+            txtPaciente.Size = new System.Drawing.Size(326, 26);
+            txtPaciente.TabIndex = 35;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.Location = new System.Drawing.Point(10, 25);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(54, 15);
+            label1.TabIndex = 34;
+            label1.Text = "Paciente";
+            // 
+            // groupPacienteMedico
+            // 
+            groupPacienteMedico.Controls.Add(txtMedico);
+            groupPacienteMedico.Controls.Add(label2);
+            groupPacienteMedico.Controls.Add(label1);
+            groupPacienteMedico.Controls.Add(txtPaciente);
+            groupPacienteMedico.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            groupPacienteMedico.Location = new System.Drawing.Point(12, 46);
+            groupPacienteMedico.Name = "groupPacienteMedico";
+            groupPacienteMedico.Size = new System.Drawing.Size(716, 79);
+            groupPacienteMedico.TabIndex = 30;
+            groupPacienteMedico.TabStop = false;
+            groupPacienteMedico.Text = "Datos";
+            // 
+            // numericCantidadRecetas
+            // 
+            numericCantidadRecetas.Location = new System.Drawing.Point(9, 214);
+            numericCantidadRecetas.Name = "numericCantidadRecetas";
+            numericCantidadRecetas.Size = new System.Drawing.Size(200, 26);
+            numericCantidadRecetas.TabIndex = 75;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label4.Location = new System.Drawing.Point(9, 197);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(98, 14);
+            label4.TabIndex = 74;
+            label4.Text = "Cantidad recetas";
+            // 
+            // lclProximaReceta
+            // 
+            lclProximaReceta.AutoSize = true;
+            lclProximaReceta.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lclProximaReceta.Location = new System.Drawing.Point(235, 197);
+            lclProximaReceta.Name = "lclProximaReceta";
+            lclProximaReceta.Size = new System.Drawing.Size(92, 15);
+            lclProximaReceta.TabIndex = 76;
+            lclProximaReceta.Text = "Próxima Receta";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new System.Drawing.Point(234, 214);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new System.Drawing.Size(242, 26);
+            dateTimePicker1.TabIndex = 77;
+            // 
+            // txtIdReceta
+            // 
+            txtIdReceta.Enabled = false;
+            txtIdReceta.Location = new System.Drawing.Point(629, 27);
+            txtIdReceta.Name = "txtIdReceta";
+            txtIdReceta.Size = new System.Drawing.Size(99, 23);
+            txtIdReceta.TabIndex = 35;
+            // 
+            // lblNumeroReceta
+            // 
+            lblNumeroReceta.AutoSize = true;
+            lblNumeroReceta.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblNumeroReceta.Location = new System.Drawing.Point(629, 9);
+            lblNumeroReceta.Name = "lblNumeroReceta";
+            lblNumeroReceta.Size = new System.Drawing.Size(52, 15);
+            lblNumeroReceta.TabIndex = 34;
+            lblNumeroReceta.Text = "# Receta";
             // 
             // Frm_Recetas
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.SystemColors.ActiveCaption;
-            ClientSize = new System.Drawing.Size(1154, 805);
-            Controls.Add(btnGuardar);
-            Controls.Add(btnBuscarEspecial);
+            ClientSize = new System.Drawing.Size(740, 642);
+            Controls.Add(txtIdReceta);
+            Controls.Add(btnGuardarReceta);
+            Controls.Add(btnBuscarRecetas);
+            Controls.Add(lblNumeroReceta);
             Controls.Add(btnSalir);
-            Controls.Add(btnEditarEspecialidad);
-            Controls.Add(btnEliminarEspecialidad);
-            Controls.Add(btnNuevo);
+            Controls.Add(btnEditarRecetas);
+            Controls.Add(btnEliminarRecetas);
+            Controls.Add(btnNuevaReceta);
             Controls.Add(groupRecetas);
             Controls.Add(groupBox1);
+            Controls.Add(groupPacienteMedico);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Frm_Recetas";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Receta Médica";
             Load += Frm_Recetas_Load;
             groupRecetas.ResumeLayout(false);
             groupRecetas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericCantidad).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgrListarReceta).EndInit();
             groupBox1.ResumeLayout(false);
+            groupPacienteMedico.ResumeLayout(false);
+            groupPacienteMedico.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericCantidadRecetas).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private System.Windows.Forms.GroupBox groupRecetas;
-        private System.Windows.Forms.Label lblFechasEntrega;
-        private System.Windows.Forms.Label lblNumeroRecetas;
-        private System.Windows.Forms.TextBox txtIndicaciones;
-        private System.Windows.Forms.Label lblIndicaciones;
-        private System.Windows.Forms.TextBox txtCedulaPaciente;
-        private System.Windows.Forms.Label lblIDPacienteReceta;
-        private System.Windows.Forms.TextBox txtPaciente;
-        private System.Windows.Forms.Label lblRecetaPaciente;
-        private System.Windows.Forms.TextBox txtEspecialista;
-        private System.Windows.Forms.Label lblEspecialista;
-        private System.Windows.Forms.Label lblNumeroReceta;
-        private System.Windows.Forms.TextBox txtIdReceta;
+        private System.Windows.Forms.Label lblFechasRetiro;
         private System.Windows.Forms.TextBox txtDuracion;
         private System.Windows.Forms.Label lblDuracion;
         private System.Windows.Forms.TextBox txtNombreReceta;
         private System.Windows.Forms.Label lblReceta;
-        private System.Windows.Forms.DateTimePicker dateProximaEntrega;
-        private System.Windows.Forms.Label lblProximaReceta;
-        private System.Windows.Forms.DateTimePicker dateEntrega;
         private System.Windows.Forms.DataGridView dgrListarReceta;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnBuscarEspecial;
+        private System.Windows.Forms.Button btnGuardarReceta;
+        private System.Windows.Forms.Button btnBuscarRecetas;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnEditarEspecialidad;
-        private System.Windows.Forms.Button btnEliminarEspecialidad;
-        private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboCantidadRecetas;
+        private System.Windows.Forms.Button btnEditarRecetas;
+        private System.Windows.Forms.Button btnEliminarRecetas;
+        private System.Windows.Forms.Button btnNuevaReceta;
         private System.Windows.Forms.DataGridViewTextBoxColumn recetaid;
         private System.Windows.Forms.DataGridViewTextBoxColumn especialista;
         private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE;
@@ -519,5 +540,24 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn duracion;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadrecetas;
         private System.Windows.Forms.DataGridViewTextBoxColumn indicaciones;
+        private System.Windows.Forms.TextBox txtIndicaciones;
+        private System.Windows.Forms.Label lblIndicaciones;
+        private System.Windows.Forms.TextBox txtFechaRetiro;
+        private System.Windows.Forms.TextBox txtMedico;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtPaciente;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupPacienteMedico;
+        private System.Windows.Forms.NumericUpDown numericCantidad;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboMedicamentos;
+        private System.Windows.Forms.TextBox txtDosis;
+        private System.Windows.Forms.Label lblMedicamentos;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label lclProximaReceta;
+        private System.Windows.Forms.NumericUpDown numericCantidadRecetas;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtIdReceta;
+        private System.Windows.Forms.Label lblNumeroReceta;
     }
 }

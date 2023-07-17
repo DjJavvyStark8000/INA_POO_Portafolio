@@ -18,11 +18,11 @@ namespace ElBuenVivir_Interfaz
         }
 
 
-        public static int getUsuario
+        public static string getUsuario
         {
             get
             {
-                return Properties.Settings.Default.usuario;
+                return Properties.Settings.Default.role_Usuario;
             }
 
         }

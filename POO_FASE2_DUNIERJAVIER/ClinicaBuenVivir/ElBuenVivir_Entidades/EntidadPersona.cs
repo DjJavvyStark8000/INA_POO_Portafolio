@@ -37,7 +37,10 @@ namespace ElBuenVivir_Entidades
         }
 
         // Constructor que acepta parámetros
-        public Persona(int identificacion, string nombre, string apellidos, string fechaNacimiento, string genero, string nacionalidad, string estadoCivil, int telefono, string correo, string ciudad, string provincia, string detalleDireccion)
+        public Persona(int identificacion, string nombre, string apellidos, 
+            string fechaNacimiento, string genero, string nacionalidad, 
+            string estadoCivil, int telefono, string correo, string ciudad, 
+            string provincia, string detalleDireccion)
         {
             this.identificacion = identificacion;
             this.nombre = nombre;

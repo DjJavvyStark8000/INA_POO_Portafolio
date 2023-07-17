@@ -1,22 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Security.Cryptography;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
-using System.Data.SqlClient;
 using ElBuenVivir_Logica;
-using System.Collections;
 using ElBuenVivir_Entidades;
-using static System.Windows.Forms.MonthCalendar;
-using ElBuenVivir_AccesoDatos;
-using System.Runtime.Intrinsics.X86;
-using System.Globalization;
+using System.Linq;
+
+using CheckBox = System.Windows.Forms.CheckBox;
+using System.Data;
 
 namespace ElBuenVivir_Interfaz
 {
@@ -25,18 +17,28 @@ namespace ElBuenVivir_Interfaz
 
 
         //set some variables
-        private static string estadoCivil = "";
         private static int identificacion = 0;
         private static int elTelefono = 0;
-        private static List<string> DiasLibres = new List<string>();//guardo los dias libres del funcionario
         private bool frm_loading = true;
-        private string accion = "Nuevo";
+        private string accion = "nuevo";
         public int global = 0;
-
+        private string diaSemana;
+        private string horaEntrada;
+        private string horaSalida;
+        private int idDeHorario = 0;
+        private static List<string> Horasxdia = Enumerable.Repeat("--Libre--", 7).ToList();//horas por default
 
         public Frm_Funcionario()
         {
             InitializeComponent();
+            //Event handlers para horario
+            checkLunes.CheckedChanged += DayOfWeek_CheckedChanged;
+            checkMartes.CheckedChanged += DayOfWeek_CheckedChanged;
+            checkMiercoles.CheckedChanged += DayOfWeek_CheckedChanged;
+            checkJueves.CheckedChanged += DayOfWeek_CheckedChanged;
+            checkViernes.CheckedChanged += DayOfWeek_CheckedChanged;
+            checkSabado.CheckedChanged += DayOfWeek_CheckedChanged;
+            checkDomingo.CheckedChanged += DayOfWeek_CheckedChanged;
         }
 
         //Identificacion
@@ -46,140 +48,10 @@ namespace ElBuenVivir_Interfaz
             {
                 txtID.Text = "";
                 lblSoloNum.Visible = true;
-
             }
             else { lblSoloNum.Visible = false; }
         }
 
-        //Nombre y Apellidos
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-            GenerarNombreCompleto();
-        }
-
-        //Filtrar medico para habilitar especialidad
-        private void comboPuesto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboPuesto.SelectedItem.ToString() == "Medicina")
-            {
-                comboSeleccionarEspecialidad.Enabled = true;
-            }
-            else { comboSeleccionarEspecialidad.Enabled = false; }
-        }
-
-        private void GenerarNombreCompleto()
-        {
-            string nombre = txtNombre.Text.Trim();
-            string apellido1 = txtApellido1.Text.Trim();
-            string apellido2 = txtApellido2.Text.Trim();
-            // Concatenar los valores en el orden deseado
-            string nombreCompleto = $"{nombre} {apellido1} {apellido2}";
-        }
-
-        //genero      
-        private void radioHombre_CheckedChanged(object sender, EventArgs e)
-        {
-            //genero = radioHombre.Text;
-        }
-
-        private void radioMujer_CheckedChanged(object sender, EventArgs e)
-        {
-            // genero = radioMujer.Text;
-        }
-
-        //nacionalidad
-        private void txtNacionalidad_TextChanged(object sender, EventArgs e)
-        {
-            panelEstadoCivil.Enabled = true;
-        }
-
-        //Estado civil
-        private void radioCasado_CheckedChanged(object sender, EventArgs e)
-        {
-            estadoCivil = radioCasado.Text;
-        }
-
-        private void radioSoltero_CheckedChanged(object sender, EventArgs e)
-        {
-            estadoCivil = radioSoltero.Text;
-        }
-
-        private void radioUnion_CheckedChanged(object sender, EventArgs e)
-        {
-            estadoCivil = radioUnion.Text;
-        }
-
-        private void radioDivorciado_CheckedChanged(object sender, EventArgs e)
-        {
-            estadoCivil = radioDivorciado.Text;
-        }
-
-        private void radioOtro_CheckedChanged(object sender, EventArgs e)
-        {
-            estadoCivil = radioOtro.Text;
-        }
-
-        //Dias libres
-        private void checkLunes_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkLunes.Checked)
-            {
-                DiasLibres.Add(checkLunes.Text);//Agregar a la lista
-            }
-            else
-            {
-                DiasLibres.Remove(checkLunes.Text);//Remover de la lista
-            }
-
-        }
-
-        private void checkMartes_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkMartes.Checked)
-            {
-                DiasLibres.Add(checkMartes.Text);//Agregar a la lista
-            }
-            else
-            {
-                DiasLibres.Remove(checkMartes.Text);//Remover de la lista
-            }
-        }
-
-        private void checkMiercoles_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkMiercoles.Checked)
-            {
-                DiasLibres.Add(checkMiercoles.Text);//Agregar a la lista
-            }
-            else
-            {
-                DiasLibres.Remove(checkMiercoles.Text);//Remover de la lista
-            }
-        }
-
-        private void checkJueves_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkJueves.Checked)
-            {
-                DiasLibres.Add(checkJueves.Text);//Agregar a la lista
-            }
-            else
-            {
-                DiasLibres.Remove(checkJueves.Text);//Remover de la lista
-            }
-        }
-
-        private void checkViernes_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkViernes.Checked)
-            {
-                DiasLibres.Add(checkViernes.Text);//Agregar a la lista
-            }
-            else
-            {
-                DiasLibres.Remove(checkViernes.Text);//Remover de la lista
-            }
-        }
 
         //Telefono
         private void txtTelefono_TextChanged(object sender, EventArgs e)
@@ -223,7 +95,6 @@ namespace ElBuenVivir_Interfaz
             frm_loading = true;
             LimpiarForm();
             CargarListaFuncionario();
-            CargarListaMedico();
             CargarListaEspecialidades();
             frm_loading = false;
         }
@@ -238,27 +109,8 @@ namespace ElBuenVivir_Interfaz
                 funcionario = logicaFuncionario.llamarListarFuncionarios(condicion);
                 if (funcionario.Count > 0)
                 {
+                    // dgrListarFuncionario.AutoGenerateColumns = false;//esconder columnas no deseadas
                     dgrListarFuncionario.DataSource = funcionario;
-                }
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show(error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        // (*****) Carga la lista datagridviewj para medicos
-        public void CargarListaMedico(string condicion = "")
-        {
-
-            BLMedicos logicaMedico = new BLMedicos(Configuracion.getCadenaConeccion);
-            List<EntidadMedicos> medico;
-            try
-            {
-                medico = logicaMedico.llamarListarMedicos(condicion);
-                if (medico.Count > 0)
-                {
-                    dgrListarMedicos.DataSource = medico;
                 }
             }
             catch (Exception error)
@@ -287,9 +139,40 @@ namespace ElBuenVivir_Interfaz
             }
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
+        // (*****) Carga la lista datagridview para funcionarios
+        public void CargarListaHorarios(string condicion = "", int horarioID = 0)
         {
-            Close();
+            BLHorarioFuncionarios logicaHorario = new BLHorarioFuncionarios(Configuracion.getCadenaConeccion);
+            List<EntidadHorarioFuncionarios> horarios;
+            try
+            {
+                horarios = logicaHorario.llamarListarHorarioFuncionarios(condicion);
+                if (horarios.Count > 0)
+                {
+                    if (horarioID != 0)
+                    {
+                        // Filtrar la lista de horarios para mostrar únicamente el horario con el ID indicado
+                        horarios = horarios.Where(horario => horario.HorarioId == horarioID).ToList();
+                        // actualizar lista de horas para poder editarlas
+                        for (int i = 0; i < horarios.Count; i++)
+                        {
+                            Horasxdia[0] = horarios[i].Lunes;
+                            Horasxdia[1] = horarios[i].Martes;
+                            Horasxdia[2] = horarios[i].Miercoles;
+                            Horasxdia[3] = horarios[i].Jueves;
+                            Horasxdia[4] = horarios[i].Viernes;
+                            Horasxdia[5] = horarios[i].Sabado;
+                            Horasxdia[6] = horarios[i].Domingo;
+                        }
+                    }
+
+                    dgrHorasSemana.DataSource = horarios;
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void comboSeleccionarEspecialidad_SelectedIndexChanged(object sender, EventArgs e)
@@ -303,93 +186,62 @@ namespace ElBuenVivir_Interfaz
             }
         }
 
+
+        //crear objeto horarioFuncionario
+        private EntidadHorarioFuncionarios CrearHorarioFuncionario()
+        {
+            EntidadHorarioFuncionarios unHorarioFuncionario = new EntidadHorarioFuncionarios();
+            if (accion == "editar") unHorarioFuncionario.HorarioId = idDeHorario;
+            unHorarioFuncionario.Lunes = Horasxdia[0];//object para retornar //***
+            unHorarioFuncionario.Martes = Horasxdia[1];//***
+            unHorarioFuncionario.Miercoles = Horasxdia[2];//***
+            unHorarioFuncionario.Jueves = Horasxdia[3];//***
+            unHorarioFuncionario.Viernes = Horasxdia[4];//***
+            unHorarioFuncionario.Sabado = Horasxdia[5];//***
+            unHorarioFuncionario.Domingo = Horasxdia[6];//***
+
+            return unHorarioFuncionario;
+        }
         //crear objeto funcionario
         private EntidadFuncionario CrearFuncionario()
         {
+            int idHorario = 0;
+            EntidadHorarioFuncionarios unHorario = new EntidadHorarioFuncionarios();
             EntidadFuncionario unFuncionario = new EntidadFuncionario();
-            // if (accion == "nuevo")
-            // {
+            BLHorarioFuncionarios logicaHorarioFuncionarios = new BLHorarioFuncionarios(Configuracion.getCadenaConeccion);
+            unHorario = CrearHorarioFuncionario();// un horario de funcionario
+
             int aux;
-            if (int.TryParse(txtID.Text, out aux))
+            unFuncionario.Identificacion = int.TryParse(txtID.Text, out aux) ? aux : unFuncionario.Identificacion;
+            if (accion == "nuevo")
             {
-                unFuncionario.Identificacion = aux;
+                idHorario = logicaHorarioFuncionarios.LlamarInsertarHorarioFuncionarios(unHorario);
+                unFuncionario.HorarioId = idHorario;//skalar de la tabla de horario de la base de datos
             }
-            unFuncionario.Puesto = comboPuesto.SelectedIndex.ToString();
+            else if (accion == "editar")
+            {
+                logicaHorarioFuncionarios.LlamarEditarHorarioFuncionarios(unHorario);
+                unFuncionario.HorarioId = idHorario;
+                unFuncionario.HorarioId = idDeHorario;//directamente de la tabla
+            }
+            unFuncionario.Puesto = comboPuesto.SelectedItem.ToString();
             unFuncionario.Nombre = txtNombre.Text;
             unFuncionario.Apellidos = txtApellido1.Text + " " + txtApellido2.Text;
-            unFuncionario.FechaNacimiento = dateNacimiento.Value.ToShortDateString();
-            if (radioHombre.Checked)
-            {
-                unFuncionario.Genero = "Masculino";
-            }
-            else
-            {
-                unFuncionario.Genero = "Femenino";
-            }
+            unFuncionario.FechaNacimiento = dateNacimiento.Value.ToString("yyyy/MM/dd");//cambiar formato de fecha
+            unFuncionario.Genero = radioHombre.Checked ? "Masculino" : "Femenino";
             unFuncionario.Nacionalidad = txtNacionalidad.Text;
-            if (radioCasado.Checked)
-            {
-                unFuncionario.EstadoCivil = "Casado/a";
-            }
-            if (radioSoltero.Checked)
-            {
-                unFuncionario.EstadoCivil = "Soltero/a";
-            }
-            if (radioUnion.Checked)
-            {
-                unFuncionario.EstadoCivil = "Union Libre";
-            }
-            if (radioDivorciado.Checked)
-            {
-                unFuncionario.EstadoCivil = "Divorciado/a";
-            }
-            if (radioOtro.Checked)
-            {
-                unFuncionario.EstadoCivil = "Otro";
-            }
-            if (checkLunes.Checked)
-            {
-                DiasLibres.Add("Lunes");
-            }
-            if (checkMartes.Checked)
-            {
-                DiasLibres.Add("Martes");
-            }
-            if (checkMiercoles.Checked)
-            {
-                DiasLibres.Add("Miércoles");
-            }
-            if (checkJueves.Checked)
-            {
-                DiasLibres.Add("Jueves");
-            }
-            if (checkViernes.Checked)
-            {
-                DiasLibres.Add("Viernes");
-            }
-            string diasLibres = string.Join(", ", DiasLibres);//join los dias en una string
-            unFuncionario.DiasLibres = diasLibres;
-            unFuncionario.HoraEntrada = dateHoraEntrada.Value.TimeOfDay.ToString();
-            unFuncionario.HoraSalida = dateHoraSalida.Value.TimeOfDay.ToString();
-            if (int.TryParse(txtTelefono.Text, out aux))
-            {
-                unFuncionario.Telefono = aux;
-            }
+            unFuncionario.EstadoCivil = comboEstadoCivil.SelectedItem.ToString();
+            unFuncionario.Telefono = int.TryParse(txtTelefono.Text, out aux) ? aux : unFuncionario.Telefono;
             unFuncionario.Correo = txtCorreo.Text;
             unFuncionario.Ciudad = comboCiudades.SelectedItem.ToString();
             unFuncionario.Provincia = comboProvincias.SelectedItem.ToString();
             unFuncionario.DetalleDireccion = txtDetallesDireccion.Text;
             unFuncionario.Anotaciones = txtAnotaciones.Text;
-            //}
-            //else if (accion == "editar")
-            //{
-
-            //}
             return unFuncionario;
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            EntidadFuncionario unFuncionario = new EntidadFuncionario();//objeto
+            EntidadFuncionario unFuncionario = new EntidadFuncionario();//objeto funcionario
             BLFuncionarios logicaFuncionario = new BLFuncionarios(Configuracion.getCadenaConeccion);//conexion
 
             try
@@ -400,21 +252,23 @@ namespace ElBuenVivir_Interfaz
                 }
                 else
                 {
-                    if (accion == "Nuevo")
+                    int resultado = 0;
+                    if (accion == "nuevo")
                     {
-                        unFuncionario = CrearFuncionario();//crea objeto
-                        int resultado = logicaFuncionario.LlamarInsertarFuncionario(unFuncionario);
+                        unFuncionario = CrearFuncionario();//un funcionario
+                        resultado = logicaFuncionario.LlamarInsertarFuncionario(unFuncionario);
                         CargarListaFuncionario();//cargar lista
                         MessageBox.Show("operacion fue exitosa", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        // else if (accion == "editar")
-                        //  {
-                        //unFuncionario = CrearEspecialidad();//crea objeto
-                        //int resultado = logicaEspecialidad.LlamarEditarEspecialidad(unaEspecialidad);
-                        //CargarListaEspecialidades();//cargar lista
-                        //MessageBox.Show("operacion fue exitosa", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //btnGuardar.Enabled = false;
+                        LimpiarForm();
                     }
-
+                    else if (accion == "editar")
+                    {
+                        unFuncionario = CrearFuncionario();//un funcionario
+                        logicaFuncionario.LlamarEditarFuncinario(unFuncionario);                                    
+                        CargarListaFuncionario();//cargar lista
+                        MessageBox.Show("operacion fue exitosa", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btnGuardar.Enabled = false;
+                    }
                 }
             }
             catch (Exception ex)
@@ -428,85 +282,68 @@ namespace ElBuenVivir_Interfaz
         public bool VerificarCamposTexto()
         {
             bool todosTienenLetras = true;
-            if (string.IsNullOrEmpty(txtID.Text))
+
+            if (string.IsNullOrEmpty(txtID.Text)
+                || comboPuesto.SelectedIndex == -1
+                || string.IsNullOrEmpty(txtNombre.Text)
+                || string.IsNullOrEmpty(txtApellido1.Text)
+                || string.IsNullOrEmpty(txtApellido2.Text)
+                || dateNacimiento.Value == DateTime.Now
+                || (!radioHombre.Checked && !radioMujer.Checked)
+                || string.IsNullOrEmpty(txtNacionalidad.Text)
+                || comboEstadoCivil.SelectedIndex == -1
+                || string.IsNullOrEmpty(txtTelefono.Text)
+                || string.IsNullOrEmpty(txtCorreo.Text)
+                || comboCiudades.SelectedIndex == -1
+                || comboProvincias.SelectedIndex == -1
+                || string.IsNullOrEmpty(txtDetallesDireccion.Text)
+                || string.IsNullOrEmpty(txtAnotaciones.Text))
             {
                 todosTienenLetras = false;
             }
-            if (comboPuesto.SelectedIndex == -1)
-            {
-                todosTienenLetras = false;
-            }
-            if (string.IsNullOrEmpty(txtNombre.Text))
-            {
-                todosTienenLetras = false;
-            }
-            if (string.IsNullOrEmpty(txtApellido1.Text))
-            {
-                todosTienenLetras = false;
-            }
-            if (string.IsNullOrEmpty(txtApellido2.Text))
-            {
-                todosTienenLetras = false;
-            }
-            if (dateNacimiento.Value == DateTime.Now)
-            {
-                todosTienenLetras = false;
-            }
-            if (!radioHombre.Checked & !radioMujer.Checked)
-            {
-                todosTienenLetras = false;
-            }
-            if (string.IsNullOrEmpty(txtNacionalidad.Text))//
-            {
-                todosTienenLetras = false;
-            }
-            if (!radioCasado.Checked & !radioSoltero.Checked & !radioUnion.Checked & !radioDivorciado.Checked & !radioOtro.Checked)
-            {
-                todosTienenLetras = false;
-            }
-            if (dateHoraEntrada.Value == dateHoraEntrada.MinDate)
-            {
-                todosTienenLetras = false;
-            }
-            if (dateHoraSalida.Value == dateHoraSalida.MinDate)
-            {
-                todosTienenLetras = false;
-            }
-            if (string.IsNullOrEmpty(txtTelefono.Text))//
-            {
-                todosTienenLetras = false;
-            }
-            if (string.IsNullOrEmpty(txtCorreo.Text))//
-            {
-                todosTienenLetras = false;
-            }
-            if (comboCiudades.SelectedIndex == -1)//
-            {
-                todosTienenLetras = false;
-            }
-            if (comboProvincias.SelectedIndex == -1)//
-            {
-                todosTienenLetras = false;
-            }
-            if (string.IsNullOrEmpty(txtDetallesDireccion.Text))//
-            {
-                todosTienenLetras = false;
-            }
-            if (string.IsNullOrEmpty(txtAnotaciones.Text))//
-            {
-                todosTienenLetras = false;
-            }
+
             return todosTienenLetras;
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             LimpiarForm();
+            ActivarForm();
         }
+
+
+        //editar funcionario boton
+        private void btnEditarFuncionario_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                accion = "editar";
+                if (!txtID.Enabled & !comboPuesto.Enabled & !txtNombre.Enabled & !txtApellido1.Enabled & !txtApellido2.Enabled &
+                !dateNacimiento.Enabled & !radioHombre.Enabled & !radioMujer.Enabled & !txtNacionalidad.Enabled &
+                !comboEstadoCivil.Enabled & !checkLunes.Enabled & !checkMartes.Enabled & !checkMiercoles.Enabled &
+                !checkJueves.Enabled & !checkViernes.Enabled & !checkSabado.Enabled & !checkDomingo.Enabled &
+                !txtTelefono.Enabled & !txtCorreo.Enabled & !comboCiudades.Enabled & !comboProvincias.Enabled &
+                !txtDetallesDireccion.Enabled & !txtAnotaciones.Enabled)
+                {
+                    ActivarForm();
+                    ShowControlValues();
+                }
+                else
+                {
+                    MessageBox.Show("No existen datos para editar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        //limpiar form
         public void LimpiarForm()
         {
-            accion = "Nuevo";
+            accion = "nuevo";
             txtID.Text = string.Empty;
+            comboPuesto.Text = string.Empty;
             comboPuesto.SelectedIndex = -1;
             txtNombre.Text = string.Empty;
             txtApellido1.Text = string.Empty;
@@ -515,37 +352,97 @@ namespace ElBuenVivir_Interfaz
             radioHombre.Checked = false;
             radioMujer.Checked = false;
             txtNacionalidad.Text = string.Empty;
-            radioCasado.Checked = false;
-            radioSoltero.Checked = false;
-            radioUnion.Checked = false;
-            radioDivorciado.Checked = false;
-            radioOtro.Checked = false;
+            comboEstadoCivil.Text = string.Empty;
+            comboEstadoCivil.SelectedIndex = -1;
             checkLunes.Checked = false;
             checkMartes.Checked = false;
             checkMiercoles.Checked = false;
             checkJueves.Checked = false;
             checkViernes.Checked = false;
-            dateHoraEntrada.Value = dateHoraEntrada.MinDate;
-            dateHoraSalida.Value = dateHoraSalida.MinDate;
+            checkSabado.Checked = false;
+            checkDomingo.Checked = false;
             txtTelefono.Text = string.Empty;
             txtCorreo.Text = string.Empty;
+            comboCiudades.Text = string.Empty;
+            comboProvincias.Text = string.Empty;
             comboCiudades.SelectedIndex = -1;
             comboProvincias.SelectedIndex = -1;
             txtDetallesDireccion.Text = string.Empty;
             txtAnotaciones.Text = string.Empty;
-            DiasLibres.Clear();
+            dgrHorasSemana.DataSource = null;//en conjunto se puede limpiar el data grid view
+            dgrHorasSemana.Rows.Clear();
+            Horasxdia = new List<string>(); // Asignar una nueva lista vacía
+            Horasxdia.AddRange(Enumerable.Repeat("--Libre--", 7));//llenar con valores predeterminados otra vez
         }
 
+        //activar casillas en el form
+        private void ActivarForm()
+        {
+            txtID.Enabled = (accion != "editar");
+            comboPuesto.Enabled = true;
+            txtNombre.Enabled = true;
+            txtApellido1.Enabled = true;
+            txtApellido2.Enabled = true;
+            dateNacimiento.Enabled = true;
+            radioHombre.Enabled = true;
+            radioMujer.Enabled = true;
+            txtNacionalidad.Enabled = true;
+            comboEstadoCivil.Enabled = true;
+            checkLunes.Enabled = true;
+            checkMartes.Enabled = true;
+            checkMiercoles.Enabled = true;
+            checkJueves.Enabled = true;
+            checkViernes.Enabled = true;
+            checkSabado.Enabled = true;
+            checkDomingo.Enabled = true;
+            txtTelefono.Enabled = true;
+            txtCorreo.Enabled = true;
+            comboCiudades.Enabled = true;
+            comboProvincias.Enabled = true;
+            txtDetallesDireccion.Enabled = true;
+            txtAnotaciones.Enabled = true;
+            dgrHorasSemana.Enabled = true;
+        }
+        //temporarl
+        private void ShowControlValues()
+        {
+            string message = $"txtID.Text: {txtID.Text}\n" +
+                             $"Global tiene: {global}\n" +
+                             $"Id de Horario: {idDeHorario.ToString()}\n" +
+                             $"comboPuesto.SelectedItem: {comboPuesto.SelectedItem}\n" +
+                             $"txtNombre.Text: {txtNombre.Text}\n" +
+                             $"txtApellido1.Text: {txtApellido1.Text}\n" +
+                             $"txtApellido2.Text: {txtApellido2.Text}\n" +
+                             $"dateNacimiento.Value: {dateNacimiento.Value}\n" +
+                             $"radioHombre.Checked: {radioHombre.Checked}\n" +
+                             $"radioMujer.Checked: {radioMujer.Checked}\n" +
+                             $"txtNacionalidad.Text: {txtNacionalidad.Text}\n" +
+                             $"comboEstadoCivil.SelectedItem: {comboEstadoCivil.SelectedItem}\n" +
+                             $"checkLunes.Checked: {checkLunes.Checked}\n" +
+                             $"checkMartes.Checked: {checkMartes.Checked}\n" +
+                             $"checkMiercoles.Checked: {checkMiercoles.Checked}\n" +
+                             $"checkJueves.Checked: {checkJueves.Checked}\n" +
+                             $"checkViernes.Checked: {checkViernes.Checked}\n" +
+                             $"checkSabado.Checked: {checkSabado.Checked}\n" +
+                             $"checkDomingo.Checked: {checkDomingo.Checked}\n" +
+                             $"txtTelefono.Text: {txtTelefono.Text}\n" +
+                             $"txtCorreo.Text: {txtCorreo.Text}\n" +
+                             $"comboCiudades.SelectedItem: {comboCiudades.SelectedItem}\n" +
+                             $"comboProvincias.SelectedItem: {comboProvincias.SelectedItem}\n" +
+                             $"txtDetallesDireccion.Text: {txtDetallesDireccion.Text}\n" +
+                             $"txtAnotaciones.Text: {txtAnotaciones.Text}";
+            MessageBox.Show(message);
+        }
+
+        //listar funcionarios del datagridview a las casillar para editar
         private void dgrListarFuncionario_Click(object sender, EventArgs e)
         {
-
             if (txtID.Enabled & comboPuesto.Enabled & txtNombre.Enabled & txtApellido1.Enabled & txtApellido2.Enabled &
                 dateNacimiento.Enabled & radioHombre.Enabled & radioMujer.Enabled & txtNacionalidad.Enabled &
-                radioCasado.Enabled & radioSoltero.Enabled & radioUnion.Enabled & radioDivorciado.Enabled &
-                radioOtro.Enabled & checkLunes.Enabled & checkMartes.Enabled & checkMiercoles.Enabled &
-                checkJueves.Enabled & checkViernes.Enabled & dateHoraEntrada.Enabled & dateHoraSalida.Enabled &
+                comboEstadoCivil.Enabled & checkLunes.Enabled & checkMartes.Enabled & checkMiercoles.Enabled &
+                checkJueves.Enabled & checkViernes.Enabled & checkSabado.Enabled & checkDomingo.Enabled &
                 txtTelefono.Enabled & txtCorreo.Enabled & comboCiudades.Enabled & comboProvincias.Enabled &
-                txtDetallesDireccion.Enabled & txtAnotaciones.Enabled)
+                txtDetallesDireccion.Enabled & txtAnotaciones.Enabled & dgrHorasSemana.Enabled)
             {
                 txtID.Enabled = false;
                 comboPuesto.Enabled = false;
@@ -556,138 +453,73 @@ namespace ElBuenVivir_Interfaz
                 radioHombre.Enabled = false;
                 radioMujer.Enabled = false;
                 txtNacionalidad.Enabled = false;
-                radioCasado.Enabled = false;
-                radioSoltero.Enabled = false;
-                radioUnion.Enabled = false;
-                radioDivorciado.Enabled = false;
-                radioOtro.Enabled = false;
+                comboEstadoCivil.Enabled = false;
                 checkLunes.Enabled = false;
                 checkMartes.Enabled = false;
                 checkMiercoles.Enabled = false;
                 checkJueves.Enabled = false;
                 checkViernes.Enabled = false;
-                dateHoraEntrada.Enabled = false;
-                dateHoraSalida.Enabled = false;
+                checkSabado.Enabled = false;
+                checkDomingo.Enabled = false;
                 txtTelefono.Enabled = false;
                 txtCorreo.Enabled = false;
                 comboCiudades.Enabled = false;
                 comboProvincias.Enabled = false;
                 txtDetallesDireccion.Enabled = false;
                 txtAnotaciones.Enabled = false;
+                dgrHorasSemana.Enabled = false;
             }
 
             LimpiarForm();
             try
-            {                                                                                       //obtener datos un click en la fila y pasarlo a cajas de texto
+            {
+                //obtener datos un click en la fila y pasarlo a cajas de texto
                 if (dgrListarFuncionario.SelectedRows.Count > 0)
                 {
-                    DataGridViewRow row = dgrListarFuncionario.SelectedRows[0];
-                    // Accede a las celdas en el orden correcto utilizando el índice real de la columna
-                    DataGridViewCell identificacion = row.Cells[dgrListarFuncionario.Columns["clmidfun"].Index];
-                    DataGridViewCell nombre = row.Cells[dgrListarFuncionario.Columns["clmnombrefun"].Index];
-                    DataGridViewCell apellido = row.Cells[dgrListarFuncionario.Columns["clmapellidosfun"].Index];
-                    DataGridViewCell nacimiento = row.Cells[dgrListarFuncionario.Columns["clmnaciofun"].Index];
-                    DataGridViewCell genero = row.Cells[dgrListarFuncionario.Columns["clmgenerofun"].Index];
-                    DataGridViewCell nacionalidad = row.Cells[dgrListarFuncionario.Columns["clmpaisfun"].Index];
-                    DataGridViewCell estadocivil = row.Cells[dgrListarFuncionario.Columns["clmcivilfun"].Index];
-                    DataGridViewCell libres = row.Cells[dgrListarFuncionario.Columns["clmlibresfun"].Index];
-                    DataGridViewCell correo = row.Cells[dgrListarFuncionario.Columns["clmcorreofun"].Index];
-                    DataGridViewCell telefono = row.Cells[dgrListarFuncionario.Columns["clmtelefonofun"].Index];
-                    DataGridViewCell ciudad = row.Cells[dgrListarFuncionario.Columns["clmciudadfun"].Index];
-                    DataGridViewCell provincia = row.Cells[dgrListarFuncionario.Columns["clmprovinciafun"].Index];
-                    DataGridViewCell direccion = row.Cells[dgrListarFuncionario.Columns["clmdireccionfun"].Index];
-                    DataGridViewCell anotaciones = row.Cells[dgrListarFuncionario.Columns["clmanotacionesfun"].Index];
-                    DataGridViewCell puesto = row.Cells[dgrListarFuncionario.Columns["clmpuestofun"].Index];
-                    DataGridViewCell horain = row.Cells[dgrListarFuncionario.Columns["clmhorainfun"].Index];
-                    DataGridViewCell horaout = row.Cells[dgrListarFuncionario.Columns["clmhoraoutfun"].Index];
+                    var row = dgrListarFuncionario.SelectedRows[0];
 
+                    DataGridViewCell identificacion = row.Cells["clmidfun"];
+                    DataGridViewCell puesto = row.Cells["clmpuestofun"];
+                    DataGridViewCell horarioId = row.Cells["clmhorarioidfun"];
+                    DataGridViewCell nombre = row.Cells["clmnombrefun"];
+                    DataGridViewCell apellido = row.Cells["clmapellidosfun"];
+                    DataGridViewCell nacimiento = row.Cells["clmnaciofun"];
+                    DataGridViewCell genero = row.Cells["clmgenerofun"];
+                    DataGridViewCell nacionalidad = row.Cells["clmpaisfun"];
+                    DataGridViewCell estadocivil = row.Cells["clmcivilfun"];
+                    DataGridViewCell correo = row.Cells["clmcorreofun"];
+                    DataGridViewCell telefono = row.Cells["clmtelefonofun"];
+                    DataGridViewCell ciudad = row.Cells["clmciudadfun"];
+                    DataGridViewCell provincia = row.Cells["clmprovinciafun"];
+                    DataGridViewCell direccion = row.Cells["clmdireccionfun"];
+                    DataGridViewCell anotaciones = row.Cells["clmanotacionesfun"];
 
-                    // Obtén los valores de las celdas
-                    txtID.Text = identificacion.Value.ToString();
-                    comboPuesto.Text = puesto.Value.ToString();
-                    txtNombre.Text = nombre.Value.ToString();
-                    txtApellido1.Text = apellido.Value.ToString();
-                    DateTime nacimientoValue;
-                    if (DateTime.TryParse(nacimiento.Value.ToString(), out nacimientoValue))
-                    {
-                        dateNacimiento.Value = nacimientoValue;
-                    }
-                    if (genero.Value.ToString() == "Masculino")
-                    {
-                        radioHombre.Checked = true;
-                    }
-                    if (genero.Value.ToString() == "Femenino")
-                    {
-                        radioMujer.Checked = true;
-                    }
-                    txtNacionalidad.Text = nacimiento.Value.ToString();
-                    if (estadocivil.Value.ToString() == "Casado/a")
-                    {
-                        radioCasado.Checked = true;
-                    }
-                    if (estadocivil.Value.ToString() == "Soltero/a")
-                    {
-                        radioSoltero.Checked = true;
-                    }
-                    if (estadocivil.Value.ToString() == "Union Libre")
-                    {
-                        radioUnion.Checked = true;
-                    }
-                    if (estadocivil.Value.ToString() == "Divorciado/a")
-                    {
-                        radioDivorciado.Checked = true;
-                    }
-                    if (estadocivil.Value.ToString() == "Otro")
-                    {
-                        radioOtro.Checked = true;
-                    }
-                    DateTime entrada;
-                    if (DateTime.TryParse(horain.Value.ToString(), out entrada))
-                    {
-                        dateHoraEntrada.Value = entrada;
-                    }
-                    DateTime salida;
-                    if (DateTime.TryParse(horaout.Value.ToString(), out salida))
-                    {
-                        dateHoraSalida.Value = salida;
-                    }
-                    txtTelefono.Text = telefono.Value.ToString();
-                    txtCorreo.Text = correo.Value.ToString();
-                    comboCiudades.Text = ciudad.Value.ToString();
-                    comboProvincias.Text = provincia.Value.ToString();
-                    txtDetallesDireccion.Text = direccion.Value.ToString();
-                    txtAnotaciones.Text = anotaciones.Value.ToString();
-
-                    string dia = "Lunes";
-                    int indice = libres.Value.ToString().IndexOf(dia);
-                    if (indice != -1)
-                    {
-                        checkLunes.Checked = true;
-                    }
-                    dia = "Martes";
-                    indice = libres.Value.ToString().IndexOf(dia);
-                    if (indice != -1)
-                    {
-                        checkMartes.Checked = true;
-                    }
-                    dia = "Miercoles";
-                    indice = libres.Value.ToString().IndexOf(dia);
-                    if (indice != -1)
-                    {
-                        checkMiercoles.Checked = true;
-                    }
-                    dia = "Jueves";
-                    indice = libres.Value.ToString().IndexOf(dia);
-                    if (indice != -1)
-                    {
-                        checkJueves.Checked = true;
-                    }
-                    dia = "Viernes";
-                    indice = libres.Value.ToString().IndexOf(dia);
-                    if (indice != -1)
-                    {
-                        checkViernes.Checked = true;
-                    }
+                    txtID.Text = identificacion.Value?.ToString();
+                    global = Convert.ToInt32(identificacion.Value);//se nesecita para eliminar un funcionario
+                    comboPuesto.Items.Add(puesto.Value?.ToString());//add the item and then selected
+                    comboPuesto.SelectedItem = puesto.Value?.ToString();
+                    txtNombre.Text = nombre.Value?.ToString();
+                    string[] unApellido = apellido.Value?.ToString().Split(' ');//separar el apellido
+                    string primerApellido = unApellido[0];
+                    string segundoApellido = unApellido[1];
+                    txtApellido1.Text = primerApellido;
+                    txtApellido2.Text = segundoApellido;
+                    dateNacimiento.Value = DateTime.TryParse(nacimiento.Value?.ToString(), out DateTime nacimientoValue) ? nacimientoValue : dateNacimiento.Value;
+                    radioHombre.Checked = genero.Value?.ToString() == "Masculino";
+                    radioMujer.Checked = genero.Value?.ToString() == "Femenino";
+                    txtNacionalidad.Text = nacionalidad.Value?.ToString();
+                    comboEstadoCivil.Items.Add(estadocivil.Value?.ToString());//add the item and then selected
+                    comboEstadoCivil.SelectedItem = estadocivil.Value?.ToString();
+                    txtTelefono.Text = telefono.Value?.ToString();
+                    txtCorreo.Text = correo.Value?.ToString();
+                    comboCiudades.Items.Add(ciudad.Value?.ToString());//add the item and then selected
+                    comboCiudades.SelectedItem = ciudad.Value?.ToString();
+                    comboProvincias.Items.Add(provincia.Value?.ToString());//add the item and then selected
+                    comboProvincias.SelectedItem = provincia.Value?.ToString();
+                    txtDetallesDireccion.Text = direccion.Value?.ToString();
+                    txtAnotaciones.Text = anotaciones.Value?.ToString();
+                    idDeHorario = (int)horarioId.Value;//recupera el id lo manda por parametro para cargar el horario 
+                    CargarListaHorarios("", idDeHorario);//recupera el horario en el data grid
                 }
             }
             catch (Exception ex)
@@ -695,10 +527,213 @@ namespace ElBuenVivir_Interfaz
                 MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        // (0) set global
-        private int GetSetGlobal(int global)
+
+        //Casilla de ingreso de horario control
+        private void DayOfWeek_CheckedChanged(object sender, EventArgs e)
         {
-            return global;
+            CheckBox checkBox = (CheckBox)sender;
+            bool visibilidad = false;
+            if (checkBox.Checked)
+            {
+                CheckBox[] checkBoxes = { checkLunes, checkMartes, checkMiercoles, checkJueves, checkViernes, checkSabado, checkDomingo };
+                //deshabilita las casillas para que no hayan problemas
+                foreach (var boxes in checkBoxes)
+                {
+                    if (boxes.Text != checkBox.Text)
+                    {
+                        boxes.Enabled = false;
+                    }
+                }
+                visibilidad = true;
+                lblEntrada.ForeColor = Color.Red;
+                lblSalida.ForeColor = Color.Red;
+                diaSemana = checkBox.Text;//el dia que se elige
+                horaEntrada = string.Empty;//limpiar las horas cada vez para comparar....
+                horaSalida = string.Empty;//.....si estan llenos ambos campos se puede guardar.
+            }
+            else if (!checkBox.Checked)
+            {
+                CheckBox[] checkBoxes = { checkLunes, checkMartes, checkMiercoles, checkJueves, checkViernes, checkSabado, checkDomingo };
+                //inhabilida la casillas para seleccionar libremente
+                foreach (var boxes in checkBoxes)
+                {
+                    if (boxes.Text != checkBox.Text)
+                    {
+                        boxes.Enabled = true;
+                    }
+                }
+                visibilidad = false;
+                lblEntrada.ForeColor = Color.Black;
+                lblSalida.ForeColor = Color.Black;
+                checkBox.Checked = false;
+                diaSemana = string.Empty;//dia de la semana ya no se elige
+                btnGuardarDia.Visible = false;
+                btnTodosIguales.Visible = false;
+            }
+
+            //casilla de horario visible o invisibles
+            lblEntrada.Visible = visibilidad;
+            lblSalida.Visible = visibilidad;
+            comboEntrada.Visible = visibilidad;
+            comboSalida.Visible = visibilidad;
+        }
+        //informacion de horario de entrada
+        private void comboEntrada_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblEntrada.ForeColor = Color.Black;
+            horaEntrada = comboEntrada.SelectedItem.ToString();
+            if (!string.IsNullOrEmpty(horaSalida))//si la salida ya esta
+            {
+                btnGuardarDia.Visible = true;
+                btnTodosIguales.Visible = true;
+            }
+        }
+
+        //informacion de horario de salida
+        private void comboSalida_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblSalida.ForeColor = Color.Black;
+            horaSalida = comboSalida.SelectedItem.ToString();
+            if (!string.IsNullOrEmpty(horaEntrada))//si la entrada ya esta
+            {
+                btnGuardarDia.Visible = true;
+                btnTodosIguales.Visible = true;
+            }
+
+        }
+
+        //guardar los datos en una lista e imprimir en datagridview
+        private void btnGuardarDia_Click(object sender, EventArgs e)
+        {
+
+            string horasTrabajo = $"{horaEntrada}-{horaSalida}";
+            string nombreCelda = string.Empty;
+
+            switch (diaSemana)
+            {
+                case "Lunes":
+                    nombreCelda = "lunes";
+                    Horasxdia[0] = horasTrabajo;
+                    break;
+                case "Martes":
+                    nombreCelda = "martes";
+                    Horasxdia[1] = horasTrabajo;
+                    break;
+                case "Miércoles":
+                    nombreCelda = "miercoles";
+                    Horasxdia[2] = horasTrabajo;
+                    break;
+                case "Jueves":
+                    nombreCelda = "jueves";
+                    Horasxdia[3] = horasTrabajo;
+                    break;
+                case "Viernes":
+                    nombreCelda = "viernes";
+                    Horasxdia[4] = horasTrabajo;
+                    break;
+                case "Sábado":
+                    nombreCelda = "sabado";
+                    Horasxdia[5] = horasTrabajo;
+                    break;
+                case "Domingo":
+                    nombreCelda = "domingo";
+                    Horasxdia[6] = horasTrabajo;
+                    break;
+            }
+            DataGridViewCell celda = dgrHorasSemana.Rows[0].Cells[nombreCelda];
+            celda.Value = horasTrabajo;
+
+            CheckBox[] checkBoxes = { checkLunes, checkMartes, checkMiercoles, checkJueves, checkViernes, checkSabado, checkDomingo };
+            //inhabilida la casillas para seleccionar libremente
+            foreach (var boxes in checkBoxes)
+            {
+                boxes.Enabled = true;
+            }
+            EsconderBotonesHorario();
+        }
+
+        //llenar toda la semana con los primeros datos
+        private void btnTodosIguales_Click(object sender, EventArgs e)
+        {
+            string horasTrabajo = $"{horaEntrada}-{horaSalida}";
+            CheckBox[] checkBoxes = { checkLunes, checkMartes, checkMiercoles, checkJueves, checkViernes, checkSabado, checkDomingo };
+            string[] semana = new string[] { "lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo" };
+            foreach (var boxes in checkBoxes)
+            {
+                boxes.Checked = true;
+                boxes.Enabled = false;
+                DataGridViewCell celda = dgrHorasSemana.Rows[0].Cells[semana[Array.IndexOf(checkBoxes, boxes)]];
+                celda.Value = horasTrabajo;
+            }
+            EsconderBotonesHorario();
+        }
+
+        //desaparece algunos elementos de horario tempotalmente
+        private void EsconderBotonesHorario()
+        {
+            lblEntrada.ForeColor = Color.Black;
+            lblSalida.ForeColor = Color.Black;
+            lblEntrada.Visible = false;
+            lblSalida.Visible = false;
+            diaSemana = string.Empty;//dia de la semana ya no se elige
+            horaEntrada = string.Empty;
+            horaSalida = string.Empty;
+            btnGuardarDia.Visible = false;
+            btnTodosIguales.Visible = false;
+            comboEntrada.Visible = false;
+            comboSalida.Visible = false;
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnEliminarFuncionario_Click(object sender, EventArgs e)
+        {
+            BLHorarioFuncionarios logicaHorarioFuncionarios = new BLHorarioFuncionarios(Configuracion.getCadenaConeccion);
+            BLFuncionarios logicaFuncionario = new BLFuncionarios(Configuracion.getCadenaConeccion);//conexion
+            if (yesORnot("Desea elimirar este registro?"))
+            {
+                logicaHorarioFuncionarios.LlamarEliminarHorarioFuncionario(idDeHorario);
+                logicaFuncionario.LlamarEliminarFuncionario(global);//global es el id de la especialidad por borrar
+                CargarListaFuncionario();//actualiazar datos
+                MessageBox.Show("operacion fue exitosa", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarForm();
+            }
+        }
+
+        //eliminar si o no?
+        static bool yesORnot(string aviso)
+        {
+            DialogResult result = MessageBox.Show(aviso, "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            bool respuesta = (result == DialogResult.Yes);
+            return respuesta;
+        }
+
+        //buscar funcionario
+        private void btnBuscarFuncionario_Click(object sender, EventArgs e)
+        {
+            //filtrar los datos y recuperar el cliente deseado
+            string busqueda = "";
+            try
+            {
+                if (!string.IsNullOrEmpty(txtID.Text))
+                {
+                    //el nombre tiene en la cadena tiene que ser igual al de al entidad de la base de datos en c# 
+                    busqueda = string.Format("FUNCIONARIO_ID LIKE '%{0}%'", txtID.Text.ToString().Trim());
+                }
+                else
+                {
+                    MessageBox.Show("Debe de escribir al menos una letra", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtID.Focus();
+                }
+                CargarListaFuncionario(busqueda);//pasamos lo que vamos a filtrar
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

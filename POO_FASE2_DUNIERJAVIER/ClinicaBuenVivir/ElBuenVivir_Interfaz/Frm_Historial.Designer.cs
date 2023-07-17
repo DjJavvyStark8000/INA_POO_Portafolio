@@ -36,9 +36,6 @@
             txtHistorialID = new System.Windows.Forms.TextBox();
             lblHistorialId = new System.Windows.Forms.Label();
             lblFechaRegistro = new System.Windows.Forms.Label();
-            textBox1 = new System.Windows.Forms.TextBox();
-            txtListaMedicamentos = new System.Windows.Forms.TextBox();
-            lblMedicamentos = new System.Windows.Forms.Label();
             txtObservaciones = new System.Windows.Forms.TextBox();
             lblObservaciones = new System.Windows.Forms.Label();
             txtResultadoPruebas = new System.Windows.Forms.TextBox();
@@ -46,6 +43,13 @@
             txtDiagnostico = new System.Windows.Forms.TextBox();
             lblDiagnostico = new System.Windows.Forms.Label();
             groupHistorial = new System.Windows.Forms.GroupBox();
+            btnReceta = new System.Windows.Forms.Button();
+            label1 = new System.Windows.Forms.Label();
+            txtFechaRegistro = new System.Windows.Forms.TextBox();
+            txtIdPaciente = new System.Windows.Forms.TextBox();
+            lblPacienteId = new System.Windows.Forms.Label();
+            txtNombrePaciente = new System.Windows.Forms.TextBox();
+            lblPaciente = new System.Windows.Forms.Label();
             dgrHistorial = new System.Windows.Forms.DataGridView();
             historial_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             fecha_registro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,11 +60,9 @@
             observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             groupBox1 = new System.Windows.Forms.GroupBox();
             btnGuardar = new System.Windows.Forms.Button();
-            btnBuscarEspecial = new System.Windows.Forms.Button();
             btnSalir = new System.Windows.Forms.Button();
-            btnEditarEspecialidad = new System.Windows.Forms.Button();
-            btnEliminarEspecialidad = new System.Windows.Forms.Button();
-            btnNuevo = new System.Windows.Forms.Button();
+            btnEditarHistorial = new System.Windows.Forms.Button();
+            txtListaMedicamentos = new System.Windows.Forms.TextBox();
             groupHistorial.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgrHistorial).BeginInit();
             groupBox1.SuspendLayout();
@@ -88,7 +90,7 @@
             // 
             lblAntecedentes.AutoSize = true;
             lblAntecedentes.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblAntecedentes.Location = new System.Drawing.Point(17, 140);
+            lblAntecedentes.Location = new System.Drawing.Point(18, 209);
             lblAntecedentes.Name = "lblAntecedentes";
             lblAntecedentes.Size = new System.Drawing.Size(82, 14);
             lblAntecedentes.TabIndex = 36;
@@ -96,8 +98,7 @@
             // 
             // txtAntecedentes
             // 
-            txtAntecedentes.Enabled = false;
-            txtAntecedentes.Location = new System.Drawing.Point(17, 158);
+            txtAntecedentes.Location = new System.Drawing.Point(18, 227);
             txtAntecedentes.Multiline = true;
             txtAntecedentes.Name = "txtAntecedentes";
             txtAntecedentes.Size = new System.Drawing.Size(242, 74);
@@ -106,7 +107,7 @@
             // txtHistorialID
             // 
             txtHistorialID.Enabled = false;
-            txtHistorialID.Location = new System.Drawing.Point(17, 48);
+            txtHistorialID.Location = new System.Drawing.Point(18, 117);
             txtHistorialID.Name = "txtHistorialID";
             txtHistorialID.Size = new System.Drawing.Size(242, 23);
             txtHistorialID.TabIndex = 35;
@@ -115,7 +116,7 @@
             // 
             lblHistorialId.AutoSize = true;
             lblHistorialId.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblHistorialId.Location = new System.Drawing.Point(17, 30);
+            lblHistorialId.Location = new System.Drawing.Point(18, 99);
             lblHistorialId.Name = "lblHistorialId";
             lblHistorialId.Size = new System.Drawing.Size(73, 14);
             lblHistorialId.TabIndex = 34;
@@ -125,43 +126,15 @@
             // 
             lblFechaRegistro.AutoSize = true;
             lblFechaRegistro.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblFechaRegistro.Location = new System.Drawing.Point(17, 83);
+            lblFechaRegistro.Location = new System.Drawing.Point(18, 152);
             lblFechaRegistro.Name = "lblFechaRegistro";
             lblFechaRegistro.Size = new System.Drawing.Size(104, 14);
             lblFechaRegistro.TabIndex = 49;
             lblFechaRegistro.Text = "Fecha de Registro";
             // 
-            // textBox1
-            // 
-            textBox1.Enabled = false;
-            textBox1.Location = new System.Drawing.Point(17, 101);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new System.Drawing.Size(242, 23);
-            textBox1.TabIndex = 50;
-            // 
-            // txtListaMedicamentos
-            // 
-            txtListaMedicamentos.Enabled = false;
-            txtListaMedicamentos.Location = new System.Drawing.Point(303, 48);
-            txtListaMedicamentos.Multiline = true;
-            txtListaMedicamentos.Name = "txtListaMedicamentos";
-            txtListaMedicamentos.Size = new System.Drawing.Size(242, 74);
-            txtListaMedicamentos.TabIndex = 52;
-            // 
-            // lblMedicamentos
-            // 
-            lblMedicamentos.AutoSize = true;
-            lblMedicamentos.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblMedicamentos.Location = new System.Drawing.Point(303, 30);
-            lblMedicamentos.Name = "lblMedicamentos";
-            lblMedicamentos.Size = new System.Drawing.Size(88, 14);
-            lblMedicamentos.TabIndex = 51;
-            lblMedicamentos.Text = "Medicamentos";
-            // 
             // txtObservaciones
             // 
-            txtObservaciones.Enabled = false;
-            txtObservaciones.Location = new System.Drawing.Point(590, 156);
+            txtObservaciones.Location = new System.Drawing.Point(591, 225);
             txtObservaciones.Multiline = true;
             txtObservaciones.Name = "txtObservaciones";
             txtObservaciones.Size = new System.Drawing.Size(242, 74);
@@ -171,7 +144,7 @@
             // 
             lblObservaciones.AutoSize = true;
             lblObservaciones.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblObservaciones.Location = new System.Drawing.Point(590, 138);
+            lblObservaciones.Location = new System.Drawing.Point(591, 207);
             lblObservaciones.Name = "lblObservaciones";
             lblObservaciones.Size = new System.Drawing.Size(87, 14);
             lblObservaciones.TabIndex = 55;
@@ -179,8 +152,7 @@
             // 
             // txtResultadoPruebas
             // 
-            txtResultadoPruebas.Enabled = false;
-            txtResultadoPruebas.Location = new System.Drawing.Point(590, 48);
+            txtResultadoPruebas.Location = new System.Drawing.Point(304, 117);
             txtResultadoPruebas.Multiline = true;
             txtResultadoPruebas.Name = "txtResultadoPruebas";
             txtResultadoPruebas.Size = new System.Drawing.Size(242, 74);
@@ -190,7 +162,7 @@
             // 
             lblResultadoPruebas.AutoSize = true;
             lblResultadoPruebas.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblResultadoPruebas.Location = new System.Drawing.Point(590, 30);
+            lblResultadoPruebas.Location = new System.Drawing.Point(304, 99);
             lblResultadoPruebas.Name = "lblResultadoPruebas";
             lblResultadoPruebas.Size = new System.Drawing.Size(146, 14);
             lblResultadoPruebas.TabIndex = 53;
@@ -198,8 +170,7 @@
             // 
             // txtDiagnostico
             // 
-            txtDiagnostico.Enabled = false;
-            txtDiagnostico.Location = new System.Drawing.Point(303, 158);
+            txtDiagnostico.Location = new System.Drawing.Point(304, 227);
             txtDiagnostico.Multiline = true;
             txtDiagnostico.Name = "txtDiagnostico";
             txtDiagnostico.Size = new System.Drawing.Size(242, 74);
@@ -209,14 +180,22 @@
             // 
             lblDiagnostico.AutoSize = true;
             lblDiagnostico.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblDiagnostico.Location = new System.Drawing.Point(303, 140);
+            lblDiagnostico.Location = new System.Drawing.Point(304, 209);
             lblDiagnostico.Name = "lblDiagnostico";
-            lblDiagnostico.Size = new System.Drawing.Size(71, 14);
+            lblDiagnostico.Size = new System.Drawing.Size(77, 14);
             lblDiagnostico.TabIndex = 57;
-            lblDiagnostico.Text = "Diagnóstico";
+            lblDiagnostico.Text = "*Diagnóstico";
             // 
             // groupHistorial
             // 
+            groupHistorial.Controls.Add(txtListaMedicamentos);
+            groupHistorial.Controls.Add(btnReceta);
+            groupHistorial.Controls.Add(label1);
+            groupHistorial.Controls.Add(txtFechaRegistro);
+            groupHistorial.Controls.Add(txtIdPaciente);
+            groupHistorial.Controls.Add(lblPacienteId);
+            groupHistorial.Controls.Add(txtNombrePaciente);
+            groupHistorial.Controls.Add(lblPaciente);
             groupHistorial.Controls.Add(txtDiagnostico);
             groupHistorial.Controls.Add(lblHistorialId);
             groupHistorial.Controls.Add(lblDiagnostico);
@@ -226,17 +205,79 @@
             groupHistorial.Controls.Add(lblObservaciones);
             groupHistorial.Controls.Add(txtHistorialID);
             groupHistorial.Controls.Add(txtResultadoPruebas);
-            groupHistorial.Controls.Add(textBox1);
             groupHistorial.Controls.Add(lblResultadoPruebas);
             groupHistorial.Controls.Add(lblFechaRegistro);
-            groupHistorial.Controls.Add(txtListaMedicamentos);
-            groupHistorial.Controls.Add(lblMedicamentos);
             groupHistorial.Location = new System.Drawing.Point(12, 12);
             groupHistorial.Name = "groupHistorial";
-            groupHistorial.Size = new System.Drawing.Size(850, 259);
+            groupHistorial.Size = new System.Drawing.Size(850, 359);
             groupHistorial.TabIndex = 59;
             groupHistorial.TabStop = false;
             groupHistorial.Text = "Datos del Historial";
+            // 
+            // btnReceta
+            // 
+            btnReceta.Image = (System.Drawing.Image)resources.GetObject("btnReceta.Image");
+            btnReceta.Location = new System.Drawing.Point(591, 50);
+            btnReceta.Name = "btnReceta";
+            btnReceta.Size = new System.Drawing.Size(241, 101);
+            btnReceta.TabIndex = 69;
+            btnReceta.Text = "CREAR RECETA";
+            btnReceta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            btnReceta.UseVisualStyleBackColor = true;
+            btnReceta.Click += btnReceta_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(18, 341);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(115, 15);
+            label1.TabIndex = 66;
+            label1.Text = "*Campos requeridos";
+            // 
+            // txtFechaRegistro
+            // 
+            txtFechaRegistro.Enabled = false;
+            txtFechaRegistro.Location = new System.Drawing.Point(18, 169);
+            txtFechaRegistro.Name = "txtFechaRegistro";
+            txtFechaRegistro.Size = new System.Drawing.Size(242, 23);
+            txtFechaRegistro.TabIndex = 64;
+            // 
+            // txtIdPaciente
+            // 
+            txtIdPaciente.Enabled = false;
+            txtIdPaciente.Location = new System.Drawing.Point(304, 50);
+            txtIdPaciente.Name = "txtIdPaciente";
+            txtIdPaciente.Size = new System.Drawing.Size(242, 23);
+            txtIdPaciente.TabIndex = 63;
+            // 
+            // lblPacienteId
+            // 
+            lblPacienteId.AutoSize = true;
+            lblPacienteId.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblPacienteId.Location = new System.Drawing.Point(304, 33);
+            lblPacienteId.Name = "lblPacienteId";
+            lblPacienteId.Size = new System.Drawing.Size(87, 14);
+            lblPacienteId.TabIndex = 62;
+            lblPacienteId.Text = "ID de paciente";
+            // 
+            // txtNombrePaciente
+            // 
+            txtNombrePaciente.Enabled = false;
+            txtNombrePaciente.Location = new System.Drawing.Point(18, 50);
+            txtNombrePaciente.Name = "txtNombrePaciente";
+            txtNombrePaciente.Size = new System.Drawing.Size(242, 23);
+            txtNombrePaciente.TabIndex = 61;
+            // 
+            // lblPaciente
+            // 
+            lblPaciente.AutoSize = true;
+            lblPaciente.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblPaciente.Location = new System.Drawing.Point(18, 33);
+            lblPaciente.Name = "lblPaciente";
+            lblPaciente.Size = new System.Drawing.Size(54, 14);
+            lblPaciente.TabIndex = 60;
+            lblPaciente.Text = "Paciente";
             // 
             // dgrHistorial
             // 
@@ -246,14 +287,15 @@
             dgrHistorial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { historial_id, fecha_registro, antecedentes, medicamentos, diagnosticos, laboratorio, observaciones });
             dgrHistorial.Location = new System.Drawing.Point(17, 22);
             dgrHistorial.Name = "dgrHistorial";
+            dgrHistorial.RowHeadersVisible = false;
             dgrHistorial.RowTemplate.Height = 25;
-            dgrHistorial.Size = new System.Drawing.Size(815, 352);
+            dgrHistorial.Size = new System.Drawing.Size(815, 269);
             dgrHistorial.TabIndex = 60;
             // 
             // historial_id
             // 
             historial_id.DataPropertyName = "HistorialId";
-            historial_id.HeaderText = "HISTORIAL_ID";
+            historial_id.HeaderText = "ID_HISTORIAL";
             historial_id.Name = "historial_id";
             // 
             // fecha_registro
@@ -295,69 +337,51 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(dgrHistorial);
-            groupBox1.Location = new System.Drawing.Point(12, 277);
+            groupBox1.Location = new System.Drawing.Point(12, 390);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new System.Drawing.Size(850, 396);
+            groupBox1.Size = new System.Drawing.Size(850, 308);
             groupBox1.TabIndex = 61;
             groupBox1.TabStop = false;
             groupBox1.Text = "Listar el Historial";
             // 
             // btnGuardar
             // 
-            btnGuardar.Enabled = false;
-            btnGuardar.Location = new System.Drawing.Point(742, 689);
+            btnGuardar.Location = new System.Drawing.Point(742, 704);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new System.Drawing.Size(120, 61);
             btnGuardar.TabIndex = 67;
             btnGuardar.Text = "GUARDAR";
             btnGuardar.UseVisualStyleBackColor = true;
-            // 
-            // btnBuscarEspecial
-            // 
-            btnBuscarEspecial.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnBuscarEspecial.Location = new System.Drawing.Point(236, 689);
-            btnBuscarEspecial.Name = "btnBuscarEspecial";
-            btnBuscarEspecial.Size = new System.Drawing.Size(120, 61);
-            btnBuscarEspecial.TabIndex = 66;
-            btnBuscarEspecial.Text = "BUSCAR";
-            btnBuscarEspecial.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnSalir
             // 
             btnSalir.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnSalir.Location = new System.Drawing.Point(12, 689);
+            btnSalir.Location = new System.Drawing.Point(12, 704);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new System.Drawing.Size(159, 61);
             btnSalir.TabIndex = 65;
             btnSalir.Text = "SALIR";
             btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
             // 
-            // btnEditarEspecialidad
+            // btnEditarHistorial
             // 
-            btnEditarEspecialidad.Location = new System.Drawing.Point(488, 689);
-            btnEditarEspecialidad.Name = "btnEditarEspecialidad";
-            btnEditarEspecialidad.Size = new System.Drawing.Size(120, 61);
-            btnEditarEspecialidad.TabIndex = 64;
-            btnEditarEspecialidad.Text = "EDITAR";
-            btnEditarEspecialidad.UseVisualStyleBackColor = true;
+            btnEditarHistorial.Location = new System.Drawing.Point(616, 704);
+            btnEditarHistorial.Name = "btnEditarHistorial";
+            btnEditarHistorial.Size = new System.Drawing.Size(120, 61);
+            btnEditarHistorial.TabIndex = 64;
+            btnEditarHistorial.Text = "EDITAR";
+            btnEditarHistorial.UseVisualStyleBackColor = true;
+            btnEditarHistorial.Click += btnEditarHistorial_Click;
             // 
-            // btnEliminarEspecialidad
+            // txtListaMedicamentos
             // 
-            btnEliminarEspecialidad.Location = new System.Drawing.Point(362, 689);
-            btnEliminarEspecialidad.Name = "btnEliminarEspecialidad";
-            btnEliminarEspecialidad.Size = new System.Drawing.Size(120, 61);
-            btnEliminarEspecialidad.TabIndex = 63;
-            btnEliminarEspecialidad.Text = "ELIMINAR";
-            btnEliminarEspecialidad.UseVisualStyleBackColor = true;
-            // 
-            // btnNuevo
-            // 
-            btnNuevo.Location = new System.Drawing.Point(616, 689);
-            btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new System.Drawing.Size(120, 61);
-            btnNuevo.TabIndex = 62;
-            btnNuevo.Text = "NUEVO";
-            btnNuevo.UseVisualStyleBackColor = true;
+            txtListaMedicamentos.Location = new System.Drawing.Point(322, 307);
+            txtListaMedicamentos.Multiline = true;
+            txtListaMedicamentos.Name = "txtListaMedicamentos";
+            txtListaMedicamentos.Size = new System.Drawing.Size(242, 69);
+            txtListaMedicamentos.TabIndex = 71;
             // 
             // Frm_Historial
             // 
@@ -366,17 +390,18 @@
             BackColor = System.Drawing.SystemColors.ActiveCaption;
             ClientSize = new System.Drawing.Size(876, 777);
             Controls.Add(btnGuardar);
-            Controls.Add(btnBuscarEspecial);
             Controls.Add(btnSalir);
-            Controls.Add(btnEditarEspecialidad);
-            Controls.Add(btnEliminarEspecialidad);
-            Controls.Add(btnNuevo);
+            Controls.Add(btnEditarHistorial);
             Controls.Add(txtIdEspecialidad);
             Controls.Add(lblIdEspecialidad);
             Controls.Add(groupHistorial);
             Controls.Add(groupBox1);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "Frm_Historial";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Historial Médico";
             Load += Frm_Historial_Load;
             groupHistorial.ResumeLayout(false);
@@ -396,9 +421,6 @@
         private System.Windows.Forms.TextBox txtHistorialID;
         private System.Windows.Forms.Label lblHistorialId;
         private System.Windows.Forms.Label lblFechaRegistro;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox txtListaMedicamentos;
-        private System.Windows.Forms.Label lblMedicamentos;
         private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Label lblObservaciones;
         private System.Windows.Forms.TextBox txtResultadoPruebas;
@@ -409,11 +431,8 @@
         private System.Windows.Forms.DataGridView dgrHistorial;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnBuscarEspecial;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnEditarEspecialidad;
-        private System.Windows.Forms.Button btnEliminarEspecialidad;
-        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnEditarHistorial;
         private System.Windows.Forms.DataGridViewTextBoxColumn historial_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_registro;
         private System.Windows.Forms.DataGridViewTextBoxColumn antecedentes;
@@ -421,5 +440,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn diagnosticos;
         private System.Windows.Forms.DataGridViewTextBoxColumn laboratorio;
         private System.Windows.Forms.DataGridViewTextBoxColumn observaciones;
+        private System.Windows.Forms.Label lblPaciente;
+        private System.Windows.Forms.TextBox txtNombrePaciente;
+        private System.Windows.Forms.TextBox txtIdPaciente;
+        private System.Windows.Forms.Label lblPacienteId;
+        private System.Windows.Forms.TextBox txtFechaRegistro;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnReceta;
+        private System.Windows.Forms.TextBox txtListaMedicamentos;
     }
 }

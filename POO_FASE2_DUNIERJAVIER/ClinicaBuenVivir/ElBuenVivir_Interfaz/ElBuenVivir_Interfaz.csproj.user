@@ -28,5 +28,8 @@
     <Compile Update="Frm_Recetas.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="RoleUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

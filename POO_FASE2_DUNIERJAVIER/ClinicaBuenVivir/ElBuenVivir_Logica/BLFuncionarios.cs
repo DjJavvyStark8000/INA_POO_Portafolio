@@ -38,7 +38,24 @@ namespace ElBuenVivir_Logica
             return funcionario;
         }
 
-        // ****llamar lista especialidades para comboBox
+        // llamar medicos unicamente
+        public List<EntidadFuncionario> llamarListarMedicos(string condicion = "")
+        {
+            List<EntidadFuncionario> unMedico;
+            DAFuncionarios accesarMedico = new DAFuncionarios(_cadenaConexion);
+            try
+            {
+                unMedico = accesarMedico.ListarMedicos(condicion);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return unMedico;
+        }
+
+        //*************************************************************************
+        // ****llamar lista especialidades para comboBox***************************
         public List<EntidadEspecialidad> llamarListarEspecialidades(string condicion = "")
         {
             List<EntidadEspecialidad> especialidades;
@@ -70,6 +87,36 @@ namespace ElBuenVivir_Logica
             return id_especial;
         }// fin de la clase insertar
 
+        // (3) metodo para llamar al metodo editar el FUNCIONARIOS
+        public int LlamarEditarFuncinario(EntidadFuncionario funcinario)
+        {
+            int filasAfectadas = 0;
+            DAFuncionarios unFuncionario = new DAFuncionarios(_cadenaConexion);
+            try
+            {
+                filasAfectadas = unFuncionario.EditarFuncionario(funcinario);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return filasAfectadas;
+        }
 
+        // (4) metodo para llamar al metodo eliminar funcionarios
+        public int LlamarEliminarFuncionario(int funcionario)
+        {
+            int id_funcionario = 0;
+            DAFuncionarios unFuncionario = new DAFuncionarios(_cadenaConexion);
+            try
+            {
+                id_funcionario = unFuncionario.EliminarFuncionario(funcionario); 
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return id_funcionario;
+        }
     }
 }

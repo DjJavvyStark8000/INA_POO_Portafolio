@@ -88,12 +88,6 @@ namespace ElBuenVivir_Logica
             return id_especial;
         }
 
-        //LLAMAR VERIFICACION DE EXISTENCIA
-        public bool LlamarEspecialidadExiste(EntidadEspecialidad especialidad)
-        {
-            // Llamar a la capa de acceso a datos
-            DAEspecialidad accesoDatos = new DAEspecialidad(_cadenaConexion);
-            return accesoDatos.EspecialidadExiste(especialidad);
-        }
+       
     }
 }

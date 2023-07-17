@@ -38,27 +38,31 @@
             button2 = new System.Windows.Forms.Button();
             button1 = new System.Windows.Forms.Button();
             panel3 = new System.Windows.Forms.Panel();
-            dgrVerPaciente = new System.Windows.Forms.DataGridView();
-            clmIdpaciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clmNombrepaciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clmApellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clmFechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clmTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clmAsegurado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            dgrVerPacientes = new System.Windows.Forms.DataGridView();
+            clmcedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            clmnombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            clmapellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            clmtelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            clmemergencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            label1 = new System.Windows.Forms.Label();
             panel4 = new System.Windows.Forms.Panel();
-            button8 = new System.Windows.Forms.Button();
+            btnBuscarId = new System.Windows.Forms.Button();
+            lblIngresoId = new System.Windows.Forms.Label();
+            txtPacienteID = new System.Windows.Forms.TextBox();
             button11 = new System.Windows.Forms.Button();
-            button12 = new System.Windows.Forms.Button();
             button14 = new System.Windows.Forms.Button();
             btnAgregarPaciente = new System.Windows.Forms.Button();
             panel2 = new System.Windows.Forms.Panel();
+            btnGuardarRegistro = new System.Windows.Forms.Button();
             btnHistorial = new System.Windows.Forms.Button();
             btnRecetas = new System.Windows.Forms.Button();
             btnAgendarCita = new System.Windows.Forms.Button();
-            button3 = new System.Windows.Forms.Button();
+            btnBuscarPaciente = new System.Windows.Forms.Button();
+            btnRegistrarPaciente = new System.Windows.Forms.Button();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgrVerPaciente).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgrVerPacientes).BeginInit();
+            panel4.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -75,7 +79,6 @@
             panel1.Name = "panel1";
             panel1.Size = new System.Drawing.Size(117, 767);
             panel1.TabIndex = 2;
-            panel1.Paint += panel1_Paint;
             // 
             // btn_Horarios
             // 
@@ -172,81 +175,110 @@
             // panel3
             // 
             panel3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            panel3.Controls.Add(dgrVerPaciente);
+            panel3.Controls.Add(dgrVerPacientes);
+            panel3.Controls.Add(label1);
             panel3.Location = new System.Drawing.Point(135, 168);
             panel3.Name = "panel3";
             panel3.Size = new System.Drawing.Size(1048, 422);
             panel3.TabIndex = 4;
-            panel3.Paint += panel3_Paint;
             // 
-            // dgrVerPaciente
+            // dgrVerPacientes
             // 
-            dgrVerPaciente.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dgrVerPaciente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgrVerPaciente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { clmIdpaciente, clmNombrepaciente, clmApellidos, clmFechaNacimiento, clmTelefono, clmAsegurado });
-            dgrVerPaciente.Location = new System.Drawing.Point(13, 17);
-            dgrVerPaciente.Name = "dgrVerPaciente";
-            dgrVerPaciente.RowTemplate.Height = 25;
-            dgrVerPaciente.Size = new System.Drawing.Size(1013, 389);
-            dgrVerPaciente.TabIndex = 0;
+            dgrVerPacientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dgrVerPacientes.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            dgrVerPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgrVerPacientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { clmcedula, clmnombre, clmapellidos, clmtelefono, clmemergencia });
+            dgrVerPacientes.Location = new System.Drawing.Point(13, 30);
+            dgrVerPacientes.Name = "dgrVerPacientes";
+            dgrVerPacientes.RowHeadersVisible = false;
+            dgrVerPacientes.RowTemplate.Height = 25;
+            dgrVerPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dgrVerPacientes.Size = new System.Drawing.Size(1022, 374);
+            dgrVerPacientes.TabIndex = 2;
+            dgrVerPacientes.Click += dgrVerPacientes_Click;
             // 
-            // clmIdpaciente
+            // clmcedula
             // 
-            clmIdpaciente.DataPropertyName = "PACIENTES_ID";
-            clmIdpaciente.HeaderText = "ID";
-            clmIdpaciente.Name = "clmIdpaciente";
+            clmcedula.DataPropertyName = "Identificacion";
+            clmcedula.HeaderText = "IDENTIFICACIÓN";
+            clmcedula.Name = "clmcedula";
             // 
-            // clmNombrepaciente
+            // clmnombre
             // 
-            clmNombrepaciente.DataPropertyName = "NOMBRE_PACIENTE";
-            clmNombrepaciente.HeaderText = "NOMBRE";
-            clmNombrepaciente.Name = "clmNombrepaciente";
+            clmnombre.DataPropertyName = "Nombre";
+            clmnombre.HeaderText = "NOMBRE";
+            clmnombre.Name = "clmnombre";
             // 
-            // clmApellidos
+            // clmapellidos
             // 
-            clmApellidos.DataPropertyName = "APELLIDOS";
-            clmApellidos.HeaderText = "APELLIDOS";
-            clmApellidos.Name = "clmApellidos";
-            clmApellidos.Width = 300;
+            clmapellidos.DataPropertyName = "Apellidos";
+            clmapellidos.HeaderText = "APELLIDOS";
+            clmapellidos.Name = "clmapellidos";
             // 
-            // clmFechaNacimiento
+            // clmtelefono
             // 
-            clmFechaNacimiento.DataPropertyName = "FECHA_NACIMIENTO";
-            clmFechaNacimiento.HeaderText = "NACIMIENTO";
-            clmFechaNacimiento.Name = "clmFechaNacimiento";
+            clmtelefono.DataPropertyName = "Telefono";
+            clmtelefono.HeaderText = "TELÉFONO";
+            clmtelefono.Name = "clmtelefono";
             // 
-            // clmTelefono
+            // clmemergencia
             // 
-            clmTelefono.DataPropertyName = "TELEFONO";
-            clmTelefono.HeaderText = "TELÉFONO";
-            clmTelefono.Name = "clmTelefono";
+            clmemergencia.DataPropertyName = "NumeroEmergencia";
+            clmemergencia.HeaderText = "EMERGENCIA";
+            clmemergencia.Name = "clmemergencia";
             // 
-            // clmAsegurado
+            // label1
             // 
-            clmAsegurado.DataPropertyName = "ASEGURADO";
-            clmAsegurado.HeaderText = "ASEGURADO";
-            clmAsegurado.Name = "clmAsegurado";
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(13, 12);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(175, 15);
+            label1.TabIndex = 1;
+            label1.Text = "Información Básica del Paciente";
             // 
             // panel4
             // 
             panel4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            panel4.Controls.Add(btnBuscarId);
+            panel4.Controls.Add(lblIngresoId);
+            panel4.Controls.Add(txtPacienteID);
             panel4.Location = new System.Drawing.Point(825, 15);
             panel4.Name = "panel4";
             panel4.Size = new System.Drawing.Size(358, 345);
             panel4.TabIndex = 5;
             // 
-            // button8
+            // btnBuscarId
             // 
-            button8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            button8.Enabled = false;
-            button8.Image = (System.Drawing.Image)resources.GetObject("button8.Image");
-            button8.Location = new System.Drawing.Point(365, 13);
-            button8.Name = "button8";
-            button8.Size = new System.Drawing.Size(224, 148);
-            button8.TabIndex = 8;
-            button8.Text = "REGISTRAR PACIENTE";
-            button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            button8.UseVisualStyleBackColor = false;
+            btnBuscarId.Location = new System.Drawing.Point(113, 92);
+            btnBuscarId.Name = "btnBuscarId";
+            btnBuscarId.Size = new System.Drawing.Size(129, 40);
+            btnBuscarId.TabIndex = 2;
+            btnBuscarId.Text = "BUSCAR";
+            btnBuscarId.UseVisualStyleBackColor = true;
+            btnBuscarId.Visible = false;
+            btnBuscarId.Click += btnBuscarId_Click;
+            // 
+            // lblIngresoId
+            // 
+            lblIngresoId.AutoSize = true;
+            lblIngresoId.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblIngresoId.Location = new System.Drawing.Point(59, 29);
+            lblIngresoId.Name = "lblIngresoId";
+            lblIngresoId.Size = new System.Drawing.Size(243, 20);
+            lblIngresoId.TabIndex = 1;
+            lblIngresoId.Text = "Ingrese el número de identificación";
+            lblIngresoId.Visible = false;
+            // 
+            // txtPacienteID
+            // 
+            txtPacienteID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtPacienteID.Location = new System.Drawing.Point(22, 53);
+            txtPacienteID.Name = "txtPacienteID";
+            txtPacienteID.Size = new System.Drawing.Size(314, 33);
+            txtPacienteID.TabIndex = 0;
+            txtPacienteID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtPacienteID.Visible = false;
+            txtPacienteID.TextChanged += txtIngresarId_TextChanged;
             // 
             // button11
             // 
@@ -260,25 +292,12 @@
             button11.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             button11.UseVisualStyleBackColor = false;
             // 
-            // button12
-            // 
-            button12.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            button12.Enabled = false;
-            button12.Image = (System.Drawing.Image)resources.GetObject("button12.Image");
-            button12.Location = new System.Drawing.Point(173, 16);
-            button12.Name = "button12";
-            button12.Size = new System.Drawing.Size(146, 147);
-            button12.TabIndex = 2;
-            button12.Text = "SISTEMA";
-            button12.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            button12.UseVisualStyleBackColor = false;
-            // 
             // button14
             // 
             button14.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             button14.Enabled = false;
             button14.Image = (System.Drawing.Image)resources.GetObject("button14.Image");
-            button14.Location = new System.Drawing.Point(325, 16);
+            button14.Location = new System.Drawing.Point(173, 17);
             button14.Name = "button14";
             button14.Size = new System.Drawing.Size(146, 147);
             button14.TabIndex = 3;
@@ -302,23 +321,35 @@
             // panel2
             // 
             panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            panel2.Controls.Add(btnGuardarRegistro);
             panel2.Controls.Add(btnHistorial);
             panel2.Controls.Add(btnRecetas);
             panel2.Controls.Add(btnAgregarPaciente);
             panel2.Controls.Add(button14);
-            panel2.Controls.Add(button12);
             panel2.Controls.Add(button11);
             panel2.Location = new System.Drawing.Point(135, 596);
             panel2.Name = "panel2";
             panel2.Size = new System.Drawing.Size(1048, 183);
             panel2.TabIndex = 3;
             // 
+            // btnGuardarRegistro
+            // 
+            btnGuardarRegistro.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            btnGuardarRegistro.Image = (System.Drawing.Image)resources.GetObject("btnGuardarRegistro.Image");
+            btnGuardarRegistro.Location = new System.Drawing.Point(629, 17);
+            btnGuardarRegistro.Name = "btnGuardarRegistro";
+            btnGuardarRegistro.Size = new System.Drawing.Size(146, 147);
+            btnGuardarRegistro.TabIndex = 7;
+            btnGuardarRegistro.Text = "GUARDAR";
+            btnGuardarRegistro.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            btnGuardarRegistro.UseVisualStyleBackColor = false;
+            btnGuardarRegistro.Click += btnGuardarRegistro_Click;
+            // 
             // btnHistorial
             // 
             btnHistorial.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            btnHistorial.Enabled = false;
             btnHistorial.Image = (System.Drawing.Image)resources.GetObject("btnHistorial.Image");
-            btnHistorial.Location = new System.Drawing.Point(477, 16);
+            btnHistorial.Location = new System.Drawing.Point(325, 17);
             btnHistorial.Name = "btnHistorial";
             btnHistorial.Size = new System.Drawing.Size(146, 147);
             btnHistorial.TabIndex = 6;
@@ -331,7 +362,7 @@
             // 
             btnRecetas.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             btnRecetas.Image = (System.Drawing.Image)resources.GetObject("btnRecetas.Image");
-            btnRecetas.Location = new System.Drawing.Point(629, 16);
+            btnRecetas.Location = new System.Drawing.Point(477, 17);
             btnRecetas.Name = "btnRecetas";
             btnRecetas.Size = new System.Drawing.Size(146, 147);
             btnRecetas.TabIndex = 5;
@@ -343,6 +374,7 @@
             // btnAgendarCita
             // 
             btnAgendarCita.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            btnAgendarCita.Enabled = false;
             btnAgendarCita.Image = (System.Drawing.Image)resources.GetObject("btnAgendarCita.Image");
             btnAgendarCita.Location = new System.Drawing.Point(135, 13);
             btnAgendarCita.Name = "btnAgendarCita";
@@ -353,18 +385,32 @@
             btnAgendarCita.UseVisualStyleBackColor = false;
             btnAgendarCita.Click += btnAgendarCita_Click;
             // 
-            // button3
+            // btnBuscarPaciente
             // 
-            button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            button3.Enabled = false;
-            button3.Image = (System.Drawing.Image)resources.GetObject("button3.Image");
-            button3.Location = new System.Drawing.Point(595, 12);
-            button3.Name = "button3";
-            button3.Size = new System.Drawing.Size(224, 148);
-            button3.TabIndex = 10;
-            button3.Text = "BUSCAR PACIENTE";
-            button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            button3.UseVisualStyleBackColor = false;
+            btnBuscarPaciente.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            btnBuscarPaciente.Image = (System.Drawing.Image)resources.GetObject("btnBuscarPaciente.Image");
+            btnBuscarPaciente.Location = new System.Drawing.Point(595, 13);
+            btnBuscarPaciente.Name = "btnBuscarPaciente";
+            btnBuscarPaciente.Size = new System.Drawing.Size(224, 148);
+            btnBuscarPaciente.TabIndex = 11;
+            btnBuscarPaciente.Text = "BUSCAR PACIENTE";
+            btnBuscarPaciente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            btnBuscarPaciente.UseVisualStyleBackColor = false;
+            btnBuscarPaciente.Click += btnBuscarPaciente_Click;
+            // 
+            // btnRegistrarPaciente
+            // 
+            btnRegistrarPaciente.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            btnRegistrarPaciente.Enabled = false;
+            btnRegistrarPaciente.Image = (System.Drawing.Image)resources.GetObject("btnRegistrarPaciente.Image");
+            btnRegistrarPaciente.Location = new System.Drawing.Point(365, 13);
+            btnRegistrarPaciente.Name = "btnRegistrarPaciente";
+            btnRegistrarPaciente.Size = new System.Drawing.Size(224, 148);
+            btnRegistrarPaciente.TabIndex = 9;
+            btnRegistrarPaciente.Text = "REGISTRAR PACIENTE";
+            btnRegistrarPaciente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            btnRegistrarPaciente.UseVisualStyleBackColor = false;
+            btnRegistrarPaciente.Click += btnRegistrarPaciente_Click;
             // 
             // Frm_Plataforma
             // 
@@ -373,21 +419,28 @@
             AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             BackColor = System.Drawing.SystemColors.ActiveCaption;
             ClientSize = new System.Drawing.Size(1195, 821);
-            Controls.Add(button3);
+            Controls.Add(btnRegistrarPaciente);
+            Controls.Add(btnBuscarPaciente);
             Controls.Add(btnAgendarCita);
-            Controls.Add(button8);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(panel4);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            IsMdiContainer = true;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "Frm_Plataforma";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "Clínica El Buen Vivir";
+            Text = "Clínica El Buen Vivir | Plataforma";
             Load += Frm_Principal_Load;
             panel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgrVerPaciente).EndInit();
+            panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgrVerPacientes).EndInit();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -400,26 +453,29 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button btnAgregarPaciente;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnAgendarCita;
         private System.Windows.Forms.Button btnFuncionario;
-        private System.Windows.Forms.DataGridView dgrVerPaciente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmIdpaciente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmNombrepaciente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmApellidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmFechaNacimiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmTelefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmAsegurado;
         private System.Windows.Forms.Button btnEspecialidades;
         private System.Windows.Forms.Button btnInventario;
         private System.Windows.Forms.Button btnRecetas;
         private System.Windows.Forms.Button btn_Horarios;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnHistorial;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnBuscarPaciente;
+        private System.Windows.Forms.DataGridView dgrVerPacientes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmcedula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmapellidos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmtelefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmemergencia;
+        private System.Windows.Forms.Label lblIngresoId;
+        private System.Windows.Forms.TextBox txtPacienteID;
+        private System.Windows.Forms.Button btnBuscarId;
+        private System.Windows.Forms.Button btnRegistrarPaciente;
+        private System.Windows.Forms.Button btnGuardarRegistro;
     }
 }

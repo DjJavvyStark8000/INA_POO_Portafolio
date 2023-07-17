@@ -28,7 +28,7 @@ namespace ElBuenVivir_AccesoDatos
             SqlConnection conexion = new SqlConnection(_cadenaConexion);
             SqlDataAdapter adapter;
 
-            string instruccionDB = "SELECT PACIENTES_ID, NOMBRE_PACIENTE, APELLIDOS, FECHA_NACIMIENTO, TELEFONO, ASEGURADO FROM PACIENTES";
+            string instruccionDB = "SELECT PACIENTE_ID, NOMBRE_PACIENTE, APELLIDOS, FECHA_NACIMIENTO, TELEFONO, ASEGURADO FROM PACIENTES";
 
             if (!string.IsNullOrEmpty(condicion))
             {

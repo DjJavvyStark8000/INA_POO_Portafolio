@@ -54,12 +54,12 @@
             clmDisponibilidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             clmObservaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             lblVerEspecialidad = new System.Windows.Forms.Label();
-            btnNuevo = new System.Windows.Forms.Button();
+            btnNuevaEspecialidad = new System.Windows.Forms.Button();
             btnEliminarEspecialidad = new System.Windows.Forms.Button();
             btnEditarEspecialidad = new System.Windows.Forms.Button();
             btnSalir = new System.Windows.Forms.Button();
             btnBuscarEspecial = new System.Windows.Forms.Button();
-            btnGuardar = new System.Windows.Forms.Button();
+            btnGuardarEspecialidad = new System.Windows.Forms.Button();
             groupEspecialidades.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgrEspecialidades).BeginInit();
             SuspendLayout();
@@ -303,15 +303,15 @@
             lblVerEspecialidad.TabIndex = 8;
             lblVerEspecialidad.Text = "Lista de especialidades";
             // 
-            // btnNuevo
+            // btnNuevaEspecialidad
             // 
-            btnNuevo.Location = new System.Drawing.Point(910, 615);
-            btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new System.Drawing.Size(120, 61);
-            btnNuevo.TabIndex = 20;
-            btnNuevo.Text = "NUEVO";
-            btnNuevo.UseVisualStyleBackColor = true;
-            btnNuevo.Click += btnNuevo_Click;
+            btnNuevaEspecialidad.Location = new System.Drawing.Point(910, 615);
+            btnNuevaEspecialidad.Name = "btnNuevaEspecialidad";
+            btnNuevaEspecialidad.Size = new System.Drawing.Size(120, 61);
+            btnNuevaEspecialidad.TabIndex = 20;
+            btnNuevaEspecialidad.Text = "NUEVO";
+            btnNuevaEspecialidad.UseVisualStyleBackColor = true;
+            btnNuevaEspecialidad.Click += btnNuevo_Click;
             // 
             // btnEliminarEspecialidad
             // 
@@ -355,16 +355,16 @@
             btnBuscarEspecial.UseVisualStyleBackColor = true;
             btnBuscarEspecial.Click += btnBuscarEspecial_Click;
             // 
-            // btnGuardar
+            // btnGuardarEspecialidad
             // 
-            btnGuardar.Enabled = false;
-            btnGuardar.Location = new System.Drawing.Point(1036, 615);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new System.Drawing.Size(120, 61);
-            btnGuardar.TabIndex = 27;
-            btnGuardar.Text = "GUARDAR";
-            btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Click += btnGuardar_Click;
+            btnGuardarEspecialidad.Enabled = false;
+            btnGuardarEspecialidad.Location = new System.Drawing.Point(1036, 615);
+            btnGuardarEspecialidad.Name = "btnGuardarEspecialidad";
+            btnGuardarEspecialidad.Size = new System.Drawing.Size(120, 61);
+            btnGuardarEspecialidad.TabIndex = 27;
+            btnGuardarEspecialidad.Text = "GUARDAR";
+            btnGuardarEspecialidad.UseVisualStyleBackColor = true;
+            btnGuardarEspecialidad.Click += btnGuardar_Click;
             // 
             // Frm_Especialidad
             // 
@@ -372,12 +372,12 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.SystemColors.ActiveCaption;
             ClientSize = new System.Drawing.Size(1180, 688);
-            Controls.Add(btnGuardar);
+            Controls.Add(btnGuardarEspecialidad);
             Controls.Add(btnBuscarEspecial);
             Controls.Add(btnSalir);
             Controls.Add(btnEditarEspecialidad);
             Controls.Add(btnEliminarEspecialidad);
-            Controls.Add(btnNuevo);
+            Controls.Add(btnNuevaEspecialidad);
             Controls.Add(groupEspecialidades);
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
@@ -397,7 +397,7 @@
         private System.Windows.Forms.Label lblNombreEspecialidad;
         private System.Windows.Forms.GroupBox groupEspecialidades;
         private System.Windows.Forms.Label lblVerEspecialidad;
-        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnNuevaEspecialidad;
         private System.Windows.Forms.DataGridView dgrEspecialidades;
         private System.Windows.Forms.Button btnEliminarEspecialidad;
         private System.Windows.Forms.Button btnEditarEspecialidad;
@@ -422,7 +422,7 @@
         private System.Windows.Forms.Button btnBuscarEspecial;
         private System.Windows.Forms.TextBox txtIdEspecialidad;
         private System.Windows.Forms.Label lblIdEspecialidad;
-        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnGuardarEspecialidad;
         private System.Windows.Forms.Label lblRequeridos;
     }
 }

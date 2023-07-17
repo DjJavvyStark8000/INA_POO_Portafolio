@@ -169,29 +169,5 @@ namespace ElBuenVivir_AccesoDatos
             }
         }
 
-        //VERIFICACION DE EXISTENCIA EN LA BASEDEDATOS
-        public bool EspecialidadExiste(EntidadEspecialidad especialidad)
-        {
-            bool existe = false;
-
-            SqlConnection conexion = new SqlConnection(_cadenaConexion);
-            {
-                conexion.Open();
-
-                // Ejecutar una consulta para verificar si el dato existe en la base de datos
-                string query = "SELECT COUNT(*) FROM ESPECIALIDADES WHERE NOMBRE_ESPECIALIDAD = @ESPECIALIDAD";
-                SqlCommand command = new SqlCommand(query, conexion);
-                command.Parameters.AddWithValue("@ESPECIALIDAD", especialidad.Nombre_Especialidad);
-
-                int count = (int)command.ExecuteScalar();
-
-                if (count > 0)
-                {
-                    existe = true;
-                }
-            }
-
-            return existe;
-        }
     }
 }

@@ -6,8 +6,9 @@ namespace ElBuenVivir_Entidades
 {
     public class EntidadHistorial
     {
-        private int historialClinicoId;
-        private DateTime fechaRegistro;
+        private int historialId;
+        private int pacienteId;
+        private string fechaRegistro;
         private string antecedentes;
         private string medicamentos;
         private string diagnosticos;
@@ -15,9 +16,10 @@ namespace ElBuenVivir_Entidades
         private string observaciones;
 
 
-        public EntidadHistorial(int historialClinicoId, DateTime fechaRegistro, string antecedentes, string medicamentos, string diagnosticos, string resultadoPruebas, string observaciones)
+        public EntidadHistorial(int historialClinicoId,int pacienteId, string fechaRegistro, string antecedentes, string medicamentos, string diagnosticos, string resultadoPruebas, string observaciones)
         {
-            this.historialClinicoId = historialClinicoId;
+            this.historialId = historialClinicoId;
+            this.pacienteId = pacienteId;
             this.fechaRegistro = fechaRegistro;
             this.antecedentes = antecedentes;
             this.medicamentos = medicamentos;
@@ -28,16 +30,18 @@ namespace ElBuenVivir_Entidades
 
         public EntidadHistorial()
         {
-            historialClinicoId = 0;
-            fechaRegistro = DateTime.MinValue;
-            antecedentes = null;
-            medicamentos = null;
-            diagnosticos = null;
-            resultadoPruebas = null;
-            observaciones = null;
+            historialId = 0;
+            pacienteId = 0;
+            fechaRegistro = string.Empty;
+            antecedentes = string.Empty;
+            medicamentos = string.Empty;
+            diagnosticos = string.Empty;
+            resultadoPruebas = string.Empty;
+            observaciones = string.Empty;
         }
-        public int HistorialId { get => historialClinicoId; set => historialClinicoId = value; }
-        public DateTime FechaRegistro { get => fechaRegistro; set => fechaRegistro = value; }
+        public int HistorialId { get => historialId; set => historialId = value; }
+        public int PacienteId { get => pacienteId; set => pacienteId = value; }
+        public string FechaRegistro { get => fechaRegistro; set => fechaRegistro = value; }
         public string Antecedentes { get => antecedentes; set => antecedentes = value; }
         public string Medicamentos { get => medicamentos; set => medicamentos = value; }
         public string Diagnosticos { get => diagnosticos; set => diagnosticos = value; }

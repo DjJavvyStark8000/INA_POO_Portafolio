@@ -18,13 +18,50 @@ namespace ElBuenVivir_Interfaz
 {
     public partial class Frm_Especialidad : Form
     {
-        public int global;
+        public int global;//guarda el id de la columna
         private string accion;
 
         public Frm_Especialidad()
         {
             InitializeComponent();
 
+        }
+
+        //**********************************************************LOADING******************************************************************
+
+        //Carga automaticatica la lista
+        private void Frm_Especialidad_Load(object sender, EventArgs e)
+        {
+            Authentication();//Algunas funciones no funcionan depende del usuario
+            // Even handlers para controlar cambios de texto en todas las cajas
+            txtIdEspecialidad.TextChanged += TextBox_TextChanged;
+            txtNombreEspecialidad.TextChanged += TextBox_TextChanged;
+            txtDescripcion.TextChanged += TextBox_TextChanged;
+            txtArea.TextChanged += TextBox_TextChanged;
+            txtCosto.TextChanged += TextBox_TextChanged;
+            txtDisponibilidad.TextChanged += TextBox_TextChanged;
+            txtObservaciones.TextChanged += TextBox_TextChanged;
+            //cargar lista
+            CargarListaEspecialidades();
+        }
+
+        // (0A) Carga la lista datagridview
+        public void CargarListaEspecialidades(string condicion = "")
+        {
+            BLEspecialidad logicaEspecialidad = new BLEspecialidad(Configuracion.getCadenaConeccion);
+            List<EntidadEspecialidad> especialidades;
+            try
+            {
+                especialidades = logicaEspecialidad.llamarListarEspecialidades(condicion);
+                if (especialidades.Count > 0)
+                {
+                    dgrEspecialidades.DataSource = especialidades;
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
@@ -36,7 +73,7 @@ namespace ElBuenVivir_Interfaz
             {
                 if (!VerificarCamposTexto())//si no tiene texto                   
                 {
-                    btnGuardar.Enabled = false;
+                    btnGuardarEspecialidad.Enabled = false;
                 }
                 else
                 {
@@ -44,9 +81,8 @@ namespace ElBuenVivir_Interfaz
                     lblRequeridos.Text = "Listo ya puedes Guardar";
                     if (txtDescripcion.Enabled & txtArea.Enabled & txtCosto.Enabled & txtDisponibilidad.Enabled & txtObservaciones.Enabled)
                     {
-                        btnGuardar.Enabled = true;
+                        btnGuardarEspecialidad.Enabled = true;
                     }
-
                 }
             }
             catch (Exception ex)
@@ -56,7 +92,21 @@ namespace ElBuenVivir_Interfaz
 
         }
 
-        // () Hacer click enel dataGridView acciones
+        //para saber si todos las casillas tienen datos
+        public bool VerificarCamposTexto()
+        {
+            bool todosTienenLetras = true;
+            todosTienenLetras = todosTienenLetras && !string.IsNullOrEmpty(txtNombreEspecialidad.Text);
+            todosTienenLetras = todosTienenLetras && !string.IsNullOrEmpty(txtDescripcion.Text);
+            todosTienenLetras = todosTienenLetras && !string.IsNullOrEmpty(txtArea.Text);
+            todosTienenLetras = todosTienenLetras && !string.IsNullOrEmpty(txtCosto.Text);
+            todosTienenLetras = todosTienenLetras && !string.IsNullOrEmpty(txtDisponibilidad.Text);
+            todosTienenLetras = todosTienenLetras && !string.IsNullOrEmpty(txtObservaciones.Text);
+
+            return todosTienenLetras;
+        }
+
+        // () Hacer click las filas del dataGridView acciones
         private void dgrEspecialidades_Click(object sender, EventArgs e)
         {
             //desabilidar casillas
@@ -68,14 +118,14 @@ namespace ElBuenVivir_Interfaz
                 txtDisponibilidad.Enabled = false;
                 txtObservaciones.Enabled = false;
             }
-            if (dgrEspecialidades.SelectedRows.Count > 0)
+            if (dgrEspecialidades.SelectedRows.Count > 0)//El id de la especialidad que se el hizo un click
             {
                 global = (int)dgrEspecialidades.SelectedRows[0].Cells[0].Value;
                 GetSetGlobal(global);//sends value
             }
             //..................
             try
-            {                                                                                       //obtener datos un click en la fila y pasarlo a cajas de texto
+            {  //obtener datos un click en la fila y pasarlo a cajas de texto
                 if (dgrEspecialidades.SelectedRows.Count > 0)
                 {
                     DataGridViewRow selectedRow = dgrEspecialidades.SelectedRows[0];
@@ -109,51 +159,10 @@ namespace ElBuenVivir_Interfaz
             }
         }
 
-        // (0) set global
+        // (0) set global 
         private int GetSetGlobal(int global)
         {
             return global;
-        }
-
-
-        //Carga automaticatica la lista
-        private void Frm_Especialidad_Load(object sender, EventArgs e)
-        {
-            // Even handlers para controlar cambios de texto en todas las cajas
-            txtIdEspecialidad.TextChanged += TextBox_TextChanged;
-            txtNombreEspecialidad.TextChanged += TextBox_TextChanged;
-            txtDescripcion.TextChanged += TextBox_TextChanged;
-            txtArea.TextChanged += TextBox_TextChanged;
-            txtCosto.TextChanged += TextBox_TextChanged;
-            txtDisponibilidad.TextChanged += TextBox_TextChanged;
-            txtObservaciones.TextChanged += TextBox_TextChanged;
-
-            //cargar lista
-            CargarListaEspecialidades();
-
-
-        }
-
-        // (0A) Carga la lista datagridview
-        public void CargarListaEspecialidades(string condicion = "")
-        {
-
-            BLEspecialidad logicaEspecialidad = new BLEspecialidad(Configuracion.getCadenaConeccion);
-            List<EntidadEspecialidad> especialidades;
-            try
-            {
-                especialidades = logicaEspecialidad.llamarListarEspecialidades(condicion);
-                if (especialidades.Count > 0)
-                {
-                    dgrEspecialidades.DataSource = especialidades;
-
-
-                }
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show(error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         // (1) Buscar especialidad
@@ -181,11 +190,6 @@ namespace ElBuenVivir_Interfaz
             }
         }
 
-        // (2) Insertar especialidad
-        private void btnInsertarEspecialidad_Click(object sender, EventArgs e)
-        {
-
-        }
 
         //crear especialidad
         private EntidadEspecialidad CrearEspecialidad()
@@ -270,18 +274,8 @@ namespace ElBuenVivir_Interfaz
                 logicaEspecialidad.LlamarEliminarEspecialidad(GetSetGlobal(global));//globla es el id de la especialidad por borrar
                 CargarListaEspecialidades();//actualiazar datos
                 MessageBox.Show("operacion fue exitosa", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                limpiarCasillas();
+                limpiarForm();
             }
-        }
-
-        //VERIFICACION DE EXISTENCIA
-        public bool ExisteEspecialidad(EntidadEspecialidad especialidad)
-        {
-            // Llamar a la capa de lógica de negocio
-            BLEspecialidad logicaEspecialidad = new BLEspecialidad(Configuracion.getCadenaConeccion);//conexion
-            bool existe = logicaEspecialidad.LlamarEspecialidadExiste(especialidad);
-
-            return false;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -315,7 +309,7 @@ namespace ElBuenVivir_Interfaz
                         int resultado = logicaEspecialidad.LlamarInsertarEspecialidad(unaEspecialidad);
                         CargarListaEspecialidades();//cargar lista
                         MessageBox.Show("operacion fue exitosa", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        btnGuardar.Enabled = false;
+                        btnGuardarEspecialidad.Enabled = false;
                     }
                     else if (accion == "editar")
                     {
@@ -323,7 +317,7 @@ namespace ElBuenVivir_Interfaz
                         int resultado = logicaEspecialidad.LlamarEditarEspecialidad(unaEspecialidad);
                         CargarListaEspecialidades();//cargar lista
                         MessageBox.Show("operacion fue exitosa", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        btnGuardar.Enabled = false;
+                        btnGuardarEspecialidad.Enabled = false;
                     }
 
                 }
@@ -337,10 +331,10 @@ namespace ElBuenVivir_Interfaz
         //limpiar
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            limpiarCasillas();
+            limpiarForm();
         }
 
-        private void limpiarCasillas()
+        private void limpiarForm()
         {
             accion = "nuevo";//se va a enviar un nuevo dato al servidor
             txtIdEspecialidad.Text = string.Empty;
@@ -365,42 +359,6 @@ namespace ElBuenVivir_Interfaz
 
         }
 
-        public bool VerificarCamposTexto()
-        {
-            bool todosTienenLetras = true;
-            if (string.IsNullOrEmpty(txtNombreEspecialidad.Text))
-            {
-                todosTienenLetras = false;
-            }
-
-            if (string.IsNullOrEmpty(txtDescripcion.Text))
-            {
-                todosTienenLetras = false;
-            }
-
-            if (string.IsNullOrEmpty(txtArea.Text))
-            {
-                todosTienenLetras = false;
-            }
-
-            if (string.IsNullOrEmpty(txtCosto.Text))
-            {
-                todosTienenLetras = false;
-            }
-
-            if (string.IsNullOrEmpty(txtDisponibilidad.Text))
-            {
-                todosTienenLetras = false;
-            }
-
-            if (string.IsNullOrEmpty(txtObservaciones.Text))
-            {
-                todosTienenLetras = false;
-            }
-
-            return todosTienenLetras;
-        }
-
         private void txtCosto_TextChanged(object sender, EventArgs e)
         {
             // Verificar si el texto es válido como número decimal
@@ -410,6 +368,19 @@ namespace ElBuenVivir_Interfaz
                 MessageBox.Show("Por favor, ingrese un número decimal válido en el campo de costo.");
                 txtCosto.Text = string.Empty; // Puedes limpiar el contenido del campo si no es válido.
             }
+        }
+
+        //ACTIVAR O DESACTIVAR FUNCIONALIDADES DEPENDIENDO DEL USUARIO
+        private void Authentication()
+        {
+            if (Configuracion.getUsuario != "ADMINISTRADOR")
+            {
+                btnGuardarEspecialidad.Enabled = false;
+                btnEliminarEspecialidad.Enabled = false;
+                btnEditarEspecialidad.Enabled = false;
+                btnNuevaEspecialidad.Enabled = false;
+            }
+
         }
     }
 }

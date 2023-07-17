@@ -24,5 +24,7 @@ namespace ElBuenVivir_Interfaz
     public static class VariableGlobal
     {
         public static int globalUser { get; set; }
+        public static string userName { get; set; }
+        public static int funcionarioId { get; set; }
     }
 }

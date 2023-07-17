@@ -12,15 +12,15 @@ namespace ElBuenVivir_Entidades
         private int idMedEspecial;
         private String nombreReceta;
         private String dosis;
-        private DateTime fechaRetiro;
+        private string fechaRetiro;
         private string duracion;
         private String indicaciones;
         private int cantidadRecetas;
-        private DateTime proximaReceta;
+        private string proximaReceta;
 
         // Constructor con parámetros
-        public EntidadRecetas(int recetaId,int inventarioId, int idMedEspecial, String nombreReceta, String dosis, DateTime fechaRetiro,
-                      string duracion, String indicaciones, int cantidadRecetas, DateTime proximaReceta)
+        public EntidadRecetas(int recetaId,int inventarioId, int idMedEspecial, String nombreReceta, String dosis, string fechaRetiro,
+                      string duracion, String indicaciones, int cantidadRecetas, string proximaReceta)
         {
             this.recetaId = recetaId;
             this.inventarioId = inventarioId;
@@ -42,11 +42,11 @@ namespace ElBuenVivir_Entidades
             this.idMedEspecial = 0;
             this.nombreReceta = null;
             this.dosis = null;
-            this.fechaRetiro = DateTime.MinValue;
+            this.fechaRetiro = "";
             this.duracion = "";
             this.indicaciones = null;
             this.cantidadRecetas = 0;
-            this.proximaReceta = DateTime.MinValue;
+            this.proximaReceta = "";
         }
 
         // Getters y setters en una sola línea
@@ -55,10 +55,10 @@ namespace ElBuenVivir_Entidades
         public int IdMedEspecial { get => idMedEspecial; set => idMedEspecial = value; }
         public string NombreReceta { get => nombreReceta; set => nombreReceta = value; }
         public string Dosis { get => dosis; set => dosis = value; }
-        public DateTime FechaRetiro { get => fechaRetiro; set => fechaRetiro = value; }
+        public string FechaRetiro { get => fechaRetiro; set => fechaRetiro = value; }
         public string Duracion { get => duracion; set => duracion = value; }
         public string Indicaciones { get => indicaciones; set => indicaciones = value; }
         public int CantidadRecetas { get => cantidadRecetas; set => cantidadRecetas = value; }
-        public DateTime ProximaReceta { get => proximaReceta; set => proximaReceta = value; }
+        public string ProximaReceta { get => proximaReceta; set => proximaReceta = value; }
     }
 }

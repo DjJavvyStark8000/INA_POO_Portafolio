@@ -33,7 +33,7 @@ namespace ElBuenVivir_AccesoDatos
             List<EntidadPlataforma> plataforma;
 
             string instruccionDB = "SELECT PLATAFORMA_ID, ID_PACIENTE, " +
-                "ID_CITAS, ID_FUNCIONARIO, HORA_ENTRADA, HORA_SALIDA, MOTIVO, CASO FROM PLATAFORMA";
+                "ID_CITAS, ID_FUNCIONARIO, HORA_ENTRADA, HORA_SALIDA, MOTIVO FROM PLATAFORMA";
 
             if (!string.IsNullOrEmpty(condicion))
             {
@@ -51,10 +51,9 @@ namespace ElBuenVivir_AccesoDatos
                               IdPaciente = Convert.ToInt32(row[1]),
                               IdCitas = Convert.ToInt32(row[2]),
                               IdFuncionario = Convert.ToInt32(row[3]),
-                              HoraEntrada= TimeSpan.Parse(row[4].ToString()),
-                              HoraSalida = TimeSpan.Parse(row[5].ToString()),
+                              HoraEntrada= row[4].ToString(),
+                              HoraSalida = row[5].ToString(),
                               Motivo = row[6].ToString(),
-                              Caso = row[7].ToString()
                           }).ToList();
 
             }
@@ -64,6 +63,43 @@ namespace ElBuenVivir_AccesoDatos
 
             }
             return plataforma;
+        }
+
+        // (2) Insertar datos de plataforma
+        public int InsertarDatosPlataforma(EntidadPlataforma datosPlataforma)
+        {
+            int id = 0;
+            //Establecer el objeto conexion
+            SqlConnection cnx = new SqlConnection(_cadenaConexion);
+            //Establecer los comandos sQL
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = cnx;
+            string ruta = "INSERT INTO PLATAFORMA (PACIENTE_ID, CITAS_ID, FUNCIONARIO_ID, HORA_ENTRADA, MOTIVO) " +
+                "VALUES (@PACIENTE_ID, @CITAS_ID, @FUNCIONARIO_ID, @HORA_ENTRADA, @MOTIVO); SELECT SCOPE_IDENTITY()";
+
+            comando.Parameters.AddWithValue("@PACIENTE_ID", datosPlataforma.IdPaciente);
+            comando.Parameters.AddWithValue("@CITAS_ID", datosPlataforma.IdCitas);
+            comando.Parameters.AddWithValue("@FUNCIONARIO_ID", datosPlataforma.IdFuncionario);
+            comando.Parameters.AddWithValue("@HORA_ENTRADA", datosPlataforma.HoraEntrada);
+            comando.Parameters.AddWithValue("@MOTIVO", datosPlataforma.Motivo);
+
+            comando.CommandText = ruta;
+            try
+            {
+                cnx.Open();
+                id = Convert.ToInt32(comando.ExecuteScalar());
+                cnx.Close();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cnx.Dispose();
+                comando.Dispose();
+            }
+            return id;
         }
     }
 }

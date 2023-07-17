@@ -37,5 +37,53 @@ namespace ElBuenVivir_Logica
             }
             return historial;
         }
+
+        // (2a) metodo para llamar al metodo insertar MEDICAMENTOS  
+        public int LlamarInsertarHistorial(EntidadHistorial historial)
+        {
+            int id_historial = 0;
+            DAHistorial unHistorial = new DAHistorial(_cadenaConexion);
+            try
+            {
+                id_historial = unHistorial.InsertarHistorial(historial);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return id_historial;
+        }// fin de la clase insertar
+
+        // (2b) metodo para llamar al metodo insertar MEDICAMENTOS  
+        public int LlamarInsertarHistorialVacio()
+        {
+            int id_historial = 0;
+            DAHistorial unHistorial = new DAHistorial(_cadenaConexion);
+            try
+            {
+                id_historial = unHistorial.InsertarHistorialVacio();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return id_historial;
+        }// fin de la clase insertar
+
+        // (3) metodo para llamar al metodo editar el invetario 
+        public int LlamarEditarHistorial(EntidadHistorial historial)
+        {
+            int filasAfectadas = 0;
+            DAHistorial unHistorial = new DAHistorial(_cadenaConexion);
+            try
+            {
+                filasAfectadas = unHistorial.EditarHistorial(historial);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return filasAfectadas;
+        }
     }
 }

@@ -52,11 +52,11 @@ namespace ElBuenVivir_AccesoDatos
                               IdMedEspecial= Convert.ToInt32(row[2]),
                               NombreReceta = row[3].ToString(),
                               Dosis = row[4].ToString(),
-                              FechaRetiro = Convert.ToDateTime(row[5]),
+                              FechaRetiro = row[5].ToString(),
                               Duracion = row[6].ToString(),
                               Indicaciones = row[7].ToString(),
                               CantidadRecetas = Convert.ToInt32(row[8]),
-                              ProximaReceta = Convert.ToDateTime(row[9]),
+                              ProximaReceta = row[9].ToString(),
                           }).ToList();
               
             }

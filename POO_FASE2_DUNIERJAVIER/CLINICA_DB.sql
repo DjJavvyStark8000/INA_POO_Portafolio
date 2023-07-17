@@ -21,8 +21,20 @@ ALTER TABLE BITACORA ADD  CONSTRAINT DF_USUARIO_BIT  DEFAULT ('N/A') FOR USUARIO
 GO 
 
 --(2)
+CREATE TABLE HORARIOFUNCIONARIOS (
+    HORARIO_ID    INT CONSTRAINT PK_HORARIOFUNCIONARIOS PRIMARY KEY IDENTITY(1,1) NOT NULL,
+    LUNES         VARCHAR(50),
+	MARTES        VARCHAR(50),
+	MIERCOLES     VARCHAR(50),
+	JUEVES        VARCHAR(50),
+	VIERNES       VARCHAR(50),
+	SABADO        VARCHAR(50),
+	DOMINGO       VARCHAR(50)
+)
+--(4)
 CREATE TABLE FUNCIONARIOS(
     FUNCIONARIO_ID     INT CONSTRAINT PK_FUNCIONARIOS_ID PRIMARY KEY NOT NULL,
+	HORARIO_ID         INT NOT NULL,
 	PUESTO             VARCHAR(50) NULL,
     NOMBRE_FUNCIONARIO VARCHAR(50) NULL,
     APELLIDOS          VARCHAR(60) NULL,
@@ -30,20 +42,16 @@ CREATE TABLE FUNCIONARIOS(
     GENERO             VARCHAR(20) NULL,
     NACIONALIDAD       VARCHAR(50) NULL,
 	ESTADO_CIVIL       VARCHAR(20) NULL,
-	DIAS_LIBRES        VARCHAR(300)NULL,
     CORREO             VARCHAR(50) NULL,
     TELEFONO           INT NULL,
     CIUDAD             VARCHAR(50) NULL,
     PROVINCIA          VARCHAR(50) NULL,
     DIRECCION_DETALLE  VARCHAR(300)NULL,
 	ANOTACIONES        VARCHAR(300)NULL,
-	HORA_ENTRADA       VARCHAR(50) NULL,
-    HORA_SALIDA        VARCHAR(50) NULL
+
 )
 GO
 
-ALTER TABLE FUNCIONARIOS ADD  CONSTRAINT DF_FECHA_NAC_FUN  DEFAULT (getdate()) FOR FECHA_NACIMIENTO
-GO
 ALTER TABLE FUNCIONARIOS ADD  CONSTRAINT DF_NACIONALIDAD_FUN  DEFAULT ('Costarricense') FOR NACIONALIDAD
 GO
 ALTER TABLE FUNCIONARIOS ADD  CONSTRAINT DF_CIUDAD_FUN  DEFAULT ('N/A') FOR CIUDAD
@@ -53,40 +61,20 @@ GO
 ALTER TABLE FUNCIONARIOS ADD  CONSTRAINT DF_DIRECCION_DET_FUN  DEFAULT ('N/A') FOR DIRECCION_DETALLE
 GO
 
+--REFERENCE
+ALTER TABLE FUNCIONARIOS ADD  CONSTRAINT FK_TO_HORARIOFUNCIONARIO FOREIGN KEY(HORARIO_ID)
+REFERENCES HORARIOFUNCIONARIOS(HORARIO_ID)
+ON DELETE CASCADE
+GO 
 
---(3)
-CREATE TABLE HISTORIAL(
-	HISTORIAL_ID         INT CONSTRAINT PK_HISTORIAL PRIMARY KEY IDENTITY(1,1) NOT NULL,
-	FECHA_REGISTRO       DATE NULL,
-	ANTECEDENTES         VARCHAR(100) NULL,
-	MEDICAMENTOS         VARCHAR(100) NULL,
-	DIAGNOSTICOS         VARCHAR(100) NULL,
-	RESULTADO_PRUEBAS    VARCHAR(100) NULL,
-	OBSERVACIONES        VARCHAR(100) NULL
-)
-GO
 
-ALTER TABLE HISTORIAL ADD  CONSTRAINT DF_FECHA_REG_HIS  DEFAULT (getdate()) FOR FECHA_REGISTRO
-GO
-ALTER TABLE HISTORIAL ADD  CONSTRAINT DF_ANTECEDENTES_HIS  DEFAULT ('N/A') FOR ANTECEDENTES
-GO
-ALTER TABLE HISTORIAL ADD  CONSTRAINT DF_MEDICAMENTOS_HIS  DEFAULT ('N/A') FOR MEDICAMENTOS
-GO
-ALTER TABLE HISTORIAL ADD  CONSTRAINT DF_DIAGNOSTICOS_HIS  DEFAULT ('N/A') FOR DIAGNOSTICOS
-GO
-ALTER TABLE HISTORIAL ADD  CONSTRAINT DF_RESULTADO_PRUEBAS_HIS  DEFAULT ('N/A') FOR RESULTADO_PRUEBAS
-GO
-ALTER TABLE HISTORIAL ADD  CONSTRAINT DF_OBSERVACIONES_HIS  DEFAULT ('N/A') FOR OBSERVACIONES
-GO
-
---(4)
+--(6)
 CREATE TABLE PACIENTES(
     PACIENTE_ID        INT CONSTRAINT PK_PACIENTES_ID PRIMARY KEY NOT NULL,
-	ID_HISTORIAL       INT NOT NULL,
 	TIPO_ID            VARCHAR(50) NULL,
     NOMBRE_PACIENTE    VARCHAR(50) NULL,
     APELLIDOS          VARCHAR(60) NULL,
-    FECHA_NACIMIENTO   DATE NULL,
+    FECHA_NACIMIENTO   VARCHAR(50) NULL,
     GENERO             VARCHAR(50) NULL,
     NACIONALIDAD       VARCHAR(50) NULL,
 	CORREO             VARCHAR(50) NULL,
@@ -116,14 +104,43 @@ ALTER TABLE PACIENTES ADD  CONSTRAINT DF_ESTADO_CIVIL_PAC  DEFAULT ('N/A') FOR E
 GO
 ALTER TABLE PACIENTES ADD  CONSTRAINT DF_GUARDIAN_PAC  DEFAULT ('N/A') FOR GUARDIAN
 GO
---REFERENCE
-ALTER TABLE PACIENTES WITH CHECK ADD  CONSTRAINT FK_TO_HISTORIAL FOREIGN KEY(ID_HISTORIAL)
-REFERENCES HISTORIAL(HISTORIAL_ID)
-ON DELETE CASCADE
 
---(5)
+
+--(7)
+CREATE TABLE HISTORIAL(
+	HISTORIAL_ID         INT CONSTRAINT PK_HISTORIAL PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	PACIENTE_ID          INT NOT NULL,
+	FECHA_REGISTRO       VARCHAR(50) NULL,
+	ANTECEDENTES         VARCHAR(100) NULL,
+	MEDICAMENTOS         VARCHAR(100) NULL,
+	DIAGNOSTICOS         VARCHAR(100) NULL,
+	RESULTADO_PRUEBAS    VARCHAR(100) NULL,
+	OBSERVACIONES        VARCHAR(100) NULL
+)
+GO
+--REFERENCE
+ALTER TABLE HISTORIAL ADD  CONSTRAINT FK_TO_PACIENTESH FOREIGN KEY(PACIENTE_ID)
+REFERENCES PACIENTES(PACIENTE_ID)
+ON DELETE NO ACTION
+
+ALTER TABLE HISTORIAL ADD  CONSTRAINT DF_FECHA_REG_HIS  DEFAULT ('') FOR FECHA_REGISTRO
+GO
+ALTER TABLE HISTORIAL ADD  CONSTRAINT DF_ANTECEDENTES_HIS  DEFAULT ('') FOR ANTECEDENTES
+GO
+ALTER TABLE HISTORIAL ADD  CONSTRAINT DF_MEDICAMENTOS_HIS  DEFAULT ('') FOR MEDICAMENTOS
+GO
+ALTER TABLE HISTORIAL ADD  CONSTRAINT DF_DIAGNOSTICOS_HIS  DEFAULT ('') FOR DIAGNOSTICOS
+GO
+ALTER TABLE HISTORIAL ADD  CONSTRAINT DF_RESULTADO_PRUEBAS_HIS  DEFAULT ('') FOR RESULTADO_PRUEBAS
+GO
+ALTER TABLE HISTORIAL ADD  CONSTRAINT DF_OBSERVACIONES_HIS  DEFAULT ('') FOR OBSERVACIONES
+GO
+
+
+
+--(8)
 CREATE TABLE ESPECIALIDADES(
-	ESPECIAL_ID          INT CONSTRAINT PK_ESPECIAL_ID PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	ESPECIAL_ID          INT CONSTRAINT PK_ESPECIALIDADES PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	NOMBRE_ESPECIALIDAD  VARCHAR(50) NULL,
 	DESCRIPCION          VARCHAR(200) NULL,
 	AREA                 VARCHAR(50) NULL,
@@ -144,93 +161,36 @@ GO
 ALTER TABLE ESPECIALIDADES ADD  CONSTRAINT DF_OBSERVACIONES_ESP  DEFAULT ('Sin Observaciones') FOR OBSERVACIONES
 GO
 
---(6)
-CREATE TABLE MEDICOS(
-    MEDICOS_ID         INT CONSTRAINT PK_MEDICOS_ID PRIMARY KEY NOT NULL,
-    NOMBRE_MEDICO      VARCHAR(30) NULL,
-    APELLIDOS          VARCHAR(60) NULL,
-    FECHA_NACIMIENTO   VARCHAR(50) NULL,
-    GENERO             VARCHAR(10) NULL,
-    NACIONALIDAD       VARCHAR(50) NULL,
-	ESTADO_CIVIL       VARCHAR(20) NULL,
-	DIAS_LIBRES        VARCHAR(100)NULL,
-    CORREO             VARCHAR(50) NULL,
-    TELEFONO           INT NULL,
-    CIUDAD             VARCHAR(20) NULL,
-    PROVINCIA          VARCHAR(20) NULL,
-    DIRECCION_DETALLE  VARCHAR(300)NULL,
-	ANOTACIONES        VARCHAR(300)NULL,
-	PUESTO             VARCHAR(100)NULL,
-    HORA_ENTRADA       VARCHAR(50) NULL,
-    HORA_SALIDA        VARCHAR(50) NULL   
-)
-GO
 
-
-ALTER TABLE MEDICOS ADD  CONSTRAINT DF_FECHA_NAC_MED  DEFAULT (getdate()) FOR FECHA_NACIMIENTO
-GO
-ALTER TABLE MEDICOS ADD  CONSTRAINT DF_NACIONALIDAD_MED  DEFAULT ('Costarricense') FOR NACIONALIDAD
-GO
-ALTER TABLE MEDICOS ADD  CONSTRAINT DF_CIUDAD_MED  DEFAULT ('N/A') FOR CIUDAD
-GO
-ALTER TABLE MEDICOS ADD  CONSTRAINT DF_PROVINCIA_MED  DEFAULT ('San José') FOR PROVINCIA
-GO
-ALTER TABLE MEDICOS ADD  CONSTRAINT DF_DIRECCION_DET_MED  DEFAULT ('N/A') FOR DIRECCION_DETALLE
-GO
-
---(7)
-CREATE TABLE MEDICOS_ESPECIALIDADES(
-	MED_ESP_ID INT CONSTRAINT PK_MED_ESP PRIMARY KEY IDENTITY(1,1) NOT NULL,
-	ID_ESPECIALIDADES      INT NOT NULL,
-	ID_MEDICOS             INT NOT NULL
-)
-
-
-
-ALTER TABLE MEDICOS_ESPECIALIDADES  WITH CHECK ADD  CONSTRAINT FK_ID_ESPECIALIDADES FOREIGN KEY(ID_ESPECIALIDADES)
-REFERENCES ESPECIALIDADES (ESPECIAL_ID)
-ON DELETE CASCADE
-GO
-ALTER TABLE MEDICOS_ESPECIALIDADES CHECK CONSTRAINT FK_ID_ESPECIALIDADES
-GO
-ALTER TABLE MEDICOS_ESPECIALIDADES  WITH CHECK ADD  CONSTRAINT FK_ID_MEDICOS FOREIGN KEY(ID_MEDICOS)
-REFERENCES MEDICOS (MEDICOS_ID)
-ON DELETE CASCADE
-GO
-ALTER TABLE MEDICOS_ESPECIALIDADES CHECK CONSTRAINT FK_ID_MEDICOS
-GO
-
---(8)
+--(9)
 CREATE TABLE HORARIO (
     HORARIO_ID   INT CONSTRAINT PK_HORARIO PRIMARY KEY IDENTITY(1,1) NOT NULL,
     FECHA        VARCHAR(50),
     HORA_INICIO  VARCHAR(50),
-    HORA_FIN     VARCHAR(50)
+    HORA_FIN     VARCHAR(50),
+	MEDICO_ID    INT
 )
+----REFERENCE
+ALTER TABLE HORARIO ADD CONSTRAINT FK_TO_FUNCIONARIO_MED
+FOREIGN KEY(MEDICO_ID) REFERENCES FUNCIONARIOS(FUNCIONARIO_ID)
+ON DELETE CASCADE
+GO
+--(10)
+CREATE TABLE PAGOS (
+    PAGOS_ID    INT CONSTRAINT PK_PAGOS PRIMARY KEY IDENTITY(1,1) NOT NULL,
+    MONTO       DECIMAL(10,2),
+    METODOPAGO  VARCHAR(50)
+)
+GO
 
-INSERT INTO HORARIO (FECHA, HORA_INICIO, HORA_FIN)
-VALUES
-    ('2023-06-19', '06:00', '07:00'),
-    ('2023-06-20', '08:00', '09:00'),
-    ('2023-06-21', '10:00', '11:00'),
-    ('2023-06-22', '12:00', '13:00'),
-    ('2023-06-23', '14:00', '15:00');
-
-INSERT INTO HORARIO (FECHA, HORA_INICIO, HORA_FIN)
-VALUES
-    ('2023-06-25', '06:00', '14:00'),
-    ('2023-06-26', '08:00', '17:00');
-
-
---(9)
+--(11)
 CREATE TABLE CITAS(
 	CITAS_ID                    INT CONSTRAINT PK_CITAS PRIMARY KEY IDENTITY(1,1) NOT NULL,
-	ID_MEDICOS_ESPECIALIDADES   INT NOT NULL,
     HORARIO_ID                  INT NULL,
+	PAGOS_ID                    INT NOT NULL,
 	ESTADO                      VARCHAR(100) NULL,
 	MOTIVO                      VARCHAR(100) NULL,
 	OBSERVACIONES               VARCHAR(100) NULL,
-	PAGADO                      VARCHAR(20) NULL,
 	METODO_PAGO                 VARCHAR(20) NULL
 )
 
@@ -238,49 +198,45 @@ CREATE TABLE CITAS(
 ALTER TABLE CITAS ADD CONSTRAINT FK_TO_HORARIO 
 FOREIGN KEY(HORARIO_ID) REFERENCES HORARIO (HORARIO_ID)
 ON DELETE CASCADE
-ALTER TABLE CITAS ADD CONSTRAINT FK_TO_MED_ESPEC
-FOREIGN KEY(ID_MEDICOS_ESPECIALIDADES) REFERENCES MEDICOS_ESPECIALIDADES(MED_ESP_ID)
-ON DELETE CASCADE
+GO
+ALTER TABLE CITAS ADD  CONSTRAINT FK_TO_PAGOS FOREIGN KEY(PAGOS_ID)
+REFERENCES PAGOS(PAGOS_ID)
+ON DELETE NO ACTION
+GO
 
---(10)
+
+--(12)
 CREATE TABLE PLATAFORMA(
 	PLATAFORMA_ID   INT CONSTRAINT PK_PLATAFORMA PRIMARY KEY IDENTITY(1,1) NOT NULL,
-	ID_PACIENTE     INT NOT NULL,
-	ID_CITAS        INT NOT NULL,
-	ID_FUNCIONARIO  INT NOT NULL,
-	HORA_ENTRADA    TIME(7) NULL,
-	HORA_SALIDA     TIME(7) NULL,
-	MOTIVO          VARCHAR(100) NULL,
-	CASO            VARCHAR(100) NULL
+	PACIENTE_ID     INT NOT NULL,
+	CITAS_ID        INT NOT NULL,
+	FUNCIONARIO_ID   INT NOT NULL,
+	HORA_ENTRADA    VARCHAR(50) NULL,
+	MOTIVO          VARCHAR(50) NULL,
 )
 GO
 
-ALTER TABLE PLATAFORMA  WITH CHECK ADD  CONSTRAINT FK_CITAS FOREIGN KEY(ID_CITAS)
+ALTER TABLE PLATAFORMA ADD  CONSTRAINT FK_CITAS FOREIGN KEY(CITAS_ID)
 REFERENCES CITAS (CITAS_ID)
+ON DELETE NO ACTION
+GO
+ALTER TABLE PLATAFORMA ADD  CONSTRAINT FK_FUNCIONARIOID FOREIGN KEY(FUNCIONARIO_ID)
+REFERENCES FUNCIONARIOS(FUNCIONARIO_ID)
 ON DELETE CASCADE
 GO
-ALTER TABLE PLATAFORMA CHECK CONSTRAINT FK_CITAS
-GO
-ALTER TABLE PLATAFORMA  WITH CHECK ADD  CONSTRAINT FK_FUNCIONARIO FOREIGN KEY(ID_FUNCIONARIO)
-REFERENCES FUNCIONARIOS (FUNCIONARIO_ID)
-ON DELETE CASCADE
-GO
-ALTER TABLE PLATAFORMA CHECK CONSTRAINT FK_FUNCIONARIO
-GO
-ALTER TABLE PLATAFORMA  WITH CHECK ADD  CONSTRAINT FK_PACIENTES FOREIGN KEY(ID_PACIENTE)
+ALTER TABLE PLATAFORMA ADD  CONSTRAINT FK_PACIENTES FOREIGN KEY(PACIENTE_ID)
 REFERENCES PACIENTES(PACIENTE_ID)
-ON DELETE CASCADE
-GO
-ALTER TABLE PLATAFORMA CHECK CONSTRAINT FK_PACIENTES
+ON DELETE NO ACTION
 GO
 
 
---(11)
+
+--(13)
 CREATE TABLE INVENTARIO(
 	INVENTARIO_ID    INT CONSTRAINT PK_INVENTARIO_ID PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	PRODUCTO         VARCHAR(50) NULL,
 	CANTIDAD         INT NULL,
-	FECHA_CADUCIDAD  DATE NULL,
+	FECHA_CADUCIDAD  VARCHAR(50) NULL,
 	PRECIO_UNITARIO  DECIMAL(10, 2) NULL,
 	PROVEEDOR        VARCHAR(50) NULL,
 )
@@ -296,19 +252,19 @@ GO
 ALTER TABLE INVENTARIO ADD  CONSTRAINT DF_PROVEEDOR_INV  DEFAULT ('N/A') FOR PROVEEDOR
 GO 
 
---(12)
+--(14)
 CREATE TABLE RECETAS
 (
     RECETAS_ID         INT CONSTRAINT PK_RECETAS PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	INVENTARIO_ID      INT NOT NULL,
-    ID_MED_ESPECIAL    INT NOT NULL,
+    FUNCIONARIO_ID     INT NOT NULL,
     NOMBRE_RECETA      VARCHAR(50) NULL,
     DOSIS              VARCHAR(50) NULL,
-    FECHA_RETIRO       DATE NULL,
+    FECHA_RETIRO       VARCHAR(50) NULL,
     DURACION           VARCHAR(50) NULL,
     INDICACIONES       VARCHAR(100) NULL,
     CANTIDAD_RECETAS   INT NULL,
-    PROXIMA_RECETA     DATE NULL
+    PROXIMA_RECETA     VARCHAR(50) NULL
 )
 GO
 ALTER TABLE RECETAS ADD  CONSTRAINT DF_DOSIS_REC  DEFAULT ('N/A') FOR DOSIS
@@ -324,120 +280,161 @@ GO
 ALTER TABLE RECETAS ADD  CONSTRAINT DF_PROXIMO_REC  DEFAULT (getdate()) FOR PROXIMA_RECETA
 GO
 ----REFERENCE
-ALTER TABLE RECETAS ADD  CONSTRAINT FK_TO_MED_ESP 
-FOREIGN KEY(ID_MED_ESPECIAL) REFERENCES MEDICOS_ESPECIALIDADES(MED_ESP_ID)
-ON DELETE CASCADE
 ALTER TABLE RECETAS ADD  CONSTRAINT FK_TO_INVENTARIO 
 FOREIGN KEY(INVENTARIO_ID) REFERENCES INVENTARIO(INVENTARIO_ID)
+ON DELETE NO ACTION
+ALTER TABLE RECETAS ADD  CONSTRAINT FK_TO_FUNPUESTOS_ID
+FOREIGN KEY(FUNCIONARIO_ID) REFERENCES FUNCIONARIOS(FUNCIONARIO_ID)
 ON DELETE CASCADE
 
+-- Tabla BITACORA
+INSERT INTO BITACORA (EVENTO, FECHA_HORA, USUARIO) VALUES
+('Evento 1', '2023/01/01', 'Usuario1'),
+('Evento 2', '2023/02/15', 'Usuario2'),
+('Evento 3', '2023/03/10', 'Usuario3'),
+('Evento 4', '2023/04/20', 'Usuario4'),
+('Evento 5', '2023/05/05', 'Usuario5');
+
+-- Tabla HORARIOFUNCIONARIOS
+INSERT INTO HorarioFuncionarios (LUNES, MARTES, MIERCOLES, JUEVES, VIERNES, SABADO, DOMINGO) VALUES
+('1:00-17:00', '2:00-17:00', '3:00-17:00', '4:00-17:00', '5:00-17:00', '6:00-12:00', '--Libre--'),
+('6:00-17:00', '6:00-17:00', '6:00-17:00', '6:00-17:00', '6:00-17:00', '8:00-12:00', '--Libre--'),
+('6:00-17:00', '6:00-17:00', '6:00-17:00', '6:00-17:00', '6:00-17:00', '8:00-12:00', '--Libre--'),
+('6:00-17:00', '6:00-17:00', '6:00-17:00', '6:00-17:00', '6:00-17:00', '8:00-12:00', '--Libre--'),
+('6:00-17:00', '6:00-17:00', '6:00-17:00', '6:00-17:00', '6:00-17:00', '8:00-12:00', '--Libre--');
 
 
-INSERT INTO FUNCIONARIOS (FUNCIONARIO_ID, PUESTO, NOMBRE_FUNCIONARIO, APELLIDOS, FECHA_NACIMIENTO, GENERO, NACIONALIDAD, ESTADO_CIVIL, DIAS_LIBRES, CORREO, TELEFONO, CIUDAD, PROVINCIA, DIRECCION_DETALLE, ANOTACIONES, HORA_ENTRADA, HORA_SALIDA)
-VALUES
-    (1, 'Gerente', 'Juan', 'Pérez', '1990-01-01', 'Masculino', 'Español', 'Soltero', 'Lunes, Martes', 'juan.perez@example.com', 12345690, 'Madrid', 'Madrid', 'Calle Principal 123', 'Ninguna anotación', '09:00:00', '18:00:00'),
-    (2, 'Analista', 'María', 'López', '1995-02-15', 'Femenino', 'Española', 'Casada', 'Miércoles, Jueves', 'maria.lopez@example.com', 96543210, 'Barcelona', 'Barcelona', 'Avenida Central 456', 'Anotación de prueba', '08:30:00', '17:30:00'),
-    (3, 'Desarrollador', 'Pedro', 'García', '1992-07-10', 'Masculino', 'Español', 'Soltero', 'Viernes', 'pedro.garcia@example.com', 55555555, 'Valencia', 'Valencia', 'Calle Secundaria 789', NULL, '09:15:00', '18:15:00'),
-    (4, 'Administrativo', 'Ana', 'Martínez', '1988-12-05', 'Femenino', 'Española', 'Casada', 'Sábado, Domingo', 'ana.martinez@example.com', 11111111, 'Sevilla', 'Sevilla', 'Plaza Principal 987', NULL, '09:30:00', '18:30:00'),
-    (5, 'Coordinador', 'Luis', 'Rodríguez', '1993-04-20', 'Masculino', 'Español', 'Soltero', 'Lunes a Viernes', 'luis.rodriguez@example.com', 99999999, 'Málaga', 'Málaga', 'Avenida Secundaria 654', 'Otra anotación', '08:45:00', '17:45:00');
---INSERTAR DATOS DE ESPECIALIDADES INICIALES
-INSERT INTO ESPECIALIDADES (NOMBRE_ESPECIALIDAD, DESCRIPCION, AREA, COSTO, DISPONIBILIDAD, OBSERVACIONES)
-VALUES
-    ('Medicina General', 'Atención médica general para pacientes de todas las edades.', 'Medicina General', 100000.00, 'Si', 'Sin Observaciones'),
-    ('Pediatría', 'Atención médica especializada para niños y adolescentes.', 'Pediatría', 12000.00, 'Si', 'Sin Observaciones'),
-    ('Cardiología', 'Especialidad que se ocupa del diagnóstico y tratamiento de enfermedades del corazón.', 'Cardiología', 150000.00, 'Si', 'Sin Observaciones'),
-    ('Dermatología', 'Especialidad que se ocupa del diagnóstico y tratamiento de enfermedades de la piel.', 'Dermatología', 130000.00, 'Si', 'Sin Observaciones'),
-    ('Ginecología', 'Especialidad que se ocupa de la salud del sistema reproductor femenino.', 'Ginecología', 140000.00, 'Si', 'Sin Observaciones'),
-    ('Oftalmología', 'Especialidad que se ocupa del diagnóstico y tratamiento de enfermedades de los ojos.', 'Oftalmología', 160000.00, 'Si', 'Sin Observaciones'),
-    ('Otorrinolaringología', 'Especialidad que se ocupa del diagnóstico y tratamiento de enfermedades del oído, nariz y garganta.', 'Otorrinolaringología', 140000.00, 'Si', 'Sin Observaciones'),
-    ('Ortopedia', 'Especialidad que se ocupa del diagnóstico y tratamiento de enfermedades y lesiones del sistema musculoesquelético.', 'Ortopedia', 180000.00, 'Si', 'Sin Observaciones'),
-    ('Psicología', 'Especialidad que se ocupa del diagnóstico y tratamiento de trastornos mentales y emocionales.', 'Psicología', 120000.00, 'Si', 'Sin Observaciones'),
-    ('Nutrición', 'Especialidad que se ocupa del diagnóstico y tratamiento de problemas relacionados con la alimentación y la nutrición.', 'Nutrición', 100000.00, 'Si', 'Sin Observaciones');
+-- Tabla FUNCIONARIOS
+INSERT INTO FUNCIONARIOS (FUNCIONARIO_ID, HORARIO_ID, PUESTO, NOMBRE_FUNCIONARIO, APELLIDOS, FECHA_NACIMIENTO, GENERO, NACIONALIDAD, ESTADO_CIVIL, CORREO, TELEFONO, CIUDAD, PROVINCIA, DIRECCION_DETALLE, ANOTACIONES) VALUES
+(1, 1, 'Medico', 'Funcionario 1', 'Apellido 1', '2023/01/01', 'Masculino', 'Costarricense', 'Estado Civil 1', 'correo1@example.com', 12345678, 'Ciudad 1', 'Provincia 1', 'Dirección 1', 'Anotaciones 1'),
+(2, 2, 'Medico', 'Funcionario 2', 'Apellido 2', '2023/02/15', 'Femenino', 'Costarricense', 'Estado Civil 2', 'correo2@example.com', 87654321, 'Ciudad 2', 'Provincia 2', 'Dirección 2', 'Anotaciones 2'),
+(3, 3, 'Puesto 3', 'Funcionario 3', 'Apellido 3', '2023/03/10', 'Femenino', 'Costarricense', 'Estado Civil 3', 'correo3@example.com', 98765432, 'Ciudad 3', 'Provincia 3', 'Dirección 3', 'Anotaciones 3'),
+(4, 4, 'Puesto 4', 'Funcionario 4', 'Apellido 4', '2023/04/20', 'Masculino', 'Costarricense', 'Estado Civil 4', 'correo4@example.com', 54321098, 'Ciudad 4', 'Provincia 4', 'Dirección 4', 'Anotaciones 4'),
+(5, 5, 'Medico', 'Funcionario 5', 'Apellido 5', '2023/05/05', 'Masculino', 'Costarricense', 'Estado Civil 5', 'correo5@example.com', 87654321, 'Ciudad 5', 'Provincia 5', 'Dirección 5', 'Anotaciones 5');
+
+-- Tabla PACIENTES
+INSERT INTO PACIENTES (PACIENTE_ID, TIPO_ID, NOMBRE_PACIENTE, APELLIDOS, FECHA_NACIMIENTO, GENERO, NACIONALIDAD, CORREO, TELEFONO, CIUDAD, PROVINCIA, DIRECCION_DETALLE, ESTADO_CIVIL, LABORANDO, EMERGENCIA_NUM, GUARDIAN, ASEGURADO) VALUES
+(1,'Tipo ID 1', 'Paciente 1', 'Apellido 1', '2023/01/01', 'Masculino', 'Costarricense', 'correo1@example.com', 12345678, 'Ciudad 1', 'Provincia 1', 'Dirección 1', 'Estado Civil 1', 'Si', 98765432, 'Guardian 1', 'No'),
+(2,'Tipo ID 2', 'Paciente 2', 'Apellido 2', '2023/02/15', 'Masculino', 'Costarricense', 'correo2@example.com', 87654321, 'Ciudad 2', 'Provincia 2', 'Dirección 2', 'Estado Civil 2', 'Si', 12345678, 'Guardian 2', 'No'),
+(3,'Tipo ID 3', 'Paciente 3', 'Apellido 3', '2023/03/10', 'Femenino', 'Costarricense', 'correo3@example.com', 98765432, 'Ciudad 3', 'Provincia 3', 'Dirección 3', 'Estado Civil 3', 'No', 54321098, 'Guardian 3', 'Si'),
+(4,'Tipo ID 4', 'Paciente 4', 'Apellido 4', '2023/04/20', 'Masculino', 'Costarricense', 'correo4@example.com', 54321098, 'Ciudad 4', 'Provincia 4', 'Dirección 4', 'Estado Civil 4', 'No', 12345678, 'Guardian 4', 'Si'),
+(5,'Tipo ID 5', 'Paciente 5', 'Apellido 5', '2023/05/05', 'Femenino', 'Costarricense', 'correo5@example.com', 87654321, 'Ciudad 5', 'Provincia 5', 'Dirección 5', 'Estado Civil 5', 'No', 98765432, 'Guardian 5', 'Si');
+
+-- Tabla HISTORIAL
+INSERT INTO HISTORIAL (PACIENTE_ID, FECHA_REGISTRO, ANTECEDENTES, MEDICAMENTOS, DIAGNOSTICOS, RESULTADO_PRUEBAS, OBSERVACIONES) VALUES
+(1,'2023/01/01', 'Antecedentes 1', 'Medicamentos 1', 'Diagnósticos 1', 'Resultado Pruebas 1', 'Observaciones 1'),
+(2,'2023/02/15', 'Antecedentes 2', 'Medicamentos 2', 'Diagnósticos 2', 'Resultado Pruebas 2', 'Observaciones 2'),
+(3,'2023/03/10', 'Antecedentes 3', 'Medicamentos 3', 'Diagnósticos 3', 'Resultado Pruebas 3', 'Observaciones 3'),
+(4,'2023/04/20', 'Antecedentes 4', 'Medicamentos 4', 'Diagnósticos 4', 'Resultado Pruebas 4', 'Observaciones 4'),
+(5,'2023/05/05', 'Antecedentes 5', 'Medicamentos 5', 'Diagnósticos 5', 'Resultado Pruebas 5', 'Observaciones 5');
+
+-- Tabla ESPECIALIDADES
+INSERT INTO ESPECIALIDADES (NOMBRE_ESPECIALIDAD, DESCRIPCION, AREA, COSTO, DISPONIBILIDAD, OBSERVACIONES) VALUES
+('Especialidad 1', 'Descripción 1', 'Área 1', 100.00, 'Disponible', 'Observaciones 1'),
+('Especialidad 2', 'Descripción 2', 'Área 2', 200.00, 'Disponible', 'Observaciones 2'),
+('Especialidad 3', 'Descripción 3', 'Área 3', 300.00, 'No Disponible', 'Observaciones 3'),
+('Especialidad 4', 'Descripción 4', 'Área 4', 400.00, 'Disponible', 'Observaciones 4'),
+('Especialidad 5', 'Descripción 5', 'Área 5', 500.00, 'No Disponible', 'Observaciones 5');
+
+-- Tabla HORARIO
+INSERT INTO HORARIO (FECHA, HORA_INICIO, HORA_FIN, MEDICO_ID) VALUES
+('2023/07/17', '03:00', '03:30',1),
+('2023/07/17', '14:00', '14:30',2),
+('2023/03/10', '10:00', '10:30',3),
+('2023/04/20', '13:00', '13:30',4),
+('2023/07/30', '08:00', '08:30',5);
+
+--TABLA PAGOS
+INSERT INTO PAGOS (MONTO, METODOPAGO) VALUES
+  (100.00, 'Efectivo'),
+  (50.25, 'Tarjeta de crédito'),
+  (75.50, 'Transferencia bancaria'),
+  (200.00, 'Efectivo'),
+  (150.75, 'Cheque');
+
+-- Tabla CITAS
+INSERT INTO CITAS (HORARIO_ID, PAGOS_ID, ESTADO, MOTIVO, OBSERVACIONES, METODO_PAGO) VALUES
+(1,1, 'Estado 1', 'Motivo 1', 'Observaciones 1', 'Método de Pago 1'),
+(2,2, 'Estado 2', 'Motivo 2', 'Observaciones 2', 'Método de Pago 2'),
+(3,3, 'Estado 3', 'Motivo 3', 'Observaciones 3', 'Método de Pago 3'),
+(4,4, 'Estado 4', 'Motivo 4', 'Observaciones 4', 'Método de Pago 4'),
+(5,5, 'Estado 5', 'Motivo 5', 'Observaciones 5', 'Método de Pago 5');
 
 
 
+-- Tabla PLATAFORMA
+INSERT INTO PLATAFORMA (PACIENTE_ID, CITAS_ID, FUNCIONARIO_ID, HORA_ENTRADA, MOTIVO) VALUES
+  (1, 1, 1, '09:00:00', 'Consulta médica'),
+  (2, 2, 2, '10:30:00', 'Examen de laboratorio'),
+  (3, 3, 3, '11:15:00', 'Terapia física'),
+  (4, 4, 4, '14:00:00', 'Consulta psicológica'),
+  (5, 5, 5, '15:45:00', 'Control de medicamentos');
+
+-- Tabla INVENTARIO
+INSERT INTO INVENTARIO (PRODUCTO, CANTIDAD, FECHA_CADUCIDAD, PRECIO_UNITARIO, PROVEEDOR) VALUES
+('Producto 1', 10, '2023/12/31', 10.00, 'Proveedor 1'),
+('Producto 2', 20, '2023/11/30', 20.00, 'Proveedor 2'),
+('Producto 3', 30, '2023/10/31', 30.00, 'Proveedor 3'),
+('Producto 4', 40, '2023/09/30', 40.00, 'Proveedor 4'),
+('Producto 5', 50, '2023/08/31', 50.00, 'Proveedor 5');
+
+-- Tabla RECETAS
+INSERT INTO RECETAS (INVENTARIO_ID, FUNCIONARIO_ID, NOMBRE_RECETA, DOSIS, FECHA_RETIRO, DURACION, INDICACIONES, CANTIDAD_RECETAS, PROXIMA_RECETA) VALUES
+(1, 1, 'Receta 1', 'Dosis 1', '2023/07/01', 'Duración 1', 'Indicaciones 1', 1, '2023/07/08'),
+(2, 2, 'Receta 2', 'Dosis 2', '2023/07/02', 'Duración 2', 'Indicaciones 2', 2, '2023/07/09'),
+(3, 3, 'Receta 3', 'Dosis 3', '2023/07/03', 'Duración 3', 'Indicaciones 3', 3, '2023/07/10'),
+(4, 4, 'Receta 4', 'Dosis 4', '2023/07/04', 'Duración 4', 'Indicaciones 4', 4, '2023/07/11'),
+(5, 5, 'Receta 5', 'Dosis 5', '2023/07/05', 'Duración 5', 'Indicaciones 5', 5, '2023/07/12');
 
 
-
-INSERT INTO INVENTARIO (PRODUCTO, CANTIDAD, FECHA_CADUCIDAD, PRECIO_UNITARIO, PROVEEDOR)
-VALUES
-    ('Paracetamol', 100, '2024-06-30', 10.99, 'Proveedor A'),
-    ('Ibuprofeno', 50, '2023-12-31', 8.99, 'Proveedor B'),
-    ('Amoxicilina', 80, '2024-09-15', 15.99, 'Proveedor C'),
-    ('Omeprazol', 120, '2023-11-30', 12.99, 'Proveedor A'),
-    ('Loratadina', 60, '2024-08-15', 7.99, 'Proveedor B'),
-    ('Diazepam', 30, '2023-10-31', 9.99, 'Proveedor C'),
-    ('Clonazepam', 40, '2024-07-31', 11.99, 'Proveedor A'),
-    ('Prednisona', 90, '2023-09-30', 14.99, 'Proveedor B'),
-    ('Metformina', 70, '2024-05-31', 6.99, 'Proveedor C'),
-    ('Atorvastatina', 50, '2023-11-15', 13.99, 'Proveedor A'),
-    ('Metoprolol', 80, '2024-06-30', 8.99, 'Proveedor B'),
-    ('Fluoxetina', 100, '2023-12-31', 12.99, 'Proveedor C'),
-    ('Escitalopram', 40, '2024-09-15', 9.99, 'Proveedor A'),
-    ('Losartan', 70, '2023-11-30', 11.99, 'Proveedor B'),
-    ('Warfarina', 90, '2024-08-15', 7.99, 'Proveedor C'),
-    ('Levothyroxine', 120, '2023-10-31', 10.99, 'Proveedor A'),
-    ('Ciprofloxacino', 60, '2024-07-31', 14.99, 'Proveedor B'),
-    ('Sulfametoxazol', 30, '2023-09-30', 8.99, 'Proveedor C'),
-    ('Furosemida', 50, '2024-05-31', 9.99, 'Proveedor A'),
-    ('Amoxicilina', 80, '2023-11-15', 12.99, 'Proveedor B'),
-    ('Dipirona', 70, '2024-06-30', 6.99, 'Proveedor C'),
-    ('Oxcarbazepina', 100, '2024-06-30', 10.99, 'Proveedor A'),
-    ('Metronidazol', 50, '2023-12-31', 8.99, 'Proveedor B'),
-    ('Sildenafil', 80, '2024-09-15', 15.99, 'Proveedor C'),
-    ('Dextrometorfano', 120, '2023-11-30', 12.99, 'Proveedor A'),
-    ('Alprazolam', 60, '2024-08-15', 7.99, 'Proveedor B'),
-    ('Cetirizina', 30, '2023-10-31', 9.99, 'Proveedor C'),
-    ('Naproxeno', 40, '2024-07-31', 11.99, 'Proveedor A'),
-    ('Enalapril', 90, '2023-09-30', 14.99, 'Proveedor B'),
-    ('Lisinopril', 70, '2024-05-31', 6.99, 'Proveedor C'),
-    ('Metoclopramida', 50, '2023-11-15', 13.99, 'Proveedor A'),
-    ('Codeína', 80, '2024-06-30', 8.99, 'Proveedor B'),
-    ('Pregabalina', 100, '2023-12-31', 12.99, 'Proveedor C'),
-    ('Aciclovir', 40, '2024-09-15', 9.99, 'Proveedor A'),
-    ('Lansoprazol', 70, '2023-11-30', 11.99, 'Proveedor B'),
-    ('Simvastatina', 90, '2024-08-15', 7.99, 'Proveedor C'),
-    ('Tramadol', 120, '2023-10-31', 10.99, 'Proveedor A'),
-    ('Clorfenamina', 60, '2024-07-31', 14.99, 'Proveedor B'),
-    ('Salbutamol', 30, '2023-09-30', 8.99, 'Proveedor C'),
-    ('Levotiroxina', 50, '2024-05-31', 9.99, 'Proveedor A'),
-    ('Ranitidina', 80, '2023-11-15', 12.99, 'Proveedor B'),
-    ('Cefalexina', 70, '2024-06-30', 6.99, 'Proveedor C'),
-    ('Dexametasona', 100, '2024-06-30', 10.99, 'Proveedor A'),
-    ('Miconazol', 50, '2023-12-31', 8.99, 'Proveedor B'),
-    ('Metronidazol', 80, '2024-09-15', 15.99, 'Proveedor C'),
-    ('Prednisolona', 120, '2023-11-30', 12.99, 'Proveedor A'),
-    ('Fluconazol', 60, '2024-08-15', 7.99, 'Proveedor B'),
-    ('Atenolol', 30, '2023-10-31', 9.99, 'Proveedor C'),
-    ('Bisoprolol', 40, '2024-07-31', 11.99, 'Proveedor A'),
-    ('Fenitoína', 90, '2023-09-30', 14.99, 'Proveedor B');
-
-	INSERT INTO MEDICOS (MEDICOS_ID, NOMBRE_MEDICO, APELLIDOS, FECHA_NACIMIENTO, GENERO, NACIONALIDAD, ESTADO_CIVIL, DIAS_LIBRES, CORREO, TELEFONO, CIUDAD, PROVINCIA, DIRECCION_DETALLE, ANOTACIONES, PUESTO, HORA_ENTRADA, HORA_SALIDA)
-VALUES
-    (1, 'Dr. Juan', 'Pérez', '1990-05-15', 'Masculino', 'México', 'Soltero', 'Lunes, Miércoles, Viernes', 'drjuan@example.com', 123456789, 'Ciudad de México', 'Ciudad de México', 'Av. Principal 123', 'Especialista en Cardiología', 'Cardiólogo', '08:00:00', '17:00:00'),
-    (2, 'Dra. María', 'González', '1985-10-20', 'Femenino', 'España', 'Casada', 'Martes, Jueves', 'dramaria@example.com', 987654321, 'Madrid', 'Madrid', 'Calle Secundaria 456', 'Especialista en Pediatría', 'Pediatra', '09:00:00', '18:00:00'),
-    (3, 'Dr. Roberto', 'Sánchez', '1978-03-10', 'Masculino', 'Argentina', 'Casado', 'Miércoles, Viernes', 'drroberto@example.com', 564738291, 'Buenos Aires', 'Buenos Aires', 'Avenida Principal 789', 'Especialista en Dermatología', 'Dermatólogo', '10:00:00', '19:00:00'),
-    (4, 'Dra. Ana', 'López', '1992-07-08', 'Femenino', 'Colombia', 'Soltera', 'Lunes, Martes, Miércoles', 'draana@example.com', 908172635, 'Bogotá', 'Bogotá', 'Carrera Principal 987', 'Especialista en Ginecología', 'Ginecóloga', '08:30:00', '17:30:00'),
-    (5, 'Dr. Carlos', 'Martínez', '1980-12-25', 'Masculino', 'Perú', 'Casado', 'Martes, Jueves, Viernes', 'drcarlos@example.com', 456789123, 'Lima', 'Lima', 'Avenida Secundaria 654', 'Especialista en Medicina Interna', 'Médico Internista', '09:30:00', '18:30:00');
-
-
-	INSERT INTO MEDICOS_ESPECIALIDADES (ID_ESPECIALIDADES, ID_MEDICOS)
-VALUES 
-    (1, 1),
-    (2, 1),
-    (3, 2),
-    (4, 2),
-    (5, 3),
-    (6, 3),
-    (7, 4),
-    (8, 4),
-    (9, 5),
-    (10, 5);
-SELECT * FROM ESPECIALIDADES
-SELECT * FROM INVENTARIO
 SELECT * FROM FUNCIONARIOS
-SELECT * FROM MEDICOS
-SELECT * FROM RECETAS
-SELECT * FROM HORARIO
-SELECT * FROM CITAS
-SELECT * FROM MEDICOS_ESPECIALIDADES
+SELECT * FROM HORARIOFUNCIONARIOS;
+SELECT * FROM HISTORIAL;
+SELECT * FROM BITACORA;
+SELECT * FROM PACIENTES;
+SELECT * FROM ESPECIALIDADES;
+SELECT * FROM HORARIO;
+SELECT * FROM CITAS;
+SELECT * FROM PLATAFORMA;
+SELECT * FROM INVENTARIO;
+SELECT * FROM RECETAS;
+SELECT * FROM PAGOS;
+
+--SELECT NOMBRE_FUNCIONARIO, FUNCIONARIO_ID
+--FROM FUNCIONARIOS
+--WHERE PUESTO = 'Medico'
+
+
+
+--SELECT F.NOMBRE_FUNCIONARIO, F.PUESTO, H.FECHA, H.HORA_INICIO, H.HORA_FIN, H.MEDICO_ID
+--FROM HORARIO H
+--INNER JOIN FUNCIONARIOS F ON H.MEDICO_ID = F.FUNCIONARIO_ID
+--WHERE F.PUESTO = 'Medico' AND H.FECHA = '2023/05/05' AND H.HORA_INICIO = '08:00'
+
+
+----ORDER BY H.FECHA;
+----string fecha = "2023/05/05";
+----string horaInicio = "08:00";
+----string condicion = $"F.PUESTO = 'Medico' AND H.FECHA = '{fecha}' AND H.HORA_INICIO = '{horaInicio}'";
+
+--SELECT *
+--FROM HORARIO
+--WHERE FECHA = '2023/05/05'
+--ORDER BY FECHA;
+
+
+--SELECT NOMBRE_FUNCIONARIO, LUNES
+--FROM FUNCIONARIOS F
+--INNER JOIN HORARIOFUNCIONARIOS HF ON F.HORARIO_ID = HF.HORARIO_ID
+
+
+SELECT F.FUNCIONARIO_ID, HF.LUNES, HF.MARTES, HF.MIERCOLES, HF.JUEVES, HF.VIERNES, HF.SABADO, HF.DOMINGO
+FROM HORARIO H
+INNER JOIN FUNCIONARIOS F ON H.MEDICO_ID = F.FUNCIONARIO_ID
+INNER JOIN HORARIOFUNCIONARIOS HF ON F.HORARIO_ID = HF.HORARIO_ID
+WHERE FUNCIONARIO_ID = '1'
+
+
+SELECT *
+FROM HISTORIAL
+WHERE HISTORIAL_ID = '1'

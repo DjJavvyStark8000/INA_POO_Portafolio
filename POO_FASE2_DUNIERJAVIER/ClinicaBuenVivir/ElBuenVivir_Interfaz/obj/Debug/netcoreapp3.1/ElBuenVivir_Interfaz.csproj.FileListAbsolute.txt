@@ -44,6 +44,7 @@ C:\Users\djjav\Desktop\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Inter
 C:\Users\djjav\Desktop\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.Frm_Plataforma.resources
 C:\Users\djjav\Desktop\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.Frm_Recetas.resources
 C:\Users\djjav\Desktop\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.Properties.Resources.resources
+C:\Users\djjav\Desktop\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.RoleUsuario.resources
 C:\Users\djjav\Desktop\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.csproj.GenerateResource.cache
 C:\Users\djjav\Desktop\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\djjav\Desktop\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.AssemblyInfoInputs.cache

@@ -2,6 +2,7 @@
 using ElBuenVivir_Entidades;
 using ElBuenVivir_Logica;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,65 +10,54 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using static System.Windows.Forms.MonthCalendar;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ElBuenVivir_Interfaz
 {
     public partial class Frm_Citas : Form
     {
-        private List<int> horasDisponibles;
-        private string horaDCita = string.Empty;
+        private string horaDCita = string.Empty;//hora seleccionada para la cita
+        private string nombreCompleto = "";
         private string accion = "nuevo";
-        private int medEspId = 1;
-        private int horarioId = 0;
+        private int idPaciente = 0;
+        private int medicoId;
+        private int aux = 0;
+        private bool cargando;
+        private int horaInicio = 0;
+        private int horaFin = 0;
+        private int checkHorarioPagos = 0;//existe un id de horario y de pago para proseguir
+        public static string CitasIdCita { get; set; }//un valor que tengo que mandar a plataforma
 
-        public Frm_Citas()
+        public Frm_Citas(int idPaciente, string nombrePaciente)
         {
             InitializeComponent();
-            dgrHorasDisponibles.CellFormatting += dgrHorasDisponibles_CellFormatting;
+
+            this.idPaciente = idPaciente;//id desde plataforma
+            this.nombreCompleto = nombrePaciente;
+            comboMedicos.SelectedIndexChanged += comboMedicos_SelectedIndexChanged;//seleccionar medico y obtener su id
         }
+
 
         public void Frm_Horarios_Load(object sender, EventArgs e)
         {
+            cargando = true;
             LimpiarCasillas();
-            CargarListaCitas();
-            CargarListaMedicos();
-        }
-
-        // cargar Medicos del al base de datos a un combobox
-        public void CargarListaMedicos(string condicion = "")
-        {
-            BLMedicos logicaMedicos = new BLMedicos(Configuracion.getCadenaConeccion);
-            List<EntidadMedicos> medicos;
-            try
-            {
-                medicos = logicaMedicos.llamarListarMedicos(condicion);
-                if (medicos.Count > 0)
-                {
-                    comboMedicos.DataSource = medicos;
-                    comboMedicos.DisplayMember = "Nombre";
-                    comboMedicos.ValueMember = "Identificacion";
-
-                }
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show(error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        //cuando busca un dia carga las horas
-        private void dateFechaCita_ValueChanged(object sender, EventArgs e)
-        {
-
-            LlenarHoras(dateFechaCita.Value.Date, "");
+            txtID.Text = idPaciente.ToString();//id desde plataforma
+            txtNombreCompleto.Text = nombreCompleto.ToString();
+            //cargar medicos en combobox
+            List<EntidadFuncionario> listaMedicos = ObtenerListaMedicos();
+            comboMedicos.DisplayMember = "Nombre"; // Reemplaza "NombreMedico" por la propiedad que deseas mostrar en el ComboBox
+            comboMedicos.DataSource = listaMedicos;
+            //CargarListaCitas();
+            cargando = false;
         }
 
         // (0A) Carga la lista datagridview
         public void CargarListaCitas(string condicion = "")
         {
-
             BLCitas logicaCita = new BLCitas(Configuracion.getCadenaConeccion);
             List<EntidadCitas> cita;
             try
@@ -75,7 +65,7 @@ namespace ElBuenVivir_Interfaz
                 cita = logicaCita.llamarListarCitas(condicion);
                 if (cita.Count > 0)
                 {
-                    dgrListarCitas.DataSource = cita;
+                    //dgrListarCitas.DataSource = cita;
                 }
             }
             catch (Exception error)
@@ -84,152 +74,98 @@ namespace ElBuenVivir_Interfaz
             }
         }
 
-        private void LlenarHoras(DateTime fecha, string condicion = "")
-        {
-            // Obtener la lista de horarios desde la base de datos
-            BLHorarios logicaHorarios = new BLHorarios(Configuracion.getCadenaConeccion);
-            List<EntidadHorario> horariosDisponibles = logicaHorarios.llamarListarHorarios(condicion);
-
-            // Limpia el DataGridView antes de insertar los datos
-            dgrHorasDisponibles.Rows.Clear();
-
-            // Recorre las horas de 6 a 17 con incrementos de 30 minutos
-            for (int hora = 6; hora <= 17; hora++)
-            {
-                bool ocupado = false;
-
-                // Verifica si la hora actual está dentro de algún horario disponible
-                foreach (EntidadHorario horario in horariosDisponibles)
-                {
-                    DateTime horaInicio = DateTime.Parse(horario.HoraInicio);
-                    DateTime horaSalida = DateTime.Parse(horario.HoraFin);
-                    DateTime fechaHorario = DateTime.Parse(horario.Fecha);
-
-                    // Verifica si la hora actual está dentro del rango de horario
-                    if (fecha.Date == fechaHorario.Date && hora >= horaInicio.Hour && hora <= horaSalida.Hour)
-                    {
-                        ocupado = true;
-                        break;
-                    }
-                }
-
-                // Inserta la hora y el estado correspondiente en una nueva fila
-                dgrHorasDisponibles.Rows.Add(hora.ToString("00") + ":00", ocupado ? "Ocupado" : "Disponible");
-                dgrHorasDisponibles.Rows.Add(hora.ToString("00") + ":30", ocupado ? "Ocupado" : "Disponible");
-            }
-        }
-
-
-        private void dgrHorasDisponibles_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (e.ColumnIndex == 0 || e.ColumnIndex == 1) // Verificar las columnas de hora y estado
-            {
-                DataGridViewCell estadoCell = dgrHorasDisponibles.Rows[e.RowIndex].Cells[1]; // Obtener la celda adyacente de estado
-
-                if (estadoCell.Value != null && estadoCell.Value != DBNull.Value)
-                {
-                    string estado = estadoCell.Value.ToString();
-
-                    if (estado == "Ocupado")
-                    {
-                        e.CellStyle.BackColor = Color.Gray; // Establecer el color de fondo en rojo para las celdas ocupadas
-                    }
-                    else if (estado == "Disponible")
-                    {
-                        e.CellStyle.BackColor = Color.LightGray; // Establecer el color de fondo en verde para las celdas disponibles
-                    }
-                }
-            }
-        }
-
-        private void dgrHorasDisponibles_Click(object sender, EventArgs e)
-        {
-            if (dgrHorasDisponibles.SelectedRows.Count > 0)
-            {
-                DataGridViewRow row = dgrHorasDisponibles.SelectedRows[0];
-                // Accede a las celdas en el orden correcto utilizando el índice real de la columna
-                DataGridViewCell horaCita = row.Cells[dgrHorasDisponibles.Columns["horas"].Index];
-                DataGridViewCell estado = row.Cells[dgrHorasDisponibles.Columns["estado"].Index];
-                if (estado.Value.ToString() == "Disponible")
-                {
-
-                    MessageBox.Show($"Cita a las: {horaCita.Value.ToString()}", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    horaDCita = horaCita.Value.ToString();
-                    //obtenerId();
-                    //LlenarHoras(dateFechaCita.Value.Date, "");
-                }
-                else
-                {
-                    MessageBox.Show("No disponible", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-
-            }
-        }
-
-
         //crear horario object
         private EntidadHorario CrearHorario()
         {
+            TimeSpan intervalo = TimeSpan.FromMinutes(30);//4 linas de convercion agregando 30minutos a la hora de entrada de la cita
+            DateTime dt = DateTime.ParseExact(horaDCita, "HH:mm", null);
+            dt = dt.Add(intervalo);
+            string horaSalida = dt.ToString("HH:mm");
             EntidadHorario unHorario = new EntidadHorario();
-            unHorario.Fecha = dateFechaCita.Value.Date.ToShortDateString();
-            unHorario.HoraInicio = horaDCita;
-            unHorario.HoraFin = horaDCita;
+            unHorario.FechaHorario = dateFechaCita.Value.Date.ToString("yyyy/MM/dd");//fecha
+            unHorario.HoraInicio = horaDCita;//hora entrada
+            unHorario.HoraFin = horaSalida;//hora salida
+            unHorario.MedicoId = medicoId;//id del medico que atendera en la cita
             return unHorario;
+        }
+
+        //crear pago object
+        private EntidadPagos CrearPago()
+        {
+            EntidadPagos unPago = new EntidadPagos();
+            unPago.Monto = decimal.Parse(txtMontoPagar.Text);
+            unPago.MetodoPago = comboMetodoPago.SelectedItem.ToString();
+
+            return unPago;
+        }
+
+        //la hora seleccionada de la cita antes de enviar al db para obterner un id
+        private void comboHorasDisponibles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            horaDCita = comboHorasDisponibles.SelectedItem.ToString();//hora seleccionada para la cita
+
         }
 
         //Crear cita object
         private EntidadCitas CrearCita()
         {
             EntidadCitas unaCita = new EntidadCitas();
-            unaCita.IdMedicosEspecialidades = medEspId;
-            unaCita.HorarioId = horarioId;
+            unaCita.HorarioId = ObtenerHorarioId();
+            unaCita.PagosId = ObtenerPagoID();
             unaCita.Estado = comboEstado.SelectedItem.ToString();
             unaCita.Motivo = txtMotivo.Text;
             unaCita.Observaciones = txtObservaciones.Text;
             unaCita.Metodo_Pago = comboMetodoPago.SelectedItem.ToString();
-            if (checkPagoSi.Checked)
-            {
-                unaCita.Pagado = "Si";
-            }
-            else { unaCita.Pagado = "No"; }
+
             return unaCita;
         }
 
         //obtener horario_id
-        private void obtenerId()
+        private int ObtenerHorarioId()
         {
+            int getHorarioId = 0;
             EntidadHorario unHorario = new EntidadHorario();//objeto
-            BLCitas logicaHorario = new BLCitas(Configuracion.getCadenaConeccion);//conexion
+            BLHorario logicaHorario = new BLHorario(Configuracion.getCadenaConeccion);//conexion
             try
             {
-                if (!VerificarCamposTexto())//si no tiene texto                   
-                {
-                    MessageBox.Show("ooops! Faltan datos favor revisar", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    if (accion == "nuevo")
-                    {
-                        unHorario = CrearHorario();//crea objeto horario
-                        horarioId = logicaHorario.LlamarInsertarHorario(unHorario);
-                    }
-                }
+                unHorario = CrearHorario();//crea objeto horario
+                getHorarioId = logicaHorario.LlamarInsertarHorario(unHorario);
+                if (getHorarioId > 0) checkHorarioPagos++;// 2 significa que puede progeguir
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            return getHorarioId;
+        }
 
+        //obtener pago id
+        private int ObtenerPagoID()
+        {
+            int getPagosId = 0;
+            EntidadPagos unPago = new EntidadPagos();//objeto
+            BLPagos logicaPagos = new BLPagos(Configuracion.getCadenaConeccion);//conexion
+            try
+            {
+                unPago = CrearPago();//crea objeto pago
+                getPagosId = logicaPagos.LlamarInsertarPago(unPago);
+                if (getPagosId > 0) checkHorarioPagos++;//2 significa que puede progeguir
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return getPagosId;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            EntidadCitas lacita = new EntidadCitas();//objeto
+            EntidadCitas laCita = new EntidadCitas();//objeto
             BLCitas logicaCita = new BLCitas(Configuracion.getCadenaConeccion);//conexion
 
             try
             {
-                if (!VerificarCamposTexto())//si no tiene texto                   
+                if (!VerificarCamposTexto() && checkHorarioPagos != 2)//si no tiene texto o no hay ids de horario y pagos            
                 {
                     MessageBox.Show("ooops! Faltan datos favor revisar", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -237,12 +173,10 @@ namespace ElBuenVivir_Interfaz
                 {
                     if (accion == "nuevo")
                     {
-                        //Estos datos se mandan a la base de datos y regresa id de cita para plataforma                  
-                        //manda los dato a la base de datos y obtiene el ID
-                        obtenerId();//id de horario
-                        lacita = CrearCita();//creacion del objeto cita
-                        int idCita = logicaCita.LlamarInsertarCita(lacita);
-                        CargarListaCitas();
+                        //Estos datos se mandan a la base de datos y regresa id de cita para plataforma                                     
+                        laCita = CrearCita();//creacion del objeto cita
+                        int idCita = logicaCita.LlamarInsertarCita(laCita);
+                        txtNumCita.Text = idCita.ToString();//numero obtenido del db
                         MessageBox.Show("operacion fue exitosa", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
@@ -252,44 +186,87 @@ namespace ElBuenVivir_Interfaz
                 MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        //verificar campos
-        public bool VerificarCamposTexto()
+
+
+
+        private void CompararHorasDisponibles()
         {
-            bool todosTienenLetras = true;
-            if (string.IsNullOrEmpty(txtMotivo.Text))
+            // Obtener la lista de horas disponibles
+            List<string> horasDisponibles = new List<string>();
+
+            // Obtener la lista de horas generadas
+            List<string> listaHoras = GenerarListaHoras();
+
+            // Obtener la lista de horarios de la base de datos
+            List<EntidadHorario> horariosBaseDatos = ObtenerHorarioBaseDatos();
+
+            // Iterar sobre la lista de horas generadas
+            foreach (string hora in listaHoras)
             {
-                todosTienenLetras = false;
-            }
-            if (string.IsNullOrEmpty(txtObservaciones.Text))
-            {
-                todosTienenLetras = false;
-            }
-            if (string.IsNullOrEmpty(txtID.Text))
-            {
-                todosTienenLetras = false;
-            }
-            if (string.IsNullOrEmpty(horaDCita))
-            {
-                todosTienenLetras = false;
-            }
-            if (comboEstado.SelectedIndex == -1)
-            {
-                todosTienenLetras = false;
-            }
-            if (comboMetodoPago.SelectedIndex == -1)
-            {
-                todosTienenLetras = false;
-            }
-            if (!checkPagoSi.Checked & !checkPagoNo.Checked)
-            {
-                todosTienenLetras = false;
+                // Verificar si la hora no está en la lista de horarios de la base de datos
+                if (!horariosBaseDatos.Any(horario => horario.HoraInicio == hora))
+                {
+                    // La hora no está en la base de datos, agregarla a la lista de horas disponibles
+                    horasDisponibles.Add(hora);
+                }
             }
 
-
-            return todosTienenLetras;
+            // Llenar el ComboBox con las horas disponibles
+            comboHorasDisponibles.DataSource = horasDisponibles;
         }
 
+        //busca en la base de datos todos los horarios
+        private List<EntidadHorario> ObtenerHorarioBaseDatos()
+        {
+            List<EntidadHorario> horarioBaseDatos = new List<EntidadHorario>();
+            BLHorario logicaHorario = new BLHorario(Configuracion.getCadenaConeccion);
 
+            try
+            {
+                string fechaSeleccionada = dateFechaCita.Value.ToString("yyyy/MM/dd");
+                horarioBaseDatos = logicaHorario.llamarListarHorario($"FECHA = '{fechaSeleccionada.Trim()}'");
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return horarioBaseDatos;
+        }
+
+        //genera una lista de horas cada 30 minutos
+        private List<string> GenerarListaHoras()
+        {
+            List<string> horas = new List<string>();
+            TimeSpan intervalo = TimeSpan.FromMinutes(30);
+            TimeSpan horaActual = TimeSpan.FromHours(horaInicio);
+
+            while (horaActual <= TimeSpan.FromHours(horaFin))
+            {
+                string hora = horaActual.ToString(@"hh\:mm");
+                horas.Add(hora);
+                horaActual = horaActual.Add(intervalo);
+            }
+            return horas;
+        }
+
+        //busca en la base de datos todos los MEDICOS y los guarda en una lista
+        private List<EntidadFuncionario> ObtenerListaMedicos(string condicion = "")
+        {
+            List<EntidadFuncionario> listaMedicos = new List<EntidadFuncionario>();
+            BLFuncionarios logicaMedicos = new BLFuncionarios(Configuracion.getCadenaConeccion);
+
+            try
+            {
+                listaMedicos = logicaMedicos.llamarListarMedicos(condicion);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return listaMedicos;
+        }
+
+        //*******************************************************************************************************************************************
         //limpiar casilla
         private void LimpiarCasillas()
         {
@@ -302,42 +279,117 @@ namespace ElBuenVivir_Interfaz
             comboMedicos.SelectedItem = null;
             comboEstado.SelectedItem = null;
             comboMetodoPago.SelectedItem = null;
-            checkPagoSi.Checked = false;
-            checkPagoNo.Checked = false;
+
         }
-        private void comboMedicos_SelectedIndexChanged(object sender, EventArgs e)
+
+        //verificar campos
+        public bool VerificarCamposTexto()
         {
+            bool todosTienenLetras = true;
 
-            ComboBox comboBox = (ComboBox)sender;
-            if (comboBox.SelectedItem != null)
+            if (string.IsNullOrEmpty(txtMotivo.Text) ||
+                string.IsNullOrEmpty(txtObservaciones.Text) ||
+                string.IsNullOrEmpty(txtID.Text) ||
+                string.IsNullOrEmpty(horaDCita) ||
+                comboEstado.SelectedIndex == -1 ||
+                comboMetodoPago.SelectedIndex == -1)
             {
-                string selectedID = comboBox.SelectedValue.ToString();
-                if (int.TryParse(selectedID, out int medicoID))
-                {
-                    BLMedicos_Especialidades logicaMedicosEspecialidades = new BLMedicos_Especialidades(Configuracion.getCadenaConeccion);
-                    medEspId = 0;
-                    try
-                    {
-                        medEspId = logicaMedicosEspecialidades.llamarIdMedicosEspecialidades(medicoID);
+                todosTienenLetras = false;
+            }
 
-                    }
-                    catch (Exception error)
+            return todosTienenLetras;
+        }
+
+        //salir del form
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        //valores del datetimepicker han cambiado
+        private void dateFechaCita_ValueChanged(object sender, EventArgs e)
+        {
+            List<EntidadDiaHorario> listaDiaHorario = new List<EntidadDiaHorario>();
+            BLDiaHorario logicaDiaHorario = new BLDiaHorario(Configuracion.getCadenaConeccion);
+            aux = 1;//permite procesar unicamente un cambio en el datetimepicker
+            string diaSemana = dateFechaCita.Value.ToString("dddd", new System.Globalization.CultureInfo("es-ES")).ToUpper();//dia en espanol upper
+            if (diaSemana == "MIÉRCOLES") diaSemana = "MIERCOLES";
+            if (diaSemana == "SÁBADO") diaSemana = "SABADO";
+            // diaSemana.Trim();
+            string condicion = $"FUNCIONARIO_ID = '{medicoId}'";
+
+            try
+            {
+                // diccionario de dias y sus propiedades
+                Dictionary<string, Func<EntidadDiaHorario, string>> dayMappings = new Dictionary<string, Func<EntidadDiaHorario, string>>()
+                {
+                    { "LUNES", (diaHorario) => diaHorario.Lunes },
+                    { "MARTES", (diaHorario) => diaHorario.Martes },
+                    { "MIERCOLES", (diaHorario) => diaHorario.Miercoles },
+                    { "JUEVES", (diaHorario) => diaHorario.Jueves },
+                    { "VIERNES", (diaHorario) => diaHorario.Viernes },
+                    { "SABADO", (diaHorario) => diaHorario.Sabado },
+                    { "DOMINGO", (diaHorario) => diaHorario.Domingo }
+                };
+
+                listaDiaHorario = logicaDiaHorario.llamarListarHorarioDia(condicion, diaSemana);
+                foreach (EntidadDiaHorario diaHorario in listaDiaHorario)
+                {
+                    // propiedad segun el dia de la semana
+                    if (dayMappings.TryGetValue(diaSemana, out var getProperty))
                     {
-                        MessageBox.Show(error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        string horario = getProperty(diaHorario);
+                        if (horario != "--Libre--")
+                        {
+                            string[] partes = horario.Split('-');
+                            string horaInicioString = partes[0].Split(':')[0];
+                            string horaFinString = partes[1].Split(':')[0];
+                            horaInicio = int.Parse(horaInicioString);
+                            horaFin = int.Parse(horaFinString);
+                            comboHorasDisponibles.Items.Add("00:00");//add the item and then selected
+                            comboHorasDisponibles.Text = "00:00";
+                            comboHorasDisponibles.Enabled = true;
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("No esta disponible este dia", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
             }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void btnBuscarEspecial_Click(object sender, EventArgs e)
+        //se generan una lista firtrada de horas dependiedo unicamente de la ultima fecha seleccionada en el datetimepicker
+        private void comboHorasDisponibles_Click(object sender, EventArgs e)
         {
-            CargarListaCitas();
-            MessageBox.Show("Hello");
+            if (aux == 1)
+            {
+                CompararHorasDisponibles();
+                aux++;
+            }
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
+        //cuando se selecciona un medico se almacena su id para el horario
+        private void comboMedicos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LimpiarCasillas();
+            if (!cargando)
+            {
+                // Obtener el médico seleccionado del ComboBox
+                EntidadFuncionario medicoSeleccionado = comboMedicos.SelectedItem as EntidadFuncionario;
+                medicoId = medicoSeleccionado.Identificacion;//id del medico seleccionado para la cita
+                dateFechaCita.Enabled = true;
+            }
+        }
+
+        //cuando este formlulario se cierre envie el id de la cita
+        private void Frm_Citas_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CitasIdCita = txtNumCita.Text;
         }
     }
 }

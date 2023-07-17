@@ -35,13 +35,13 @@ namespace ElBuenVivir_Interfaz.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int usuario {
+        [global::System.Configuration.DefaultSettingValueAttribute("admin")]
+        public string role_Usuario {
             get {
-                return ((int)(this["usuario"]));
+                return ((string)(this["role_Usuario"]));
             }
             set {
-                this["usuario"] = value;
+                this["role_Usuario"] = value;
             }
         }
     }

@@ -53,23 +53,7 @@
             txtNombre = new System.Windows.Forms.TextBox();
             lblNombre = new System.Windows.Forms.Label();
             groupBox1 = new System.Windows.Forms.GroupBox();
-            lblSalida = new System.Windows.Forms.Label();
-            dateHoraSalida = new System.Windows.Forms.DateTimePicker();
-            lblEntrada = new System.Windows.Forms.Label();
-            dateHoraEntrada = new System.Windows.Forms.DateTimePicker();
-            panelDiasLibres = new System.Windows.Forms.Panel();
-            checkViernes = new System.Windows.Forms.CheckBox();
-            checkJueves = new System.Windows.Forms.CheckBox();
-            checkMiercoles = new System.Windows.Forms.CheckBox();
-            checkMartes = new System.Windows.Forms.CheckBox();
-            checkLunes = new System.Windows.Forms.CheckBox();
-            lblDiasLibres = new System.Windows.Forms.Label();
-            panelEstadoCivil = new System.Windows.Forms.Panel();
-            radioOtro = new System.Windows.Forms.RadioButton();
-            radioDivorciado = new System.Windows.Forms.RadioButton();
-            radioUnion = new System.Windows.Forms.RadioButton();
-            radioSoltero = new System.Windows.Forms.RadioButton();
-            radioCasado = new System.Windows.Forms.RadioButton();
+            comboEstadoCivil = new System.Windows.Forms.ComboBox();
             lblEstadoCivil = new System.Windows.Forms.Label();
             txtNacionalidad = new System.Windows.Forms.TextBox();
             lblNacinalidad = new System.Windows.Forms.Label();
@@ -104,56 +88,63 @@
             groupBox2 = new System.Windows.Forms.GroupBox();
             lblSoloNum = new System.Windows.Forms.Label();
             btnGuardar = new System.Windows.Forms.Button();
-            btnBuscarEspecial = new System.Windows.Forms.Button();
+            btnBuscarFuncionario = new System.Windows.Forms.Button();
             btnSalir = new System.Windows.Forms.Button();
-            btnEditarEspecialidad = new System.Windows.Forms.Button();
-            btnEliminarEspecialidad = new System.Windows.Forms.Button();
+            btnEditarFuncionario = new System.Windows.Forms.Button();
+            btnEliminarFuncionario = new System.Windows.Forms.Button();
             btnNuevo = new System.Windows.Forms.Button();
             dgrListarFuncionario = new System.Windows.Forms.DataGridView();
             clmidfun = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            clmhorarioidfun = new System.Windows.Forms.DataGridViewTextBoxColumn();
             clmnombrefun = new System.Windows.Forms.DataGridViewTextBoxColumn();
             clmapellidosfun = new System.Windows.Forms.DataGridViewTextBoxColumn();
             clmnaciofun = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            clmtelefonofun = new System.Windows.Forms.DataGridViewTextBoxColumn();
             clmgenerofun = new System.Windows.Forms.DataGridViewTextBoxColumn();
             clmpaisfun = new System.Windows.Forms.DataGridViewTextBoxColumn();
             clmcivilfun = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clmlibresfun = new System.Windows.Forms.DataGridViewTextBoxColumn();
             clmcorreofun = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clmtelefonofun = new System.Windows.Forms.DataGridViewTextBoxColumn();
             clmciudadfun = new System.Windows.Forms.DataGridViewTextBoxColumn();
             clmprovinciafun = new System.Windows.Forms.DataGridViewTextBoxColumn();
             clmdireccionfun = new System.Windows.Forms.DataGridViewTextBoxColumn();
             clmanotacionesfun = new System.Windows.Forms.DataGridViewTextBoxColumn();
             clmpuestofun = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clmhorainfun = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clmhoraoutfun = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            dgrListarMedicos = new System.Windows.Forms.DataGridView();
-            clmIdentificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clmNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clmApellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clmFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clmgenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clmnacionalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clmestadocivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clmdiaslibres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clmcorreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clmtelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clmciudad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clmprovincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clmdireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clmanotaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clmpuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clmhoraentrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            clmhorasalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            panelDeDias = new System.Windows.Forms.Panel();
+            lblHorarioId = new System.Windows.Forms.Label();
+            checkDomingo = new System.Windows.Forms.CheckBox();
+            checkSabado = new System.Windows.Forms.CheckBox();
+            checkViernes = new System.Windows.Forms.CheckBox();
+            checkJueves = new System.Windows.Forms.CheckBox();
+            checkMiercoles = new System.Windows.Forms.CheckBox();
+            checkMartes = new System.Windows.Forms.CheckBox();
+            checkLunes = new System.Windows.Forms.CheckBox();
+            dgrHorasSemana = new System.Windows.Forms.DataGridView();
+            horarioid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            lunes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            martes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            miercoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            jueves = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            viernes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            sabado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            domingo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            btnGuardarDia = new System.Windows.Forms.Button();
+            comboSalida = new System.Windows.Forms.ComboBox();
+            comboEntrada = new System.Windows.Forms.ComboBox();
+            lblSalida = new System.Windows.Forms.Label();
+            lblEntrada = new System.Windows.Forms.Label();
+            groupEntradaSalida = new System.Windows.Forms.GroupBox();
+            btnTodosIguales = new System.Windows.Forms.Button();
+            groupListaFuncionario = new System.Windows.Forms.GroupBox();
             groupContacto.SuspendLayout();
             groupBox1.SuspendLayout();
-            panelDiasLibres.SuspendLayout();
-            panelEstadoCivil.SuspendLayout();
             panelGenero.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgrListarFuncionarios).BeginInit();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgrListarFuncionario).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgrListarMedicos).BeginInit();
+            panelDeDias.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgrHorasSemana).BeginInit();
+            groupEntradaSalida.SuspendLayout();
+            groupListaFuncionario.SuspendLayout();
             SuspendLayout();
             // 
             // txtID
@@ -190,9 +181,9 @@
             groupContacto.Controls.Add(lblCiudad);
             groupContacto.Controls.Add(lblTelefono);
             groupContacto.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            groupContacto.Location = new System.Drawing.Point(712, 98);
+            groupContacto.Location = new System.Drawing.Point(712, 12);
             groupContacto.Name = "groupContacto";
-            groupContacto.Size = new System.Drawing.Size(404, 322);
+            groupContacto.Size = new System.Drawing.Size(404, 509);
             groupContacto.TabIndex = 23;
             groupContacto.TabStop = false;
             groupContacto.Text = "Datos de contacto";
@@ -211,17 +202,17 @@
             // 
             // txtAnotaciones
             // 
-            txtAnotaciones.Location = new System.Drawing.Point(194, 168);
+            txtAnotaciones.Location = new System.Drawing.Point(16, 349);
             txtAnotaciones.Multiline = true;
             txtAnotaciones.Name = "txtAnotaciones";
-            txtAnotaciones.Size = new System.Drawing.Size(200, 102);
+            txtAnotaciones.Size = new System.Drawing.Size(378, 148);
             txtAnotaciones.TabIndex = 20;
             // 
             // lblNotas
             // 
             lblNotas.AutoSize = true;
             lblNotas.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblNotas.Location = new System.Drawing.Point(194, 150);
+            lblNotas.Location = new System.Drawing.Point(16, 331);
             lblNotas.Name = "lblNotas";
             lblNotas.Size = new System.Drawing.Size(75, 15);
             lblNotas.TabIndex = 19;
@@ -240,9 +231,9 @@
             // 
             // txtCorreo
             // 
-            txtCorreo.Location = new System.Drawing.Point(194, 46);
+            txtCorreo.Location = new System.Drawing.Point(207, 46);
             txtCorreo.Name = "txtCorreo";
-            txtCorreo.Size = new System.Drawing.Size(200, 26);
+            txtCorreo.Size = new System.Drawing.Size(187, 26);
             txtCorreo.TabIndex = 17;
             txtCorreo.TextChanged += txtCorreo_TextChanged_1;
             // 
@@ -250,7 +241,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label1.Location = new System.Drawing.Point(184, 29);
+            label1.Location = new System.Drawing.Point(207, 29);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(44, 15);
             label1.TabIndex = 16;
@@ -258,10 +249,10 @@
             // 
             // txtDetallesDireccion
             // 
-            txtDetallesDireccion.Location = new System.Drawing.Point(16, 167);
+            txtDetallesDireccion.Location = new System.Drawing.Point(16, 168);
             txtDetallesDireccion.Multiline = true;
             txtDetallesDireccion.Name = "txtDetallesDireccion";
-            txtDetallesDireccion.Size = new System.Drawing.Size(172, 102);
+            txtDetallesDireccion.Size = new System.Drawing.Size(378, 153);
             txtDetallesDireccion.TabIndex = 15;
             // 
             // lblDetallesDireccion
@@ -290,9 +281,9 @@
             comboProvincias.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             comboProvincias.FormattingEnabled = true;
             comboProvincias.Items.AddRange(new object[] { "Alajuela", "Heredia", "Cartago", "San José", "Puntarenas", "Guanacaste", "Limón", "" });
-            comboProvincias.Location = new System.Drawing.Point(194, 109);
+            comboProvincias.Location = new System.Drawing.Point(207, 109);
             comboProvincias.Name = "comboProvincias";
-            comboProvincias.Size = new System.Drawing.Size(200, 22);
+            comboProvincias.Size = new System.Drawing.Size(187, 22);
             comboProvincias.TabIndex = 7;
             comboProvincias.Text = "Seleccione una Provincia";
             // 
@@ -300,7 +291,7 @@
             // 
             lblProvincia.AutoSize = true;
             lblProvincia.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblProvincia.Location = new System.Drawing.Point(194, 90);
+            lblProvincia.Location = new System.Drawing.Point(207, 90);
             lblProvincia.Name = "lblProvincia";
             lblProvincia.Size = new System.Drawing.Size(60, 15);
             lblProvincia.TabIndex = 12;
@@ -387,13 +378,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(lblSalida);
-            groupBox1.Controls.Add(dateHoraSalida);
-            groupBox1.Controls.Add(lblEntrada);
-            groupBox1.Controls.Add(dateHoraEntrada);
-            groupBox1.Controls.Add(panelDiasLibres);
-            groupBox1.Controls.Add(lblDiasLibres);
-            groupBox1.Controls.Add(panelEstadoCivil);
+            groupBox1.Controls.Add(comboEstadoCivil);
             groupBox1.Controls.Add(lblEstadoCivil);
             groupBox1.Controls.Add(txtNacionalidad);
             groupBox1.Controls.Add(lblNacinalidad);
@@ -404,211 +389,19 @@
             groupBox1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             groupBox1.Location = new System.Drawing.Point(14, 98);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new System.Drawing.Size(692, 322);
+            groupBox1.Size = new System.Drawing.Size(692, 199);
             groupBox1.TabIndex = 22;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos del paciente";
             // 
-            // lblSalida
+            // comboEstadoCivil
             // 
-            lblSalida.AutoSize = true;
-            lblSalida.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblSalida.Location = new System.Drawing.Point(245, 272);
-            lblSalida.Name = "lblSalida";
-            lblSalida.Size = new System.Drawing.Size(72, 15);
-            lblSalida.TabIndex = 15;
-            lblSalida.Text = "Hora Salida";
-            // 
-            // dateHoraSalida
-            // 
-            dateHoraSalida.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dateHoraSalida.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            dateHoraSalida.Location = new System.Drawing.Point(243, 290);
-            dateHoraSalida.Name = "dateHoraSalida";
-            dateHoraSalida.Size = new System.Drawing.Size(200, 26);
-            dateHoraSalida.TabIndex = 14;
-            // 
-            // lblEntrada
-            // 
-            lblEntrada.AutoSize = true;
-            lblEntrada.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblEntrada.Location = new System.Drawing.Point(17, 272);
-            lblEntrada.Name = "lblEntrada";
-            lblEntrada.Size = new System.Drawing.Size(80, 15);
-            lblEntrada.TabIndex = 13;
-            lblEntrada.Text = "Hora Entrada";
-            // 
-            // dateHoraEntrada
-            // 
-            dateHoraEntrada.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dateHoraEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            dateHoraEntrada.Location = new System.Drawing.Point(15, 290);
-            dateHoraEntrada.Name = "dateHoraEntrada";
-            dateHoraEntrada.Size = new System.Drawing.Size(200, 26);
-            dateHoraEntrada.TabIndex = 12;
-            // 
-            // panelDiasLibres
-            // 
-            panelDiasLibres.BackColor = System.Drawing.SystemColors.ButtonFace;
-            panelDiasLibres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            panelDiasLibres.Controls.Add(checkViernes);
-            panelDiasLibres.Controls.Add(checkJueves);
-            panelDiasLibres.Controls.Add(checkMiercoles);
-            panelDiasLibres.Controls.Add(checkMartes);
-            panelDiasLibres.Controls.Add(checkLunes);
-            panelDiasLibres.Location = new System.Drawing.Point(17, 226);
-            panelDiasLibres.Name = "panelDiasLibres";
-            panelDiasLibres.Size = new System.Drawing.Size(659, 26);
-            panelDiasLibres.TabIndex = 11;
-            // 
-            // checkViernes
-            // 
-            checkViernes.AutoSize = true;
-            checkViernes.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            checkViernes.Location = new System.Drawing.Point(566, 3);
-            checkViernes.Name = "checkViernes";
-            checkViernes.Size = new System.Drawing.Size(75, 22);
-            checkViernes.TabIndex = 29;
-            checkViernes.Text = "Viernes";
-            checkViernes.UseVisualStyleBackColor = true;
-            checkViernes.CheckedChanged += checkViernes_CheckedChanged;
-            // 
-            // checkJueves
-            // 
-            checkJueves.AutoSize = true;
-            checkJueves.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            checkJueves.Location = new System.Drawing.Point(420, 3);
-            checkJueves.Name = "checkJueves";
-            checkJueves.Size = new System.Drawing.Size(69, 22);
-            checkJueves.TabIndex = 18;
-            checkJueves.Text = "Jueves";
-            checkJueves.UseVisualStyleBackColor = true;
-            checkJueves.CheckedChanged += checkJueves_CheckedChanged;
-            // 
-            // checkMiercoles
-            // 
-            checkMiercoles.AutoSize = true;
-            checkMiercoles.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            checkMiercoles.Location = new System.Drawing.Point(269, 3);
-            checkMiercoles.Name = "checkMiercoles";
-            checkMiercoles.Size = new System.Drawing.Size(88, 22);
-            checkMiercoles.TabIndex = 29;
-            checkMiercoles.Text = "Miércoles";
-            checkMiercoles.UseVisualStyleBackColor = true;
-            checkMiercoles.CheckedChanged += checkMiercoles_CheckedChanged;
-            // 
-            // checkMartes
-            // 
-            checkMartes.AutoSize = true;
-            checkMartes.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            checkMartes.Location = new System.Drawing.Point(134, 3);
-            checkMartes.Name = "checkMartes";
-            checkMartes.Size = new System.Drawing.Size(70, 22);
-            checkMartes.TabIndex = 1;
-            checkMartes.Text = "Martes";
-            checkMartes.UseVisualStyleBackColor = true;
-            checkMartes.CheckedChanged += checkMartes_CheckedChanged;
-            // 
-            // checkLunes
-            // 
-            checkLunes.AutoSize = true;
-            checkLunes.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            checkLunes.Location = new System.Drawing.Point(17, 3);
-            checkLunes.Name = "checkLunes";
-            checkLunes.Size = new System.Drawing.Size(63, 22);
-            checkLunes.TabIndex = 0;
-            checkLunes.Text = "Lunes";
-            checkLunes.UseVisualStyleBackColor = true;
-            checkLunes.CheckedChanged += checkLunes_CheckedChanged;
-            // 
-            // lblDiasLibres
-            // 
-            lblDiasLibres.AutoSize = true;
-            lblDiasLibres.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblDiasLibres.Location = new System.Drawing.Point(15, 208);
-            lblDiasLibres.Name = "lblDiasLibres";
-            lblDiasLibres.Size = new System.Drawing.Size(67, 15);
-            lblDiasLibres.TabIndex = 10;
-            lblDiasLibres.Text = "Días Libres";
-            // 
-            // panelEstadoCivil
-            // 
-            panelEstadoCivil.BackColor = System.Drawing.SystemColors.ButtonFace;
-            panelEstadoCivil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            panelEstadoCivil.Controls.Add(radioOtro);
-            panelEstadoCivil.Controls.Add(radioDivorciado);
-            panelEstadoCivil.Controls.Add(radioUnion);
-            panelEstadoCivil.Controls.Add(radioSoltero);
-            panelEstadoCivil.Controls.Add(radioCasado);
-            panelEstadoCivil.Location = new System.Drawing.Point(15, 165);
-            panelEstadoCivil.Name = "panelEstadoCivil";
-            panelEstadoCivil.Size = new System.Drawing.Size(661, 26);
-            panelEstadoCivil.TabIndex = 9;
-            // 
-            // radioOtro
-            // 
-            radioOtro.AutoSize = true;
-            radioOtro.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            radioOtro.Location = new System.Drawing.Point(568, 3);
-            radioOtro.Name = "radioOtro";
-            radioOtro.Size = new System.Drawing.Size(48, 18);
-            radioOtro.TabIndex = 12;
-            radioOtro.TabStop = true;
-            radioOtro.Text = "Otro";
-            radioOtro.UseVisualStyleBackColor = true;
-            radioOtro.CheckedChanged += radioOtro_CheckedChanged;
-            // 
-            // radioDivorciado
-            // 
-            radioDivorciado.AutoSize = true;
-            radioDivorciado.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            radioDivorciado.Location = new System.Drawing.Point(422, 3);
-            radioDivorciado.Name = "radioDivorciado";
-            radioDivorciado.Size = new System.Drawing.Size(95, 18);
-            radioDivorciado.TabIndex = 11;
-            radioDivorciado.TabStop = true;
-            radioDivorciado.Text = "Divorciado/a";
-            radioDivorciado.UseVisualStyleBackColor = true;
-            radioDivorciado.CheckedChanged += radioDivorciado_CheckedChanged;
-            // 
-            // radioUnion
-            // 
-            radioUnion.AutoSize = true;
-            radioUnion.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            radioUnion.Location = new System.Drawing.Point(271, 3);
-            radioUnion.Name = "radioUnion";
-            radioUnion.Size = new System.Drawing.Size(88, 18);
-            radioUnion.TabIndex = 7;
-            radioUnion.TabStop = true;
-            radioUnion.Text = "Unión Libre";
-            radioUnion.UseVisualStyleBackColor = true;
-            radioUnion.CheckedChanged += radioUnion_CheckedChanged;
-            // 
-            // radioSoltero
-            // 
-            radioSoltero.AutoSize = true;
-            radioSoltero.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            radioSoltero.Location = new System.Drawing.Point(136, 3);
-            radioSoltero.Name = "radioSoltero";
-            radioSoltero.Size = new System.Drawing.Size(76, 18);
-            radioSoltero.TabIndex = 10;
-            radioSoltero.TabStop = true;
-            radioSoltero.Text = "Soltero/a";
-            radioSoltero.UseVisualStyleBackColor = true;
-            radioSoltero.CheckedChanged += radioSoltero_CheckedChanged;
-            // 
-            // radioCasado
-            // 
-            radioCasado.AutoSize = true;
-            radioCasado.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            radioCasado.Location = new System.Drawing.Point(19, 2);
-            radioCasado.Name = "radioCasado";
-            radioCasado.Size = new System.Drawing.Size(77, 18);
-            radioCasado.TabIndex = 0;
-            radioCasado.TabStop = true;
-            radioCasado.Text = "Casado/a";
-            radioCasado.UseVisualStyleBackColor = true;
-            radioCasado.CheckedChanged += radioCasado_CheckedChanged;
+            comboEstadoCivil.FormattingEnabled = true;
+            comboEstadoCivil.Items.AddRange(new object[] { "Casado/a", "Soltero/a", "Unión Libre", "Divorciado/a", "Otro" });
+            comboEstadoCivil.Location = new System.Drawing.Point(12, 165);
+            comboEstadoCivil.Name = "comboEstadoCivil";
+            comboEstadoCivil.Size = new System.Drawing.Size(201, 26);
+            comboEstadoCivil.TabIndex = 9;
             // 
             // lblEstadoCivil
             // 
@@ -679,7 +472,6 @@
             radioMujer.TabStop = true;
             radioMujer.Text = "Mujer";
             radioMujer.UseVisualStyleBackColor = true;
-            radioMujer.CheckedChanged += radioMujer_CheckedChanged;
             // 
             // radioHombre
             // 
@@ -692,7 +484,6 @@
             radioHombre.TabStop = true;
             radioHombre.Text = "Hombre";
             radioHombre.UseVisualStyleBackColor = true;
-            radioHombre.CheckedChanged += radioHombre_CheckedChanged;
             // 
             // dateNacimiento
             // 
@@ -722,7 +513,6 @@
             comboPuesto.Size = new System.Drawing.Size(200, 22);
             comboPuesto.TabIndex = 28;
             comboPuesto.Text = "Seleccione el Puesto";
-            comboPuesto.SelectedIndexChanged += comboPuesto_SelectedIndexChanged;
             // 
             // comboSeleccionarEspecialidad
             // 
@@ -884,7 +674,7 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new System.Drawing.Point(999, 741);
+            btnGuardar.Location = new System.Drawing.Point(996, 806);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new System.Drawing.Size(120, 61);
             btnGuardar.TabIndex = 39;
@@ -892,21 +682,21 @@
             btnGuardar.UseVisualStyleBackColor = true;
             btnGuardar.Click += btnGuardar_Click;
             // 
-            // btnBuscarEspecial
+            // btnBuscarFuncionario
             // 
-            btnBuscarEspecial.Enabled = false;
-            btnBuscarEspecial.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnBuscarEspecial.Location = new System.Drawing.Point(493, 741);
-            btnBuscarEspecial.Name = "btnBuscarEspecial";
-            btnBuscarEspecial.Size = new System.Drawing.Size(120, 61);
-            btnBuscarEspecial.TabIndex = 38;
-            btnBuscarEspecial.Text = "BUSCAR";
-            btnBuscarEspecial.UseVisualStyleBackColor = true;
+            btnBuscarFuncionario.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnBuscarFuncionario.Location = new System.Drawing.Point(490, 806);
+            btnBuscarFuncionario.Name = "btnBuscarFuncionario";
+            btnBuscarFuncionario.Size = new System.Drawing.Size(120, 61);
+            btnBuscarFuncionario.TabIndex = 38;
+            btnBuscarFuncionario.Text = "BUSCAR";
+            btnBuscarFuncionario.UseVisualStyleBackColor = true;
+            btnBuscarFuncionario.Click += btnBuscarFuncionario_Click;
             // 
             // btnSalir
             // 
             btnSalir.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnSalir.Location = new System.Drawing.Point(14, 741);
+            btnSalir.Location = new System.Drawing.Point(11, 806);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new System.Drawing.Size(242, 61);
             btnSalir.TabIndex = 37;
@@ -914,29 +704,29 @@
             btnSalir.UseVisualStyleBackColor = true;
             btnSalir.Click += btnSalir_Click;
             // 
-            // btnEditarEspecialidad
+            // btnEditarFuncionario
             // 
-            btnEditarEspecialidad.Enabled = false;
-            btnEditarEspecialidad.Location = new System.Drawing.Point(745, 741);
-            btnEditarEspecialidad.Name = "btnEditarEspecialidad";
-            btnEditarEspecialidad.Size = new System.Drawing.Size(120, 61);
-            btnEditarEspecialidad.TabIndex = 36;
-            btnEditarEspecialidad.Text = "EDITAR";
-            btnEditarEspecialidad.UseVisualStyleBackColor = true;
+            btnEditarFuncionario.Location = new System.Drawing.Point(742, 806);
+            btnEditarFuncionario.Name = "btnEditarFuncionario";
+            btnEditarFuncionario.Size = new System.Drawing.Size(120, 61);
+            btnEditarFuncionario.TabIndex = 36;
+            btnEditarFuncionario.Text = "EDITAR";
+            btnEditarFuncionario.UseVisualStyleBackColor = true;
+            btnEditarFuncionario.Click += btnEditarFuncionario_Click;
             // 
-            // btnEliminarEspecialidad
+            // btnEliminarFuncionario
             // 
-            btnEliminarEspecialidad.Enabled = false;
-            btnEliminarEspecialidad.Location = new System.Drawing.Point(619, 741);
-            btnEliminarEspecialidad.Name = "btnEliminarEspecialidad";
-            btnEliminarEspecialidad.Size = new System.Drawing.Size(120, 61);
-            btnEliminarEspecialidad.TabIndex = 35;
-            btnEliminarEspecialidad.Text = "ELIMINAR";
-            btnEliminarEspecialidad.UseVisualStyleBackColor = true;
+            btnEliminarFuncionario.Location = new System.Drawing.Point(616, 806);
+            btnEliminarFuncionario.Name = "btnEliminarFuncionario";
+            btnEliminarFuncionario.Size = new System.Drawing.Size(120, 61);
+            btnEliminarFuncionario.TabIndex = 35;
+            btnEliminarFuncionario.Text = "ELIMINAR";
+            btnEliminarFuncionario.UseVisualStyleBackColor = true;
+            btnEliminarFuncionario.Click += btnEliminarFuncionario_Click;
             // 
             // btnNuevo
             // 
-            btnNuevo.Location = new System.Drawing.Point(873, 741);
+            btnNuevo.Location = new System.Drawing.Point(870, 806);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new System.Drawing.Size(120, 61);
             btnNuevo.TabIndex = 34;
@@ -950,13 +740,14 @@
             dgrListarFuncionario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dgrListarFuncionario.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             dgrListarFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgrListarFuncionario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { clmidfun, clmnombrefun, clmapellidosfun, clmnaciofun, clmgenerofun, clmpaisfun, clmcivilfun, clmlibresfun, clmcorreofun, clmtelefonofun, clmciudadfun, clmprovinciafun, clmdireccionfun, clmanotacionesfun, clmpuestofun, clmhorainfun, clmhoraoutfun });
+            dgrListarFuncionario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { clmidfun, clmhorarioidfun, clmnombrefun, clmapellidosfun, clmnaciofun, clmtelefonofun, clmgenerofun, clmpaisfun, clmcivilfun, clmcorreofun, clmciudadfun, clmprovinciafun, clmdireccionfun, clmanotacionesfun, clmpuestofun });
             dgrListarFuncionario.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            dgrListarFuncionario.Location = new System.Drawing.Point(27, 438);
+            dgrListarFuncionario.Location = new System.Drawing.Point(13, 24);
             dgrListarFuncionario.Name = "dgrListarFuncionario";
+            dgrListarFuncionario.RowHeadersVisible = false;
             dgrListarFuncionario.RowTemplate.Height = 25;
             dgrListarFuncionario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            dgrListarFuncionario.Size = new System.Drawing.Size(1084, 152);
+            dgrListarFuncionario.Size = new System.Drawing.Size(1079, 243);
             dgrListarFuncionario.TabIndex = 0;
             dgrListarFuncionario.Click += dgrListarFuncionario_Click;
             // 
@@ -965,6 +756,12 @@
             clmidfun.DataPropertyName = "Identificacion";
             clmidfun.HeaderText = "ID";
             clmidfun.Name = "clmidfun";
+            // 
+            // clmhorarioidfun
+            // 
+            clmhorarioidfun.DataPropertyName = "HorarioId";
+            clmhorarioidfun.HeaderText = "HORARIO";
+            clmhorarioidfun.Name = "clmhorarioidfun";
             // 
             // clmnombrefun
             // 
@@ -984,6 +781,12 @@
             clmnaciofun.HeaderText = "NACIMIENTO";
             clmnaciofun.Name = "clmnaciofun";
             // 
+            // clmtelefonofun
+            // 
+            clmtelefonofun.DataPropertyName = "Telefono";
+            clmtelefonofun.HeaderText = "TELÉFONO";
+            clmtelefonofun.Name = "clmtelefonofun";
+            // 
             // clmgenerofun
             // 
             clmgenerofun.DataPropertyName = "Genero";
@@ -999,26 +802,14 @@
             // clmcivilfun
             // 
             clmcivilfun.DataPropertyName = "EstadoCivil";
-            clmcivilfun.HeaderText = "ESTADO_CV";
+            clmcivilfun.HeaderText = "ESTADOCIV";
             clmcivilfun.Name = "clmcivilfun";
-            // 
-            // clmlibresfun
-            // 
-            clmlibresfun.DataPropertyName = "DiasLibres";
-            clmlibresfun.HeaderText = "LIBRES";
-            clmlibresfun.Name = "clmlibresfun";
             // 
             // clmcorreofun
             // 
             clmcorreofun.DataPropertyName = "Correo";
             clmcorreofun.HeaderText = "CORREO";
             clmcorreofun.Name = "clmcorreofun";
-            // 
-            // clmtelefonofun
-            // 
-            clmtelefonofun.DataPropertyName = "Telefono";
-            clmtelefonofun.HeaderText = "TELÉFONO";
-            clmtelefonofun.Name = "clmtelefonofun";
             // 
             // clmciudadfun
             // 
@@ -1035,7 +826,7 @@
             // clmdireccionfun
             // 
             clmdireccionfun.DataPropertyName = "DetalleDireccion";
-            clmdireccionfun.HeaderText = "DIRECCIÓN";
+            clmdireccionfun.HeaderText = "DIRECCION";
             clmdireccionfun.Name = "clmdireccionfun";
             // 
             // clmanotacionesfun
@@ -1050,132 +841,267 @@
             clmpuestofun.HeaderText = "PUESTO";
             clmpuestofun.Name = "clmpuestofun";
             // 
-            // clmhorainfun
+            // panelDeDias
             // 
-            clmhorainfun.DataPropertyName = "HoraEntrada";
-            clmhorainfun.HeaderText = "HORA_IN";
-            clmhorainfun.Name = "clmhorainfun";
+            panelDeDias.BackColor = System.Drawing.SystemColors.ButtonFace;
+            panelDeDias.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            panelDeDias.Controls.Add(lblHorarioId);
+            panelDeDias.Controls.Add(checkDomingo);
+            panelDeDias.Controls.Add(checkSabado);
+            panelDeDias.Controls.Add(checkViernes);
+            panelDeDias.Controls.Add(checkJueves);
+            panelDeDias.Controls.Add(checkMiercoles);
+            panelDeDias.Controls.Add(checkMartes);
+            panelDeDias.Controls.Add(checkLunes);
+            panelDeDias.Location = new System.Drawing.Point(20, 29);
+            panelDeDias.Name = "panelDeDias";
+            panelDeDias.Size = new System.Drawing.Size(655, 26);
+            panelDeDias.TabIndex = 41;
             // 
-            // clmhoraoutfun
+            // lblHorarioId
             // 
-            clmhoraoutfun.DataPropertyName = "HoraSalida";
-            clmhoraoutfun.HeaderText = "HORA_OUT";
-            clmhoraoutfun.Name = "clmhoraoutfun";
+            lblHorarioId.AutoSize = true;
+            lblHorarioId.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblHorarioId.Location = new System.Drawing.Point(3, 6);
+            lblHorarioId.Name = "lblHorarioId";
+            lblHorarioId.Size = new System.Drawing.Size(19, 15);
+            lblHorarioId.TabIndex = 31;
+            lblHorarioId.Text = "ID";
             // 
-            // dgrListarMedicos
+            // checkDomingo
             // 
-            dgrListarMedicos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dgrListarMedicos.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dgrListarMedicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgrListarMedicos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { clmIdentificacion, clmNombre, clmApellidos, clmFecha, clmgenero, clmnacionalidad, clmestadocivil, clmdiaslibres, clmcorreo, clmtelefono, clmciudad, clmprovincia, clmdireccion, clmanotaciones, clmpuesto, clmhoraentrada, clmhorasalida });
-            dgrListarMedicos.Location = new System.Drawing.Point(29, 596);
-            dgrListarMedicos.Name = "dgrListarMedicos";
-            dgrListarMedicos.RowTemplate.Height = 25;
-            dgrListarMedicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            dgrListarMedicos.Size = new System.Drawing.Size(1084, 130);
-            dgrListarMedicos.TabIndex = 0;
+            checkDomingo.AutoSize = true;
+            checkDomingo.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            checkDomingo.Location = new System.Drawing.Point(572, 3);
+            checkDomingo.Name = "checkDomingo";
+            checkDomingo.Size = new System.Drawing.Size(83, 22);
+            checkDomingo.TabIndex = 30;
+            checkDomingo.Text = "Domingo";
+            checkDomingo.UseVisualStyleBackColor = true;
             // 
-            // clmIdentificacion
+            // checkSabado
             // 
-            clmIdentificacion.DataPropertyName = "Identificacion";
-            clmIdentificacion.HeaderText = "ID";
-            clmIdentificacion.Name = "clmIdentificacion";
+            checkSabado.AutoSize = true;
+            checkSabado.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            checkSabado.Location = new System.Drawing.Point(494, 3);
+            checkSabado.Name = "checkSabado";
+            checkSabado.Size = new System.Drawing.Size(72, 22);
+            checkSabado.TabIndex = 30;
+            checkSabado.Text = "Sábado";
+            checkSabado.UseVisualStyleBackColor = true;
             // 
-            // clmNombre
+            // checkViernes
             // 
-            clmNombre.DataPropertyName = "Nombre";
-            clmNombre.HeaderText = "NOMBRE";
-            clmNombre.Name = "clmNombre";
+            checkViernes.AutoSize = true;
+            checkViernes.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            checkViernes.Location = new System.Drawing.Point(413, 3);
+            checkViernes.Name = "checkViernes";
+            checkViernes.Size = new System.Drawing.Size(75, 22);
+            checkViernes.TabIndex = 29;
+            checkViernes.Text = "Viernes";
+            checkViernes.UseVisualStyleBackColor = true;
             // 
-            // clmApellidos
+            // checkJueves
             // 
-            clmApellidos.DataPropertyName = "Apellidos";
-            clmApellidos.HeaderText = "APELLIDOS";
-            clmApellidos.Name = "clmApellidos";
+            checkJueves.AutoSize = true;
+            checkJueves.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            checkJueves.Location = new System.Drawing.Point(330, 3);
+            checkJueves.Name = "checkJueves";
+            checkJueves.Size = new System.Drawing.Size(69, 22);
+            checkJueves.TabIndex = 18;
+            checkJueves.Text = "Jueves";
+            checkJueves.UseVisualStyleBackColor = true;
             // 
-            // clmFecha
+            // checkMiercoles
             // 
-            clmFecha.DataPropertyName = "FechaNacimiento";
-            clmFecha.HeaderText = "NACIMIENTO";
-            clmFecha.Name = "clmFecha";
+            checkMiercoles.AutoSize = true;
+            checkMiercoles.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            checkMiercoles.Location = new System.Drawing.Point(245, 3);
+            checkMiercoles.Name = "checkMiercoles";
+            checkMiercoles.Size = new System.Drawing.Size(88, 22);
+            checkMiercoles.TabIndex = 29;
+            checkMiercoles.Text = "Miércoles";
+            checkMiercoles.UseVisualStyleBackColor = true;
             // 
-            // clmgenero
+            // checkMartes
             // 
-            clmgenero.DataPropertyName = "Genero";
-            clmgenero.HeaderText = "GENERO";
-            clmgenero.Name = "clmgenero";
+            checkMartes.AutoSize = true;
+            checkMartes.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            checkMartes.Location = new System.Drawing.Point(169, 3);
+            checkMartes.Name = "checkMartes";
+            checkMartes.Size = new System.Drawing.Size(70, 22);
+            checkMartes.TabIndex = 1;
+            checkMartes.Text = "Martes";
+            checkMartes.UseVisualStyleBackColor = true;
             // 
-            // clmnacionalidad
+            // checkLunes
             // 
-            clmnacionalidad.DataPropertyName = "Nacionalidad";
-            clmnacionalidad.HeaderText = "NACIONALIDAD";
-            clmnacionalidad.Name = "clmnacionalidad";
+            checkLunes.AutoSize = true;
+            checkLunes.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            checkLunes.Location = new System.Drawing.Point(88, 3);
+            checkLunes.Name = "checkLunes";
+            checkLunes.Size = new System.Drawing.Size(63, 22);
+            checkLunes.TabIndex = 0;
+            checkLunes.Text = "Lunes";
+            checkLunes.UseVisualStyleBackColor = true;
             // 
-            // clmestadocivil
+            // dgrHorasSemana
             // 
-            clmestadocivil.DataPropertyName = "EstadoCivil";
-            clmestadocivil.HeaderText = "ESTADO_CV";
-            clmestadocivil.Name = "clmestadocivil";
+            dgrHorasSemana.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dgrHorasSemana.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            dgrHorasSemana.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgrHorasSemana.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { horarioid, lunes, martes, miercoles, jueves, viernes, sabado, domingo });
+            dgrHorasSemana.Location = new System.Drawing.Point(20, 29);
+            dgrHorasSemana.Name = "dgrHorasSemana";
+            dgrHorasSemana.RowHeadersVisible = false;
+            dgrHorasSemana.RowTemplate.Height = 25;
+            dgrHorasSemana.Size = new System.Drawing.Size(655, 51);
+            dgrHorasSemana.TabIndex = 46;
             // 
-            // clmdiaslibres
+            // horarioid
             // 
-            clmdiaslibres.DataPropertyName = "DiasLibres";
-            clmdiaslibres.HeaderText = "LIBRES";
-            clmdiaslibres.Name = "clmdiaslibres";
+            horarioid.DataPropertyName = "HorarioId";
+            horarioid.HeaderText = "ID";
+            horarioid.Name = "horarioid";
             // 
-            // clmcorreo
+            // lunes
             // 
-            clmcorreo.DataPropertyName = "Correo";
-            clmcorreo.HeaderText = "CORREO";
-            clmcorreo.Name = "clmcorreo";
+            lunes.DataPropertyName = "Lunes";
+            lunes.HeaderText = "LUNES";
+            lunes.Name = "lunes";
             // 
-            // clmtelefono
+            // martes
             // 
-            clmtelefono.DataPropertyName = "Telefono";
-            clmtelefono.HeaderText = "TELÉFONO";
-            clmtelefono.Name = "clmtelefono";
+            martes.DataPropertyName = "Martes";
+            martes.HeaderText = "MARTES";
+            martes.Name = "martes";
             // 
-            // clmciudad
+            // miercoles
             // 
-            clmciudad.DataPropertyName = "Ciudad";
-            clmciudad.HeaderText = "CIUDAD";
-            clmciudad.Name = "clmciudad";
+            miercoles.DataPropertyName = "Miercoles";
+            miercoles.HeaderText = "MIERCOLES";
+            miercoles.Name = "miercoles";
             // 
-            // clmprovincia
+            // jueves
             // 
-            clmprovincia.DataPropertyName = "Provincia";
-            clmprovincia.HeaderText = "PROVINCIA";
-            clmprovincia.Name = "clmprovincia";
+            jueves.DataPropertyName = "Jueves";
+            jueves.HeaderText = "JUEVES";
+            jueves.Name = "jueves";
             // 
-            // clmdireccion
+            // viernes
             // 
-            clmdireccion.DataPropertyName = "DetalleDireccion";
-            clmdireccion.HeaderText = "DIRECCIÓN";
-            clmdireccion.Name = "clmdireccion";
+            viernes.DataPropertyName = "Viernes";
+            viernes.HeaderText = "VIERNES";
+            viernes.Name = "viernes";
             // 
-            // clmanotaciones
+            // sabado
             // 
-            clmanotaciones.DataPropertyName = "Anotaciones";
-            clmanotaciones.HeaderText = "ANOTACIONES";
-            clmanotaciones.Name = "clmanotaciones";
+            sabado.DataPropertyName = "Sabado";
+            sabado.HeaderText = "SÁBADO";
+            sabado.Name = "sabado";
             // 
-            // clmpuesto
+            // domingo
             // 
-            clmpuesto.DataPropertyName = "Puesto";
-            clmpuesto.HeaderText = "PUESTO";
-            clmpuesto.Name = "clmpuesto";
+            domingo.DataPropertyName = "Domingo";
+            domingo.HeaderText = "DOMINGO";
+            domingo.Name = "domingo";
             // 
-            // clmhoraentrada
+            // btnGuardarDia
             // 
-            clmhoraentrada.DataPropertyName = "HoraEntrada";
-            clmhoraentrada.HeaderText = "HORA_IN";
-            clmhoraentrada.Name = "clmhoraentrada";
+            btnGuardarDia.Location = new System.Drawing.Point(204, 150);
+            btnGuardarDia.Name = "btnGuardarDia";
+            btnGuardarDia.Size = new System.Drawing.Size(276, 26);
+            btnGuardarDia.TabIndex = 47;
+            btnGuardarDia.Text = "Guardar Día Indicado";
+            btnGuardarDia.UseVisualStyleBackColor = true;
+            btnGuardarDia.Visible = false;
+            btnGuardarDia.Click += btnGuardarDia_Click;
             // 
-            // clmhorasalida
+            // comboSalida
             // 
-            clmhorasalida.DataPropertyName = "HoraSalida";
-            clmhorasalida.HeaderText = "HORA_OUT";
-            clmhorasalida.Name = "clmhorasalida";
+            comboSalida.FormattingEnabled = true;
+            comboSalida.Items.AddRange(new object[] { "00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00" });
+            comboSalida.Location = new System.Drawing.Point(348, 112);
+            comboSalida.Name = "comboSalida";
+            comboSalida.Size = new System.Drawing.Size(132, 26);
+            comboSalida.TabIndex = 45;
+            comboSalida.Visible = false;
+            comboSalida.SelectedIndexChanged += comboSalida_SelectedIndexChanged;
+            // 
+            // comboEntrada
+            // 
+            comboEntrada.FormattingEnabled = true;
+            comboEntrada.Items.AddRange(new object[] { "00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00" });
+            comboEntrada.Location = new System.Drawing.Point(204, 112);
+            comboEntrada.Name = "comboEntrada";
+            comboEntrada.Size = new System.Drawing.Size(132, 26);
+            comboEntrada.TabIndex = 44;
+            comboEntrada.Visible = false;
+            comboEntrada.SelectedIndexChanged += comboEntrada_SelectedIndexChanged;
+            // 
+            // lblSalida
+            // 
+            lblSalida.AutoSize = true;
+            lblSalida.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblSalida.ForeColor = System.Drawing.Color.Red;
+            lblSalida.Location = new System.Drawing.Point(348, 94);
+            lblSalida.Name = "lblSalida";
+            lblSalida.Size = new System.Drawing.Size(72, 15);
+            lblSalida.TabIndex = 43;
+            lblSalida.Text = "Hora Salida";
+            lblSalida.Visible = false;
+            // 
+            // lblEntrada
+            // 
+            lblEntrada.AutoSize = true;
+            lblEntrada.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblEntrada.ForeColor = System.Drawing.Color.Red;
+            lblEntrada.Location = new System.Drawing.Point(204, 94);
+            lblEntrada.Name = "lblEntrada";
+            lblEntrada.Size = new System.Drawing.Size(80, 15);
+            lblEntrada.TabIndex = 42;
+            lblEntrada.Text = "Hora Entrada";
+            lblEntrada.Visible = false;
+            // 
+            // groupEntradaSalida
+            // 
+            groupEntradaSalida.Controls.Add(btnTodosIguales);
+            groupEntradaSalida.Controls.Add(btnGuardarDia);
+            groupEntradaSalida.Controls.Add(panelDeDias);
+            groupEntradaSalida.Controls.Add(comboSalida);
+            groupEntradaSalida.Controls.Add(dgrHorasSemana);
+            groupEntradaSalida.Controls.Add(comboEntrada);
+            groupEntradaSalida.Controls.Add(lblEntrada);
+            groupEntradaSalida.Controls.Add(lblSalida);
+            groupEntradaSalida.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            groupEntradaSalida.Location = new System.Drawing.Point(14, 303);
+            groupEntradaSalida.Name = "groupEntradaSalida";
+            groupEntradaSalida.Size = new System.Drawing.Size(692, 218);
+            groupEntradaSalida.TabIndex = 48;
+            groupEntradaSalida.TabStop = false;
+            groupEntradaSalida.Text = "Horario del Funcionario";
+            // 
+            // btnTodosIguales
+            // 
+            btnTodosIguales.Location = new System.Drawing.Point(204, 182);
+            btnTodosIguales.Name = "btnTodosIguales";
+            btnTodosIguales.Size = new System.Drawing.Size(276, 26);
+            btnTodosIguales.TabIndex = 48;
+            btnTodosIguales.Text = "Llenar todos por igual";
+            btnTodosIguales.UseVisualStyleBackColor = true;
+            btnTodosIguales.Visible = false;
+            btnTodosIguales.Click += btnTodosIguales_Click;
+            // 
+            // groupListaFuncionario
+            // 
+            groupListaFuncionario.Controls.Add(dgrListarFuncionario);
+            groupListaFuncionario.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            groupListaFuncionario.Location = new System.Drawing.Point(14, 527);
+            groupListaFuncionario.Name = "groupListaFuncionario";
+            groupListaFuncionario.Size = new System.Drawing.Size(1102, 273);
+            groupListaFuncionario.TabIndex = 49;
+            groupListaFuncionario.TabStop = false;
+            groupListaFuncionario.Text = "Datos del funcionario";
             // 
             // Frm_Funcionario
             // 
@@ -1183,13 +1109,12 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.SystemColors.ActiveCaption;
             ClientSize = new System.Drawing.Size(1126, 879);
-            Controls.Add(dgrListarMedicos);
-            Controls.Add(dgrListarFuncionario);
+            Controls.Add(groupEntradaSalida);
             Controls.Add(btnGuardar);
-            Controls.Add(btnBuscarEspecial);
+            Controls.Add(btnBuscarFuncionario);
             Controls.Add(btnSalir);
-            Controls.Add(btnEditarEspecialidad);
-            Controls.Add(btnEliminarEspecialidad);
+            Controls.Add(btnEditarFuncionario);
+            Controls.Add(btnEliminarFuncionario);
             Controls.Add(btnNuevo);
             Controls.Add(lblEspecialidad);
             Controls.Add(comboSeleccionarEspecialidad);
@@ -1206,6 +1131,7 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(groupContacto);
+            Controls.Add(groupListaFuncionario);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
@@ -1218,17 +1144,18 @@
             groupContacto.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            panelDiasLibres.ResumeLayout(false);
-            panelDiasLibres.PerformLayout();
-            panelEstadoCivil.ResumeLayout(false);
-            panelEstadoCivil.PerformLayout();
             panelGenero.ResumeLayout(false);
             panelGenero.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgrListarFuncionarios).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgrListarFuncionario).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgrListarMedicos).EndInit();
+            panelDeDias.ResumeLayout(false);
+            panelDeDias.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgrHorasSemana).EndInit();
+            groupEntradaSalida.ResumeLayout(false);
+            groupEntradaSalida.PerformLayout();
+            groupListaFuncionario.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1253,10 +1180,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Panel panelEstadoCivil;
-        private System.Windows.Forms.RadioButton radioUnion;
-        private System.Windows.Forms.RadioButton radioSoltero;
-        private System.Windows.Forms.RadioButton radioCasado;
         private System.Windows.Forms.Label lblEstadoCivil;
         private System.Windows.Forms.TextBox txtNacionalidad;
         private System.Windows.Forms.Label lblNacinalidad;
@@ -1269,15 +1192,6 @@
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboPuesto;
-        private System.Windows.Forms.Panel panelDiasLibres;
-        private System.Windows.Forms.Label lblDiasLibres;
-        private System.Windows.Forms.RadioButton radioDivorciado;
-        private System.Windows.Forms.RadioButton radioOtro;
-        private System.Windows.Forms.CheckBox checkLunes;
-        private System.Windows.Forms.CheckBox checkViernes;
-        private System.Windows.Forms.CheckBox checkJueves;
-        private System.Windows.Forms.CheckBox checkMiercoles;
-        private System.Windows.Forms.CheckBox checkMartes;
         private System.Windows.Forms.Label lblValidarCorreo;
         private System.Windows.Forms.ComboBox comboSeleccionarEspecialidad;
         private System.Windows.Forms.Label lblEspecialidad;
@@ -1287,10 +1201,10 @@
         private System.Windows.Forms.GroupBox groupListarFuncionarios;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnBuscarEspecial;
+        private System.Windows.Forms.Button btnBuscarFuncionario;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnEditarEspecialidad;
-        private System.Windows.Forms.Button btnEliminarEspecialidad;
+        private System.Windows.Forms.Button btnEditarFuncionario;
+        private System.Windows.Forms.Button btnEliminarFuncionario;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.DataGridViewTextBoxColumn medico_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn puesto;
@@ -1309,47 +1223,50 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn provincia;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn anotaciones;
-        private System.Windows.Forms.DataGridView dgrListarMedicos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmIdentificacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmApellidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmFecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmgenero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmnacionalidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmestadocivil;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmdiaslibres;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmcorreo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmtelefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmciudad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmprovincia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmdireccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmanotaciones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmpuesto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmhoraentrada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmhorasalida;
         private System.Windows.Forms.DataGridView dgrListarFuncionario;
-        private System.Windows.Forms.DateTimePicker dateHoraEntrada;
+        private System.Windows.Forms.Label lblSoloNum;
+        private System.Windows.Forms.Label lblSoloNum2;
+        private System.Windows.Forms.Panel panelDeDias;
+        private System.Windows.Forms.CheckBox checkDomingo;
+        private System.Windows.Forms.CheckBox checkSabado;
+        private System.Windows.Forms.CheckBox checkViernes;
+        private System.Windows.Forms.CheckBox checkJueves;
+        private System.Windows.Forms.CheckBox checkMiercoles;
+        private System.Windows.Forms.CheckBox checkMartes;
+        private System.Windows.Forms.CheckBox checkLunes;
+        private System.Windows.Forms.DataGridView dgrHorasSemana;
+        private System.Windows.Forms.Button btnGuardarDia;
+        private System.Windows.Forms.ComboBox comboSalida;
+        private System.Windows.Forms.ComboBox comboEntrada;
         private System.Windows.Forms.Label lblSalida;
-        private System.Windows.Forms.DateTimePicker dateHoraSalida;
         private System.Windows.Forms.Label lblEntrada;
+        private System.Windows.Forms.GroupBox groupEntradaSalida;
+        private System.Windows.Forms.ComboBox comboEstadoCivil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn horarioid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lunes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn martes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn miercoles;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jueves;
+        private System.Windows.Forms.DataGridViewTextBoxColumn viernes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sabado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn domingo;
+        private System.Windows.Forms.Label lblHorarioId;
+        private System.Windows.Forms.GroupBox groupListaFuncionario;
+        private System.Windows.Forms.Button btnTodosIguales;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmidfun;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmhorarioidfun;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnombrefun;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmapellidosfun;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnaciofun;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmtelefonofun;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmgenerofun;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmpaisfun;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmcivilfun;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmlibresfun;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmcorreofun;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmtelefonofun;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmciudadfun;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmprovinciafun;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmdireccionfun;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmanotacionesfun;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmpuestofun;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmhorainfun;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmhoraoutfun;
-        private System.Windows.Forms.Label lblSoloNum;
-        private System.Windows.Forms.Label lblSoloNum2;
     }
 }
