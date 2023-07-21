@@ -50,3 +50,16 @@ C:\Users\djjav\Desktop\Tarea15_Capas\Tarea_15GrupalActualizar\_03_CapaBaseDatos\
 C:\Users\djjav\Desktop\Tarea15_Capas\Tarea_15GrupalActualizar\_03_CapaBaseDatos\obj\Debug\netstandard2.0\_03_CapaBaseDatos.csproj.CopyComplete
 C:\Users\djjav\Desktop\Tarea15_Capas\Tarea_15GrupalActualizar\_03_CapaBaseDatos\obj\Debug\netstandard2.0\_03_CapaBaseDatos.dll
 C:\Users\djjav\Desktop\Tarea15_Capas\Tarea_15GrupalActualizar\_03_CapaBaseDatos\obj\Debug\netstandard2.0\_03_CapaBaseDatos.pdb
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea15_Capas\Tarea_15GrupalActualizar\_03_CapaBaseDatos\bin\Debug\netstandard2.0\_03_CapaBaseDatos.deps.json
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea15_Capas\Tarea_15GrupalActualizar\_03_CapaBaseDatos\bin\Debug\netstandard2.0\_03_CapaBaseDatos.dll
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea15_Capas\Tarea_15GrupalActualizar\_03_CapaBaseDatos\bin\Debug\netstandard2.0\_03_CapaBaseDatos.pdb
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea15_Capas\Tarea_15GrupalActualizar\_03_CapaBaseDatos\bin\Debug\netstandard2.0\Entidades.dll
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea15_Capas\Tarea_15GrupalActualizar\_03_CapaBaseDatos\bin\Debug\netstandard2.0\Entidades.pdb
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea15_Capas\Tarea_15GrupalActualizar\_03_CapaBaseDatos\obj\Debug\netstandard2.0\_03_CapaBaseDatos.csproj.AssemblyReference.cache
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea15_Capas\Tarea_15GrupalActualizar\_03_CapaBaseDatos\obj\Debug\netstandard2.0\_03_CapaBaseDatos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea15_Capas\Tarea_15GrupalActualizar\_03_CapaBaseDatos\obj\Debug\netstandard2.0\_03_CapaBaseDatos.AssemblyInfoInputs.cache
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea15_Capas\Tarea_15GrupalActualizar\_03_CapaBaseDatos\obj\Debug\netstandard2.0\_03_CapaBaseDatos.AssemblyInfo.cs
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea15_Capas\Tarea_15GrupalActualizar\_03_CapaBaseDatos\obj\Debug\netstandard2.0\_03_CapaBaseDatos.csproj.CoreCompileInputs.cache
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea15_Capas\Tarea_15GrupalActualizar\_03_CapaBaseDatos\obj\Debug\netstandard2.0\_03_CapaBaseDatos.csproj.CopyComplete
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea15_Capas\Tarea_15GrupalActualizar\_03_CapaBaseDatos\obj\Debug\netstandard2.0\_03_CapaBaseDatos.dll
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\Tarea15_Capas\Tarea_15GrupalActualizar\_03_CapaBaseDatos\obj\Debug\netstandard2.0\_03_CapaBaseDatos.pdb

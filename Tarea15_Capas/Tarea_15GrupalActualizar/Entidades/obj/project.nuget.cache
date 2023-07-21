@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GjOfHTvt+6xQVLlYm+kRIu8SFYNCig/ZgXTP4Z4Zip8xjJApqNJopG8kr1vrfiy2vncgBjujfUt+xwak9QaGsA==",
+  "dgSpecHash": "labQnCnUijUR+aadzOZCnIlUqANzTX+ej6a3s14Dj33cQn2uJcI0lQTQ9bi9bNPgeprSjDhBoGMj4Nm2e/vDWA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\djjav\\Desktop\\Tarea15_Capas\\Tarea_15GrupalActualizar\\Entidades\\Entidades.csproj",
+  "projectFilePath": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea15_Capas\\Tarea_15GrupalActualizar\\Entidades\\Entidades.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\djjav\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\djjav\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
