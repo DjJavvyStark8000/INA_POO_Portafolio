@@ -54,3 +54,43 @@ C:\Users\djjav\Desktop\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Inter
 C:\Users\djjav\Desktop\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.dll
 C:\Users\djjav\Desktop\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.pdb
 C:\Users\djjav\Desktop\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.genruntimeconfig.cache
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\bin\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.exe
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\bin\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.dll.config
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\bin\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.deps.json
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\bin\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.runtimeconfig.json
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\bin\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.runtimeconfig.dev.json
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\bin\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.dll
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\bin\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.pdb
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\bin\Debug\netcoreapp3.1\ElBuenVivir_AccesoDatos.dll
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\bin\Debug\netcoreapp3.1\ElBuenVivir_Entidades.dll
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\bin\Debug\netcoreapp3.1\ElBuenVivir_Logica.dll
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\bin\Debug\netcoreapp3.1\ElBuenVivir_Entidades.pdb
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\bin\Debug\netcoreapp3.1\ElBuenVivir_Logica.pdb
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\bin\Debug\netcoreapp3.1\ElBuenVivir_AccesoDatos.pdb
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.csproj.AssemblyReference.cache
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.Frm_Citas.resources
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.Frm_Diagnostico.resources
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.Frm_Especialidad.resources
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.Frm_Funcionario.resources
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.Frm_Historial.resources
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.Frm_Inventario.resources
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.Frm_Pacientes.resources
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.Frm_Plataforma.resources
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.Frm_Recetas.resources
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.Properties.Resources.resources
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.RoleUsuario.resources
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.csproj.GenerateResource.cache
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.AssemblyInfoInputs.cache
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.AssemblyInfo.cs
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.csproj.CoreCompileInputs.cache
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.csproj.CopyComplete
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.dll
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.pdb
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Interfaz\obj\Debug\netcoreapp3.1\ElBuenVivir_Interfaz.genruntimeconfig.cache

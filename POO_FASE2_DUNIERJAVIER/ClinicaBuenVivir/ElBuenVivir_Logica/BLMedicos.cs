@@ -23,19 +23,19 @@ namespace ElBuenVivir_Logica
         }
 
         // (***************) llamar acceso de datos por medio de lista a los medicos
-        public List<EntidadMedicos> llamarListarMedicos(string condicion = "")
-        {
-            List<EntidadMedicos> medico;
-            DAMedicos accesarMedico = new DAMedicos(_cadenaConexion);
-            try
-            {
-                medico = accesarMedico.ListarMedicos(condicion);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            return medico;
-        }
+        //public List<EntidadMedicos> llamarListarMedicos(string condicion = "")
+        //{
+        //    List<EntidadMedicos> medico;
+        //    DAMedicos accesarMedico = new DAMedicos(_cadenaConexion);
+        //    try
+        //    {
+        //        medico = accesarMedico.ListarMedicos(condicion);
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //    return medico;
+        //}
     }
 }

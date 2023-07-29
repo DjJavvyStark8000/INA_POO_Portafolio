@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "F+i8Nh2JCDKBeXBCfigZ20m0IYqpTRp+9AXq+hlX73sYIksVMWm5wadbb3G8zF2gIUzIJVzb/qkwIuIKw8dOCg==",
+  "dgSpecHash": "XxjqjU3wDvOwwM1iDKFnnHOi0fXI8HAycweGc1/Trsrsagb+umj3gE785sHjY73lRm8iJS9lR3b8M96ECX3XzA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\_03_CapaBaseDatos\\_03_CapaBaseDatos.csproj",
+  "projectFilePath": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\_03_CapaBaseDatos\\_03_CapaBaseDatos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\djjav\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\djjav\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

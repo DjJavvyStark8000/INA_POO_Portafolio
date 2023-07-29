@@ -48,7 +48,7 @@ namespace ElBuenVivir_AccesoDatos
                           select new EntidadHorario()
                           {
                               HorarioId = Convert.ToInt32(row[0]),
-                              Fecha = row[1].ToString(),
+                              FechaHorario = row[1].ToString(),
                               HoraInicio = row[2].ToString(),
                               HoraFin = row[3].ToString()                           
                           }).ToList(); 

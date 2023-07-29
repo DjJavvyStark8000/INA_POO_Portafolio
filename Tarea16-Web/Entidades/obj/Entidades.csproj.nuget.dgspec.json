@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\Entidades\\Entidades.csproj": {}
+    "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\Entidades\\Entidades.csproj": {}
   },
   "projects": {
-    "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\Entidades\\Entidades.csproj",
+        "projectPath": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\Entidades\\Entidades.csproj",
         "packagesPath": "C:\\Users\\djjav\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\Entidades\\obj\\",
+        "outputPath": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

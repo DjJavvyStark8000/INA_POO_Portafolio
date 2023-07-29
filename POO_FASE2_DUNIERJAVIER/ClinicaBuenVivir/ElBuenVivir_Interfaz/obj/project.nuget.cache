@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GTXBw5iMH1UwG43HVhMifgEkpdntJQvf2gDkob8WnjwmbWJsJaqZrfY3bdrd9ewpoR4chznVWpxLnJJd8Zmd2A==",
+  "dgSpecHash": "INi1lpa23mdPPBn+XPkj6/Ho+6Plhr9r04T9VTSAm8gkJTFHgaiyAJmkETNhsWZCFOiirrZB+f0VDwNQKNRAsw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\djjav\\Desktop\\POO_FASE2_DUNIERJAVIER\\ClinicaBuenVivir\\ElBuenVivir_Interfaz\\ElBuenVivir_Interfaz.csproj",
+  "projectFilePath": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\POO_FASE2_DUNIERJAVIER\\ClinicaBuenVivir\\ElBuenVivir_Interfaz\\ElBuenVivir_Interfaz.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\djjav\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\djjav\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

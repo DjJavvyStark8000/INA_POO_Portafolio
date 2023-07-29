@@ -525,19 +525,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\djjav\\.nuget\\packages\\": {}
+    "C:\\Users\\djjav\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\djjav\\Desktop\\POO_FASE2_DUNIERJAVIER\\ClinicaBuenVivir\\ElBuenVivir_Interfaz\\ElBuenVivir_Interfaz.csproj",
+      "projectUniqueName": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\POO_FASE2_DUNIERJAVIER\\ClinicaBuenVivir\\ElBuenVivir_Interfaz\\ElBuenVivir_Interfaz.csproj",
       "projectName": "ElBuenVivir_Interfaz",
-      "projectPath": "C:\\Users\\djjav\\Desktop\\POO_FASE2_DUNIERJAVIER\\ClinicaBuenVivir\\ElBuenVivir_Interfaz\\ElBuenVivir_Interfaz.csproj",
+      "projectPath": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\POO_FASE2_DUNIERJAVIER\\ClinicaBuenVivir\\ElBuenVivir_Interfaz\\ElBuenVivir_Interfaz.csproj",
       "packagesPath": "C:\\Users\\djjav\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\djjav\\Desktop\\POO_FASE2_DUNIERJAVIER\\ClinicaBuenVivir\\ElBuenVivir_Interfaz\\obj\\",
+      "outputPath": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\POO_FASE2_DUNIERJAVIER\\ClinicaBuenVivir\\ElBuenVivir_Interfaz\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\djjav\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -551,11 +556,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\djjav\\Desktop\\POO_FASE2_DUNIERJAVIER\\ClinicaBuenVivir\\ElBuenVivir_Entidades\\ElBuenVivir_Entidades.csproj": {
-              "projectPath": "C:\\Users\\djjav\\Desktop\\POO_FASE2_DUNIERJAVIER\\ClinicaBuenVivir\\ElBuenVivir_Entidades\\ElBuenVivir_Entidades.csproj"
+            "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\POO_FASE2_DUNIERJAVIER\\ClinicaBuenVivir\\ElBuenVivir_Entidades\\ElBuenVivir_Entidades.csproj": {
+              "projectPath": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\POO_FASE2_DUNIERJAVIER\\ClinicaBuenVivir\\ElBuenVivir_Entidades\\ElBuenVivir_Entidades.csproj"
             },
-            "C:\\Users\\djjav\\Desktop\\POO_FASE2_DUNIERJAVIER\\ClinicaBuenVivir\\ElBuenVivir_Logica\\ElBuenVivir_Logica.csproj": {
-              "projectPath": "C:\\Users\\djjav\\Desktop\\POO_FASE2_DUNIERJAVIER\\ClinicaBuenVivir\\ElBuenVivir_Logica\\ElBuenVivir_Logica.csproj"
+            "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\POO_FASE2_DUNIERJAVIER\\ClinicaBuenVivir\\ElBuenVivir_Logica\\ElBuenVivir_Logica.csproj": {
+              "projectPath": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\POO_FASE2_DUNIERJAVIER\\ClinicaBuenVivir\\ElBuenVivir_Logica\\ElBuenVivir_Logica.csproj"
             }
           }
         }
@@ -594,7 +599,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
       }
     }
   }

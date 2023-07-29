@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mc9EiqcRLmmXDtuNcqsUu8+nm4k9qWNNJdBLGAe89+7PcMroJ+6lVIHkdbKm0GkNLBwFKaxqiG3jZcBIbg+6Gw==",
+  "dgSpecHash": "/T0vihrp+YS7dScnLWhj7iCfaEhtvU6MHRd1ElntWnVRNdTdxQtKmZnHzEeEtm7KdB7HdZ6nxu6hL/uOH8vp/Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\_02_CapaLogica\\_02_CapaLogica.csproj",
+  "projectFilePath": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\_02_CapaLogica\\_02_CapaLogica.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\djjav\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\djjav\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

@@ -8,3 +8,13 @@ C:\Users\djjav\Desktop\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Entid
 C:\Users\djjav\Desktop\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Entidades\obj\Debug\netstandard2.0\ElBuenVivir_Entidades.csproj.CoreCompileInputs.cache
 C:\Users\djjav\Desktop\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Entidades\obj\Debug\netstandard2.0\ElBuenVivir_Entidades.dll
 C:\Users\djjav\Desktop\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Entidades\obj\Debug\netstandard2.0\ElBuenVivir_Entidades.pdb
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Entidades\bin\Debug\netstandard2.0\ElBuenVivir_Entidades.deps.json
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Entidades\bin\Debug\netstandard2.0\ElBuenVivir_Entidades.dll
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Entidades\bin\Debug\netstandard2.0\ElBuenVivir_Entidades.pdb
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Entidades\obj\Debug\netstandard2.0\ElBuenVivir_Entidades.csproj.AssemblyReference.cache
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Entidades\obj\Debug\netstandard2.0\ElBuenVivir_Entidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Entidades\obj\Debug\netstandard2.0\ElBuenVivir_Entidades.AssemblyInfoInputs.cache
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Entidades\obj\Debug\netstandard2.0\ElBuenVivir_Entidades.AssemblyInfo.cs
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Entidades\obj\Debug\netstandard2.0\ElBuenVivir_Entidades.csproj.CoreCompileInputs.cache
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Entidades\obj\Debug\netstandard2.0\ElBuenVivir_Entidades.dll
+C:\Users\djjav\Desktop\POO Portafolio\INA_POO_Portafolio\POO_FASE2_DUNIERJAVIER\ClinicaBuenVivir\ElBuenVivir_Entidades\obj\Debug\netstandard2.0\ElBuenVivir_Entidades.pdb

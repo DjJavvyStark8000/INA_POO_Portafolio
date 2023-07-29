@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\_01_CapaPresentacion\\_01_CapaPresentacion.csproj": {}
+    "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\_01_CapaPresentacion\\_01_CapaPresentacion.csproj": {}
   },
   "projects": {
-    "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\Entidades\\Entidades.csproj",
+        "projectPath": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\Entidades\\Entidades.csproj",
         "packagesPath": "C:\\Users\\djjav\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\Entidades\\obj\\",
+        "outputPath": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\_01_CapaPresentacion\\_01_CapaPresentacion.csproj": {
+    "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\_01_CapaPresentacion\\_01_CapaPresentacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\_01_CapaPresentacion\\_01_CapaPresentacion.csproj",
+        "projectUniqueName": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\_01_CapaPresentacion\\_01_CapaPresentacion.csproj",
         "projectName": "_01_CapaPresentacion",
-        "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\_01_CapaPresentacion\\_01_CapaPresentacion.csproj",
+        "projectPath": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\_01_CapaPresentacion\\_01_CapaPresentacion.csproj",
         "packagesPath": "C:\\Users\\djjav\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\_01_CapaPresentacion\\obj\\",
+        "outputPath": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\_01_CapaPresentacion\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -97,11 +97,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\Entidades\\Entidades.csproj"
+              "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\Entidades\\Entidades.csproj"
               },
-              "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\_02_CapaLogica\\_02_CapaLogica.csproj": {
-                "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\_02_CapaLogica\\_02_CapaLogica.csproj"
+              "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\_02_CapaLogica\\_02_CapaLogica.csproj": {
+                "projectPath": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\_02_CapaLogica\\_02_CapaLogica.csproj"
               }
             }
           }
@@ -143,14 +143,14 @@
         }
       }
     },
-    "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\_02_CapaLogica\\_02_CapaLogica.csproj": {
+    "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\_02_CapaLogica\\_02_CapaLogica.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\_02_CapaLogica\\_02_CapaLogica.csproj",
+        "projectUniqueName": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\_02_CapaLogica\\_02_CapaLogica.csproj",
         "projectName": "_02_CapaLogica",
-        "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\_02_CapaLogica\\_02_CapaLogica.csproj",
+        "projectPath": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\_02_CapaLogica\\_02_CapaLogica.csproj",
         "packagesPath": "C:\\Users\\djjav\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\_02_CapaLogica\\obj\\",
+        "outputPath": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\_02_CapaLogica\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -171,11 +171,11 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\Entidades\\Entidades.csproj"
+              "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\Entidades\\Entidades.csproj"
               },
-              "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\_03_CapaBaseDatos\\_03_CapaBaseDatos.csproj": {
-                "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\_03_CapaBaseDatos\\_03_CapaBaseDatos.csproj"
+              "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\_03_CapaBaseDatos\\_03_CapaBaseDatos.csproj": {
+                "projectPath": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\_03_CapaBaseDatos\\_03_CapaBaseDatos.csproj"
               }
             }
           }
@@ -215,14 +215,14 @@
         }
       }
     },
-    "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\_03_CapaBaseDatos\\_03_CapaBaseDatos.csproj": {
+    "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\_03_CapaBaseDatos\\_03_CapaBaseDatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\_03_CapaBaseDatos\\_03_CapaBaseDatos.csproj",
+        "projectUniqueName": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\_03_CapaBaseDatos\\_03_CapaBaseDatos.csproj",
         "projectName": "_03_CapaBaseDatos",
-        "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\_03_CapaBaseDatos\\_03_CapaBaseDatos.csproj",
+        "projectPath": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\_03_CapaBaseDatos\\_03_CapaBaseDatos.csproj",
         "packagesPath": "C:\\Users\\djjav\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\_03_CapaBaseDatos\\obj\\",
+        "outputPath": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\_03_CapaBaseDatos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -243,8 +243,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\djjav\\Desktop\\Tarea16-Web\\Entidades\\Entidades.csproj"
+              "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\Tarea16-Web\\Entidades\\Entidades.csproj"
               }
             }
           }

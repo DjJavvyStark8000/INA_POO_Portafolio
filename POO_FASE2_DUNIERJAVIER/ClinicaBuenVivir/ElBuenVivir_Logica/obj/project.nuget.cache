@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eleXbYMfUDzCCBbFD4zZQohmmacKNOHvkVA9r7cdLrpnzvgY2fAEgp6JJLWJcGaZ6cP5gN/WzHbCTRJXH9/Uxg==",
+  "dgSpecHash": "FGTqZrd8y0RNJN0EHW85O730Cw36nIMOOO3z6dte0+Rg4tktdUGWjxG1d12bCWjkeeQcmUF0qyBjFFCF7Wep5Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\djjav\\Desktop\\POO_FASE2_DUNIERJAVIER\\ClinicaBuenVivir\\ElBuenVivir_Logica\\ElBuenVivir_Logica.csproj",
+  "projectFilePath": "C:\\Users\\djjav\\Desktop\\POO Portafolio\\INA_POO_Portafolio\\POO_FASE2_DUNIERJAVIER\\ClinicaBuenVivir\\ElBuenVivir_Logica\\ElBuenVivir_Logica.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\djjav\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\djjav\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

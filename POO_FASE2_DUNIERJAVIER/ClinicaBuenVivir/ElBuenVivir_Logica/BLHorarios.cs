@@ -23,19 +23,19 @@ namespace ElBuenVivir_Logica
         }
 
         // (1) llamar acceso de datos por medio de lista
-        public List<EntidadHorario> llamarListarHorarios(string condicion = "")
-        {
-            List<EntidadHorario> horario;
-            DAHorarios accesarHorario = new DAHorarios(_cadenaConexion);
-            try
-            {
-                horario = accesarHorario.ListarHorarios(condicion);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            return horario;
-        }
+        //public List<EntidadHorario> llamarListarHorarios(string condicion = "")
+        //{
+        //    List<EntidadHorario> horario;
+        //    DAHorarios accesarHorario = new DAHorarios(_cadenaConexion);
+        //    try
+        //    {
+        //        horario = accesarHorario.ListarHorarios(condicion);
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //    return horario;
+        //}
     }
 }
