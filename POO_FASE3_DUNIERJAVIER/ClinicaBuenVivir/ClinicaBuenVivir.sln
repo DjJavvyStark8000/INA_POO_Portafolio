@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33801.447
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElBuenVivir_Interfaz", "ElBuenVivir_Interfaz\ElBuenVivir_Interfaz.csproj", "{FF98A74D-5188-4DB5-B8F4-7211F34F015B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElBuenVivir_Logica", "ElBuenVivir_Logica\ElBuenVivir_Logica.csproj", "{14725A94-E76A-4122-BA4B-D8C40017D548}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElBuenVivir_AccesoDatos", "ElBuenVivir_AccesoDatos\ElBuenVivir_AccesoDatos.csproj", "{D9C39EF3-25A0-48CC-A868-EA26AFEB98AE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElBuenVivir_Entidades", "ElBuenVivir_Entidades\ElBuenVivir_Entidades.csproj", "{90E58238-99B2-4C76-BB49-306D230658D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SitioWeb", "SitioWeb\SitioWeb.csproj", "{C9AB0BC6-B1A8-4A11-85FD-529638631A38}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF98A74D-5188-4DB5-B8F4-7211F34F015B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF98A74D-5188-4DB5-B8F4-7211F34F015B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF98A74D-5188-4DB5-B8F4-7211F34F015B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF98A74D-5188-4DB5-B8F4-7211F34F015B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14725A94-E76A-4122-BA4B-D8C40017D548}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14725A94-E76A-4122-BA4B-D8C40017D548}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14725A94-E76A-4122-BA4B-D8C40017D548}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14725A94-E76A-4122-BA4B-D8C40017D548}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9C39EF3-25A0-48CC-A868-EA26AFEB98AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9C39EF3-25A0-48CC-A868-EA26AFEB98AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9C39EF3-25A0-48CC-A868-EA26AFEB98AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9C39EF3-25A0-48CC-A868-EA26AFEB98AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90E58238-99B2-4C76-BB49-306D230658D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90E58238-99B2-4C76-BB49-306D230658D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90E58238-99B2-4C76-BB49-306D230658D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90E58238-99B2-4C76-BB49-306D230658D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9AB0BC6-B1A8-4A11-85FD-529638631A38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9AB0BC6-B1A8-4A11-85FD-529638631A38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9AB0BC6-B1A8-4A11-85FD-529638631A38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9AB0BC6-B1A8-4A11-85FD-529638631A38}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C7209961-CF34-4470-9559-FAF35C4413C4}
+	EndGlobalSection
+EndGlobal

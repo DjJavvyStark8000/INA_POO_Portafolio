@@ -1,0 +1,39 @@
+﻿body {
+    background-color: #99B4D1;
+}
+
+/* Styling for the left and right panels (keep them as is) */
+.panel-container-left {
+    margin: 5px;
+    float: left;
+    width: 58%;
+    background-color: #99B4D1;
+    height: 520px;
+}
+
+.panel-container-right {
+    margin: 5px;
+    float: right;
+    width: 38%;
+    background-color: #99B4D1;
+    height: 520px;
+}
+
+.panel-container-bottom-left {
+    margin: 5px;
+    float: left;
+    width: 100%;
+    background-color: #99B4D1;
+    height: 120px;
+}
+
+#btnRegistrarPaciente {
+    position: fixed; /* Posición fija en la ventana */
+    bottom: 10px; /* Distancia desde abajo de la ventana */
+    right: 10px; /* Distancia desde la izquierda de la ventana */
+    background-color: #007bff; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Borde redondeado */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima del botón */
+}

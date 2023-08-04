@@ -1,0 +1,89 @@
+﻿body, #panel1 {
+    background-color: #99B4D1;
+}
+
+.label {
+    text-align: right;
+    padding-right: 10px;
+    white-space: nowrap;
+}
+
+.input {
+    display: block;
+    margin-top: 5px;
+}
+
+#Citas::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Styling for the left and right panels (keep them as is) */
+.panel-container-left {
+    margin: 5px;
+    float: left;
+    width: 48%;
+    background-color: #99B4D1;
+    height: 400px;
+}
+
+.panel-container-right {
+    margin: 5px;
+    float: right;
+    width: 48%;
+    background-color: #99B4D1;
+    height: 400px;
+}
+
+.panel-container-bottom-left {
+    margin: 5px;
+    float: left;
+    width: 100%;
+    background-color: #99B4D1;
+    height: 120px;
+}
+
+.panel-item {
+    margin-bottom: 10px;
+}
+
+.panel-item-right {
+    float: right;
+}
+
+#Calendario {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#guardarCita{
+    float: right;
+    margin: 10px;
+}
+
+/* Estilos para cuando la pantalla está a pantalla completa */
+#contenido-normal {
+    display: block; /* Mostrar el contenido normal */
+}
+
+#mensaje-pantalla-completa {
+    display: none; /* Ocultar el mensaje por defecto */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Estilos para cuando la pantalla es más pequeña */
+@media screen and (max-width: 900px) {
+    #contenido-normal {
+        display: none; /* Ocultar el contenido normal cuando la pantalla es pequeña */
+    }
+
+    #mensaje-pantalla-completa {
+        display: block; /* Mostrar el mensaje solo en pantalla pequeña */
+        color: black;
+    }
+}

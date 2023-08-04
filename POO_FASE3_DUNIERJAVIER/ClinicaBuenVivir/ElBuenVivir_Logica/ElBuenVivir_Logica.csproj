@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ElBuenVivir_AccesoDatos\ElBuenVivir_AccesoDatos.csproj" />
+    <ProjectReference Include="..\ElBuenVivir_Entidades\ElBuenVivir_Entidades.csproj" />
+  </ItemGroup>
+
+</Project>

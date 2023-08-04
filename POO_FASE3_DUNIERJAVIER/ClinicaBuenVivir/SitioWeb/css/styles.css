@@ -1,0 +1,41 @@
+﻿body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+/* Estilos para el formulario */
+#form {
+    width: 300px; /* Ancho del formulario */
+    margin: 0 auto; /* Centrar el formulario horizontalmente */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilos para el título */
+h2 {
+    text-align: center;
+}
+
+/* Estilos para las etiquetas */
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Estilos para el cuadro de texto del número de usuario */
+#idUsuario {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilos para el cuadro de texto de la clave de usuario */
+#password {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#Registro {
+    margin-left: 10px;
+}

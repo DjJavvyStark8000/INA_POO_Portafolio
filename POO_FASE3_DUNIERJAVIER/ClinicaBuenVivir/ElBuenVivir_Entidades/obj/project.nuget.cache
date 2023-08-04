@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "J5Y4hl22OCdxPQlgoDPGJRpt2Ao2Ex63fcYIDGTRKzksI5z9VyhVnMqAgyMw+s5c1utHIh9Gm2NfHHzsHkB0+Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\djjav\\Desktop\\POO_FASE3_DUNIERJAVIER\\ClinicaBuenVivir\\ElBuenVivir_Entidades\\ElBuenVivir_Entidades.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\djjav\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\djjav\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
